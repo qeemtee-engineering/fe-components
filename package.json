@@ -8,8 +8,8 @@
     "url": "https://bitbucket.org/qeemtee/fe-components.git"
   },
   "scripts": {
-    "start": "source ./.env && webpack-dev-server --config ./webpack.config.dev.js",
-    "build": "source ./.env && webpack",
+    "start": "webpack-dev-server --config ./webpack.config.dev.js",
+    "build": "webpack",
     "lint": "tslint -c tslint.json --project tsconfig.json 'src/**/*.{ts,tsx}'"
   },
   "author": "",
@@ -45,6 +45,8 @@
   },
   "dependencies": {
     "@bem-react/classname": "^1.5.2",
+    "dotenv": "^8.0.0",
+    "dotenv-webpack": "^1.7.0",
     "normalize.css": "^8.0.1",
     "rc-dialog": "^7.4.1",
     "rc-util": "^4.7.1",
