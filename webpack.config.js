@@ -2,12 +2,14 @@ const path = require('path');
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   target: 'web',
   entry: './src/components/index.tsx',
   mode: 'production',
   plugins: [
+    new Dotenv(),
     new CaseSensitivePathsPlugin(),
     new CleanWebpackPlugin(),
     new CopyWebpackPlugin([{ from: './src/assets', to: 'assets' }])
