@@ -29,7 +29,7 @@ export default class TypeAhead extends Component<TypeAheadProps,TypeAheadState> 
     }
 
     mapValues(values: any) {
-        if(!Array.isArray(values)){ // Single Selet Case
+        if(!Array.isArray(values)){ // Single Select Case
             this.setState({ 
                 valuesToPass: {
                     label: values[this.props.labelKey],
