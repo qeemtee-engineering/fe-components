@@ -45,6 +45,7 @@
   },
   "dependencies": {
     "@bem-react/classname": "^1.5.2",
+    "@types/react-select": "^3.0.0",
     "dotenv": "^8.0.0",
     "dotenv-webpack": "^1.7.0",
     "normalize.css": "^8.0.1",
@@ -52,6 +53,7 @@
     "rc-util": "^4.7.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-router-dom": "^5.0.1"
+    "react-router-dom": "^5.0.1",
+    "react-select": "3.0.4"
   }
 }

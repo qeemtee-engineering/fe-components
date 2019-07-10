@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './app.scss';
-import { Button, Modal } from '../components';
+import { Button, Modal, TypeAhead } from '../components';
 
 const App = () => {
   const [visible, setVisible] = useState(false);
@@ -16,6 +16,16 @@ const App = () => {
       >
         This is modal.
       </Modal>
+      <TypeAhead
+        options = {[{title:'A',value:1}]}
+        value = {[]}
+        labelKey = 'title'
+        valueKey = 'value'
+        isMulti = {true}
+        onChange = {()=>{
+
+        }}
+      />
     </>
   );
 };
