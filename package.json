@@ -41,12 +41,12 @@
     "url-loader": "^2.0.1",
     "webpack": "^4.35.2",
     "webpack-cli": "^3.3.5",
-    "webpack-dev-server": "^3.7.2"
+    "webpack-dev-server": "^3.7.2",
+    "dotenv-webpack": "^1.7.0",
+    "dotenv": "^8.0.0"
   },
   "dependencies": {
     "@bem-react/classname": "^1.5.2",
-    "dotenv": "^8.0.0",
-    "dotenv-webpack": "^1.7.0",
     "normalize.css": "^8.0.1",
     "rc-dialog": "^7.4.1",
     "rc-util": "^4.7.1",
