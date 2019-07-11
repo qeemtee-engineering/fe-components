@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { SVG } from '../utils';
 import './Input.scss';
-import iconEyeOpen from 'assets/svg/eye_open.svg';
-import iconEyeClose from 'assets/svg/eye_close.svg';
+import iconEyeOpen from '../../assets/svg/eye_open.svg';
+import iconEyeClose from '../../assets/svg/eye_close.svg';
 import { withNaming } from '@bem-react/classname';
 import { IInput } from 'interfaces';
 
