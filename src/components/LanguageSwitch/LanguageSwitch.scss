@@ -1,0 +1,24 @@
+@import '../../styles/utils';
+
+.LanguageSwitch {
+  span {
+    font-size: 16px;
+  }
+  > span:first-child {
+    margin-right: 10px;
+    margin-left: 0;
+    cursor: pointer;
+  }
+  > span:last-child {
+    margin-left: 10px;
+    margin-right: 0;
+    cursor: pointer;
+  }
+  span:nth-of-type(even) {
+      margin: 0 10px;
+      cursor: pointer;
+  }
+  &__active {
+    color: $purple;
+  }
+}

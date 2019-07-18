@@ -1,6 +1,6 @@
 {
   "name": "fe-components",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Reusable react components for Qeemtee front-end apps.",
   "main": "./dist/index.js",
   "repository": {
@@ -41,7 +41,9 @@
     "url-loader": "^2.0.1",
     "webpack": "^4.35.2",
     "webpack-cli": "^3.3.5",
-    "webpack-dev-server": "^3.7.2"
+    "webpack-dev-server": "^3.7.2",
+    "dotenv-webpack": "^1.7.0",
+    "dotenv": "^8.0.0"
   },
   "dependencies": {
     "@bem-react/classname": "^1.5.2",
