@@ -16,7 +16,7 @@ function useForm(validate: (values: object) => object) {
     }
   }, [values]);
 
-  const onBlur = (event: any) => {
+  const onChange = (event: any) => {
     event.persist();
 
     const _values = {
@@ -44,7 +44,7 @@ function useForm(validate: (values: object) => object) {
     values,
     errors,
     valid,
-    onBlur,
+    onChange,
     submit
   };
 }
