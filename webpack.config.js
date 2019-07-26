@@ -3,6 +3,7 @@ const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
+const pkg = require('./package.json');
 
 module.exports = {
   target: 'web',
@@ -83,10 +84,5 @@ module.exports = {
     filename: 'index.js',
     libraryTarget: 'commonjs2'
   },
-  externals: {
-    react: 'react',
-    'react-dom': 'react-dom',
-    "react-router-dom": "react-router-dom",
-    'normalize.css': 'normalize.css'
-  }
+  externals: [...Object.keys(pkg.dependencies || {})]
 };

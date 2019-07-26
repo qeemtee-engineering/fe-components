@@ -16,13 +16,15 @@ $self: '.Button';
   transition: all 0.3s;
   opacity: 1;
   font-weight: 500;
+  min-width: 69px;
+  height: 42px;
   font-size: 15px;
 
   &-loading {
     padding-right: 40px;
   }
 
-  &:active {
+  &:hover {
     box-shadow: 0 0 8px rgba(33, 33, 33, 0.6);
   }
 
