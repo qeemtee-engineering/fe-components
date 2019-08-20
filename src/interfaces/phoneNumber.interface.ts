@@ -5,10 +5,5 @@ export interface PhoneNumberProps {
     displayInitialValueAsLocalNumber: boolean,
     countryOptions: Array<any>,
     onChange: Function
-    inputClassName: string,
     hasContact: boolean
 };
-
-export interface PhoneNumberState {
-    valuesToPass: any
-}
