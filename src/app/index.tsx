@@ -34,7 +34,6 @@ const App = () => {
           displayInitialValueAsLocalNumber= {true}
           countryOptions={["TH","CN","US", "|", "..."]}
           onChange= { (phone:any) => {} }
-          inputClassName={'test-class'}
           hasContact={false}
       /> 
     </>
