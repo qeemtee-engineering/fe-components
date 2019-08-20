@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { PhoneNumberProps, PhoneNumberState } from 'interfaces';
 import 'react-phone-number-input/style.css';
-const PhoneInput = require('react-phone-number-input').PhoneInput;
+import PhoneInput from 'react-phone-number-input';
 import './PhoneNumber.scss';
 
 export default class PhoneNumber extends Component<

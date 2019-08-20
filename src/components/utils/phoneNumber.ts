@@ -1,2 +1,4 @@
-export const isValidPhoneNumber = require('react-phone-number-input').isValidPhoneNumber;
-export const parsePhoneNumber = require('react-phone-number-input').parsePhoneNumber;
+import { isValidPhoneNumber, parsePhoneNumber} from 'react-phone-number-input';
+
+export const phoneNumberValid = isValidPhoneNumber;
+export const phoneNumberParse = parsePhoneNumber;
