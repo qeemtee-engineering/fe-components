@@ -6,6 +6,7 @@ export interface PhoneNumberProps {
     countryOptions: Array<any>,
     onChange: Function
     hasContact: boolean
+    className: any
 };
 
 export interface PhoneNumberState {

@@ -35,6 +35,7 @@ export default class PhoneNumber extends Component<
         countryOptions={this.props.countryOptions}
         onChange= { (phone: any) => this.emitChange(phone) }
         inputClassName={!this.props.hasContact ? 'error-react-phone-number-input react-phone-number-input-padding': 'react-phone-number-input-padding'}
+        className={this.props.className ? 'react-input-custom-width' : ''}
       /> 
     );
   }
