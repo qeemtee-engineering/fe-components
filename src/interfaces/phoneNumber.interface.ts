@@ -7,3 +7,7 @@ export interface PhoneNumberProps {
     onChange: Function
     hasContact: boolean
 };
+
+export interface PhoneNumberState {
+    valueToPass: any
+}
