@@ -55,6 +55,7 @@
     "rc-util": "^4.7.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-phone-number-input": "2.3.21",
     "react-router-dom": "^5.0.1",
     "react-select": "3.0.4"
   }
