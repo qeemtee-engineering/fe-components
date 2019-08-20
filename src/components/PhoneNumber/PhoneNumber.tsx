@@ -12,7 +12,7 @@ export default class PhoneNumber extends Component<
   }
 
   emitChange(selected: any) {
-    this.props.onChange(selected);
+    this.props.onChange(selected.phone);
   }
 
   render() {
