@@ -5,3 +5,4 @@ export * from './table.interface';
 export * from './input.interface';
 export * from './language.interface';
 export * from './typeahead.interface';
+export * from './phoneNumber.interface';

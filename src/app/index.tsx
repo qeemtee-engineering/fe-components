@@ -4,6 +4,7 @@ import { Button, Modal, TypeAhead } from '../components';
 
 const App = () => {
   const [visible, setVisible] = useState(false);
+
   return (
     <>
       <Button onClick={() => { setVisible(true)}}>Open</Button>
