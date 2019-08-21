@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './app.scss';
-import { Button, Modal, TypeAhead, PhoneNumber } from '../components';
+import { Button, Modal, TypeAhead } from '../components';
 
 const App = () => {
   const [visible, setVisible] = useState(false);
@@ -27,15 +27,6 @@ const App = () => {
 
         }}
       />
-      <PhoneNumber
-          placeholder="Enter Test"
-          value={ '' }
-          international= {false}
-          displayInitialValueAsLocalNumber= {true}
-          countryOptions={["TH","CN","US", "|", "..."]}
-          onChange= { (phone:any) => {} }
-          hasContact={false}
-      /> 
     </>
   );
 };
