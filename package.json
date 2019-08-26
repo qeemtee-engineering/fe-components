@@ -1,6 +1,6 @@
 {
   "name": "fe-components",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Reusable react components for Qeemtee front-end apps.",
   "main": "./dist/index.js",
   "repository": {
@@ -55,6 +55,7 @@
     "rc-util": "^4.7.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-phone-number-input": "2.3.21",
     "react-router-dom": "^5.0.1",
     "react-select": "3.0.4"
   }

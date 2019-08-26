@@ -16,3 +16,4 @@ export function useForm(validate: (values: object) => object): any;
 export function TranslateProvider(props: ITranslateProvider): any;
 export function TranslateConnect(props: ITranslateConnect): any;
 export class TypeAhead {};
+export class PhoneNumber {};
