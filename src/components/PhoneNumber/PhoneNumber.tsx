@@ -11,7 +11,7 @@ export default class PhoneNumber extends Component<
   constructor(props: PhoneNumberProps) {
     super(props);
     this.state = {
-      valueToPass: ''
+      valueToPass: { phone : ''}
     };
   }
 
@@ -21,7 +21,7 @@ export default class PhoneNumber extends Component<
 
   componentWillMount(){
     if(this.props.value){
-      this.setState({valueToPass: this.props.value});
+      this.setState({valueToPass: { phone: this.props.value }});
     }
   }
 
