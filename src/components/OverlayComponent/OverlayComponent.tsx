@@ -11,17 +11,15 @@ const OverlayComponent: FC<IOverlayComponent> = ({
   image,
   title,
   action,
-  actionText
+  actionText,
 }) => {
   const classes = `${cn('')} ${className}`.trim();
   return (
     <div className={classes}>
-      <div className={cn('image')}>
-        {image && <img src={image} alt='img' />}
-      </div>
+      <div className={cn('image')}>{image && <img src={image} alt="img" />}</div>
       {title && <p className={cn('title')}>{title}</p>}
       {action && actionText ? (
-        <Button color='secondary' onClick={action}>
+        <Button color="secondary" onClick={action}>
           {actionText}
         </Button>
       ) : null}

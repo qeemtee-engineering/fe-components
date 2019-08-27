@@ -8,10 +8,7 @@ const cn = withNaming({ e: '__', m: '--' })('LanguageSwitch');
 
 const LanguageSwitch = () => {
   const value = useContext(LanguageContext);
-  const language: string= extractFromUrl(
-    Object.keys(value.translations),
-    value.defaultLang
-  );
+  const language: string = extractFromUrl(Object.keys(value.translations), value.defaultLang);
   function handleClose(code: string | false = false) {
     if (code && language && code !== language) {
       window.location.replace(changeUrlLanguage(code));

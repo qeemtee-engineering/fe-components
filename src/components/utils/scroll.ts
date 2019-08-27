@@ -1,13 +1,10 @@
-export const disableScroll = (
-  preventDefault: (event: any) => any,
-  overflow = false
-) => {
+export const disableScroll = (preventDefault: (event: any) => any, overflow = false) => {
   if (overflow) {
     document.body.style.overflow = 'hidden';
   }
   if (window.addEventListener) {
     window.addEventListener('DOMMouseScroll', preventDefault, {
-      passive: false
+      passive: false,
     });
     window.addEventListener('mousewheel', preventDefault, { passive: false });
     window.addEventListener('wheel', preventDefault, { passive: false });
@@ -20,10 +17,7 @@ export const disableScroll = (
   }
 };
 
-export const enableScroll = (
-  preventDefault: (event: any) => any,
-  overflow = false
-) => {
+export const enableScroll = (preventDefault: (event: any) => any, overflow = false) => {
   if (overflow) {
     document.body.style.removeProperty('overflow');
   }

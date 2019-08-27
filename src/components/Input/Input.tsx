@@ -60,9 +60,7 @@ const Input = React.forwardRef((props: IInput, ref: any) => {
 
   return (
     <label
-      className={`Input ${
-        (error && touched) || (submitted && error) ? cn('error') : ''
-      }`}
+      className={`Input ${(error && touched) || (submitted && error) ? cn('error') : ''}`}
       ref={ref}
     >
       {label && <span className={cn('title')}>{label}</span>}
@@ -88,7 +86,7 @@ const Input = React.forwardRef((props: IInput, ref: any) => {
             {meta.password && (
               <SVG
                 onClick={togglePassword}
-                className='SVG'
+                className="SVG"
                 src={type === 'password' ? iconEyeOpen : iconEyeClose}
               />
             )}
@@ -96,13 +94,7 @@ const Input = React.forwardRef((props: IInput, ref: any) => {
         )}
       </div>
       {(error && touched) || (submitted && error) ? (
-        <p
-          className={`${
-            (error && touched) || (submitted && error)
-              ? cn('error-message')
-              : ''
-          }`}
-        >
+        <p className={`${(error && touched) || (submitted && error) ? cn('error-message') : ''}`}>
           {error}
         </p>
       ) : (

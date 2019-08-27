@@ -13,10 +13,7 @@ const Table: FC<ITable> = ({ head, body }) => {
             <thead className={cn('head')}>
               <tr>
                 {head.map((item, index: number) => (
-                  <th
-                    style={{ minWidth: item.width ? item.width : '' }}
-                    key={index}
-                  >
+                  <th style={{ minWidth: item.width ? item.width : '' }} key={index}>
                     {item.title}
                   </th>
                 ))}
