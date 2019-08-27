@@ -1,6 +1,6 @@
 export interface PhoneNumberProps {
   placeholder: string;
-  value: string;
+  value: any;
   international: boolean;
   displayInitialValueAsLocalNumber: boolean;
   countryOptions: Array<any>;
