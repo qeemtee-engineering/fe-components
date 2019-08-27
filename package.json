@@ -70,7 +70,6 @@
     "react-select": "3.0.4"
   },
   "pre-commit": [
-    "prettify-code",
-    "build"
+    "prettify-code"
   ]
 }
