@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { PhoneNumberProps, PhoneNumberState } from 'interfaces';
 import 'react-phone-number-input/style.css';
-import PhoneInput from 'react-phone-number-input';
+import Phone from 'react-phone-number-input';
 import './PhoneNumber.scss';
 
 export default class PhoneNumber extends Component<PhoneNumberProps, PhoneNumberState> {
@@ -24,7 +24,7 @@ export default class PhoneNumber extends Component<PhoneNumberProps, PhoneNumber
 
   render() {
     return (
-      <PhoneInput
+      <Phone
         placeholder={this.props.placeholder}
         value={this.state.valueToPass}
         international={this.props.international}
