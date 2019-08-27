@@ -23,30 +23,15 @@ const Button = (props: IButton) => {
   const classes = `${cn('', {
     loading,
     color,
-    layout
+    layout,
   })} ${className}`.trim();
 
   return (
-    <button
-      {...other}
-      type={type || 'button'}
-      disabled={loading || disabled}
-      className={classes}
-    >
-      {icon && (
-        <SVG
-          wrapper='span'
-          className={`${cn('icon')} ${cn('SVG')}`}
-          src={icon}
-        />
-      )}
+    <button {...other} type={type || 'button'} disabled={loading || disabled} className={classes}>
+      {icon && <SVG wrapper="span" className={`${cn('icon')} ${cn('SVG')}`} src={icon} />}
       {children}
       {loading && (
-        <SVG
-          wrapper='span'
-          className={`${cn('spinner')} ${cn('SVG')}`}
-          src={iconSpinner}
-        />
+        <SVG wrapper="span" className={`${cn('spinner')} ${cn('SVG')}`} src={iconSpinner} />
       )}
     </button>
   );

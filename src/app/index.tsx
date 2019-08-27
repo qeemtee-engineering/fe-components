@@ -7,25 +7,29 @@ const App = () => {
 
   return (
     <>
-      <Button onClick={() => { setVisible(true)}}>Open</Button>
+      <Button
+        onClick={() => {
+          setVisible(true);
+        }}
+      >
+        Open
+      </Button>
       <Modal
         visible={visible}
         onCancel={() => {
           setVisible(false);
         }}
-        title='First Modal'
+        title="First Modal"
       >
         This is modal.
       </Modal>
       <TypeAhead
-        options = {[{title:'A',value:1}]}
-        value = {[]}
-        labelKey = 'title'
-        valueKey = 'value'
-        isMulti = {true}
-        onChange = {()=>{
-
-        }}
+        options={[{ title: 'A', value: 1 }]}
+        value={[]}
+        labelKey="title"
+        valueKey="value"
+        isMulti={true}
+        onChange={() => {}}
       />
     </>
   );

@@ -1,6 +1,6 @@
 const mapping: any = {
   en: 'English',
-  th: 'Thai'
+  th: 'Thai',
 };
 
 export default mapping;

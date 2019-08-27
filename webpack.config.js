@@ -13,7 +13,7 @@ module.exports = {
     new Dotenv(),
     new CaseSensitivePathsPlugin(),
     new CleanWebpackPlugin(),
-    new CopyWebpackPlugin([{ from: './src/assets', to: 'assets' }])
+    new CopyWebpackPlugin([{ from: './src/assets', to: 'assets' }]),
   ],
   module: {
     rules: [
@@ -23,15 +23,11 @@ module.exports = {
       { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' },
       {
         test: /\.scss$/,
-        use: [
-          { loader: 'style-loader' },
-          { loader: 'css-loader' },
-          { loader: 'sass-loader' }
-        ]
+        use: [{ loader: 'style-loader' }, { loader: 'css-loader' }, { loader: 'sass-loader' }],
       },
       {
         test: /\.css$/,
-        use: [{ loader: 'style-loader' }, { loader: 'css-loader' }]
+        use: [{ loader: 'style-loader' }, { loader: 'css-loader' }],
       },
       {
         test: /\.svg$/,
@@ -45,44 +41,34 @@ module.exports = {
             loaders.push({
               loader: 'file-loader',
               options: {
-                name: '/assets/svg/[name].[ext]'
-              }
+                name: '/assets/svg/[name].[ext]',
+              },
             });
           } else {
             loaders.push({ loader: 'raw-loader' });
           }
 
           return loaders;
-        }
+        },
       },
       {
         test: /\.(png|jpg|jpeg|bmp|gif)$/,
         loader: 'url-loader',
         options: {
           limit: '10000',
-          name: 'assets/images/[name].[ext]'
-        }
-      }
-    ]
+          name: 'assets/images/[name].[ext]',
+        },
+      },
+    ],
   },
   resolve: {
-    extensions: [
-      '.ts',
-      '.tsx',
-      '.scss',
-      '.js',
-      '.json',
-      '.png',
-      '.gif',
-      '.jpg',
-      '.svg'
-    ]
+    extensions: ['.ts', '.tsx', '.scss', '.js', '.json', '.png', '.gif', '.jpg', '.svg'],
   },
   output: {
     path: path.resolve(__dirname, 'dist/'),
     publicPath: '',
     filename: 'index.js',
-    libraryTarget: 'commonjs2'
+    libraryTarget: 'commonjs2',
   },
-  externals: [...Object.keys(pkg.dependencies || {})]
+  externals: [...Object.keys(pkg.dependencies || {})],
 };
