@@ -7,3 +7,4 @@ export * from './language.interface';
 export * from './typeahead.interface';
 export * from './phoneNumber.interface';
 export * from './overlay.interface';
+export * from './checkbox.interface';

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './app.scss';
-import { Button, Modal, TypeAhead } from '../components';
+import { Button, Modal, TypeAhead, Checkbox } from '../components';
 
 const App = () => {
   const [visible, setVisible] = useState(false);
@@ -31,6 +31,9 @@ const App = () => {
         isMulti={true}
         onChange={() => {}}
       />
+      {['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'].map(day => (
+        <Checkbox>{day}</Checkbox>
+      ))}
     </>
   );
 };

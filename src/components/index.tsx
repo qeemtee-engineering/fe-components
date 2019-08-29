@@ -8,5 +8,6 @@ export { default as TypeAhead } from './TypeAhead';
 export { default as LanguageSwitch } from './LanguageSwitch';
 export { default as PhoneNumber } from './PhoneNumber';
 export { default as OverlayComponent } from './OverlayComponent';
+export { default as Checkbox } from './Checkbox';
 export * from './useForm';
 export * from './utils';
