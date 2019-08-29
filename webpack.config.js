@@ -62,6 +62,9 @@ module.exports = {
     ],
   },
   resolve: {
+    alias: {
+      src: path.resolve(__dirname, 'src/'),
+    },
     extensions: ['.ts', '.tsx', '.scss', '.js', '.json', '.png', '.gif', '.jpg', '.svg'],
   },
   output: {
