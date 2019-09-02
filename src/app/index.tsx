@@ -1,9 +1,23 @@
 import React, { useState } from 'react';
 import './app.scss';
-import { Button, Modal, TypeAhead, Checkbox } from '../components';
+import { Button, Modal, TypeAhead, Checkbox, Notification } from '../components';
 
 const App = () => {
   const [visible, setVisible] = useState(false);
+
+  const openNotification = () => {
+    Notification.open({
+      message: 'Notification Title',
+      duration: 0,
+      placement: 'bottomLeft',
+      type: 'success',
+      description:
+        'This is the content of the notification. This is the content of the notification. This is the content of the notification.',
+      onClick: () => {
+        console.log('Notification Clicked!');
+      },
+    });
+  };
 
   return (
     <>
@@ -12,7 +26,12 @@ const App = () => {
           setVisible(true);
         }}
       >
-        Open
+        Open Modal
+      </Button>
+      <Button
+        onClick={openNotification}
+      >
+        Open Notification
       </Button>
       <Modal
         visible={visible}
