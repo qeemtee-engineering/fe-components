@@ -9,7 +9,7 @@ import {
   IOverlayComponent,
   ICheckbox,
   INotification,
-  IIcon
+  IIcon,
 } from './src/interfaces';
 export function SVG(props: ISVG): any;
 export function Modal(props: IModal): any;

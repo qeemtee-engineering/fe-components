@@ -10,6 +10,6 @@ export { default as PhoneNumber } from './PhoneNumber';
 export { default as OverlayComponent } from './OverlayComponent';
 export { default as Checkbox } from './Checkbox';
 export { default as Icon } from './Icon';
-export { default as Notification } from './Notification'
+export { default as Notification } from './Notification';
 export * from './useForm';
 export * from './utils';

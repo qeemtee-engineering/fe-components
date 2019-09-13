@@ -75,6 +75,7 @@ const Input = React.forwardRef((props: IInput, ref: any) => {
           placeholder={placeholder}
           disabled={disabled}
           name={name}
+          {...otherProps}
         />
         <div
           className={`${cn('input-border')} ${

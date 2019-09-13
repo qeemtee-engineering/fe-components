@@ -28,11 +28,7 @@ const App = () => {
       >
         Open Modal
       </Button>
-      <Button
-        onClick={openNotification}
-      >
-        Open Notification
-      </Button>
+      <Button onClick={openNotification}>Open Notification</Button>
       <Modal
         visible={visible}
         onCancel={() => {
