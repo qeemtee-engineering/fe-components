@@ -11,5 +11,6 @@ export { default as OverlayComponent } from './OverlayComponent';
 export { default as Checkbox } from './Checkbox';
 export { default as Icon } from './Icon';
 export { default as Notification } from './Notification';
+export { default as Switch } from './Switch';
 export * from './useForm';
 export * from './utils';

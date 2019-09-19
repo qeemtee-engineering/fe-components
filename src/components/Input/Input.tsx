@@ -11,7 +11,6 @@ const cn = withNaming({ e: '__', m: '--' })('Input');
 const Input = React.forwardRef((props: IInput, ref: any) => {
   const [type, setType] = useState('text');
   const [touched, setTouched] = useState(false);
-  const inputRef: any = useRef(null);
 
   const {
     submitted,
@@ -34,6 +33,10 @@ const Input = React.forwardRef((props: IInput, ref: any) => {
   const togglePassword = () => {
     setType(type === 'text' ? 'password' : 'text');
   };
+
+  useEffect(() => {
+    console.log(type);
+  }, [type]);
 
   const _onChange = (event: any) => {
     if (onChange) {
@@ -58,6 +61,7 @@ const Input = React.forwardRef((props: IInput, ref: any) => {
 
   const meta: any = { password: otherProps.type === 'password' };
 
+  console.log(type);
   return (
     <label
       className={`Input ${(error && touched) || (submitted && error) ? cn('error') : ''}`}
@@ -66,7 +70,8 @@ const Input = React.forwardRef((props: IInput, ref: any) => {
       {label && <span className={cn('title')}>{label}</span>}
       <div className={cn('input')}>
         <input
-          ref={inputRef}
+          {...otherProps}
+          ref={ref}
           type={type}
           value={_value}
           onChange={_onChange}
@@ -75,7 +80,6 @@ const Input = React.forwardRef((props: IInput, ref: any) => {
           placeholder={placeholder}
           disabled={disabled}
           name={name}
-          {...otherProps}
         />
         <div
           className={`${cn('input-border')} ${

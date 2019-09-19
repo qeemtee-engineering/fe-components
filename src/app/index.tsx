@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './app.scss';
-import { Button, Modal, TypeAhead, Checkbox, Notification } from '../components';
+import { Button, Modal, TypeAhead, Checkbox, Notification, Input, Switch } from '../components';
 
 const App = () => {
   const [visible, setVisible] = useState(false);
@@ -49,6 +49,8 @@ const App = () => {
       {['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'].map(day => (
         <Checkbox>{day}</Checkbox>
       ))}
+      <Input type="password" />
+      <Switch color='secondary' />
     </>
   );
 };
