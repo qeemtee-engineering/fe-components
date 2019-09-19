@@ -3,18 +3,15 @@ import { ContextProps, ITranslateProvider } from 'interfaces';
 
 export const LanguageContext = React.createContext<ContextProps>({
   translations: {},
-  defaultLang: ''
+  defaultLang: '',
 });
 
-const TranslateProvider: FC<ITranslateProvider> = ({
-  children,
-  languageStore
-}) => {
+const TranslateProvider: FC<ITranslateProvider> = ({ children, languageStore }) => {
   return (
     <LanguageContext.Provider
       value={{
         translations: languageStore.resource,
-        defaultLang: languageStore.defaultLang
+        defaultLang: languageStore.defaultLang,
       }}
     >
       {children}

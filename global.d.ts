@@ -9,3 +9,5 @@ interface Document {
 
 declare module '*.svg';
 declare module 'rc-util/lib/Dom/addEventListener';
+declare module 'react-phone-number-input';
+declare module 'rc-notification';

@@ -21,7 +21,7 @@ function useForm(validate: (values: object) => object) {
 
     const _values = {
       ...values,
-      [event.target.name]: event.target.value
+      [event.target.name]: event.target.value,
     };
     if (JSON.stringify(values) !== JSON.stringify(_values)) {
       setValues(_values);
@@ -45,7 +45,7 @@ function useForm(validate: (values: object) => object) {
     errors,
     valid,
     onChange,
-    submit
+    submit,
   };
 }
 

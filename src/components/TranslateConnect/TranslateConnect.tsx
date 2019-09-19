@@ -3,9 +3,7 @@ import { LanguageContext } from '../TranslateProvider/TranslateProvider';
 import { extractFromUrl } from '../utils';
 import { ContextProps, ITranslateConnect } from 'interfaces';
 
-const TranslateConnect = <P extends ITranslateConnect>(
-  Component: React.ComponentType<P>
-) => {
+const TranslateConnect = <P extends ITranslateConnect>(Component: React.ComponentType<P>) => {
   return (props: Pick<P, Exclude<keyof P, 'translation'>>) => {
     const selectLanguage = (value: ContextProps) => {
       try {
@@ -24,9 +22,7 @@ const TranslateConnect = <P extends ITranslateConnect>(
     };
     return (
       <LanguageContext.Consumer>
-        {value => (
-          <Component translation={selectLanguage(value)} {...props as P} />
-        )}
+        {value => <Component translation={selectLanguage(value)} {...(props as P)} />}
       </LanguageContext.Consumer>
     );
   };

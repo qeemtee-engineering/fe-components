@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { SVG } from '../utils';
 import './Input.scss';
-import iconEyeOpen from '../../assets/svg/eye_open.svg';
-import iconEyeClose from '../../assets/svg/eye_close.svg';
+import iconEyeOpen from 'src/assets/svg/eye_open.svg';
+import iconEyeClose from 'src/assets/svg/eye_close.svg';
 import { withNaming } from '@bem-react/classname';
 import { IInput } from 'interfaces';
 
@@ -11,7 +11,6 @@ const cn = withNaming({ e: '__', m: '--' })('Input');
 const Input = React.forwardRef((props: IInput, ref: any) => {
   const [type, setType] = useState('text');
   const [touched, setTouched] = useState(false);
-  const inputRef: any = useRef(null);
 
   const {
     submitted,
@@ -34,6 +33,10 @@ const Input = React.forwardRef((props: IInput, ref: any) => {
   const togglePassword = () => {
     setType(type === 'text' ? 'password' : 'text');
   };
+
+  useEffect(() => {
+    console.log(type);
+  }, [type]);
 
   const _onChange = (event: any) => {
     if (onChange) {
@@ -58,17 +61,17 @@ const Input = React.forwardRef((props: IInput, ref: any) => {
 
   const meta: any = { password: otherProps.type === 'password' };
 
+  console.log(type);
   return (
     <label
-      className={`Input ${
-        (error && touched) || (submitted && error) ? cn('error') : ''
-      }`}
+      className={`Input ${(error && touched) || (submitted && error) ? cn('error') : ''}`}
       ref={ref}
     >
       {label && <span className={cn('title')}>{label}</span>}
       <div className={cn('input')}>
         <input
-          ref={inputRef}
+          {...otherProps}
+          ref={ref}
           type={type}
           value={_value}
           onChange={_onChange}
@@ -88,7 +91,7 @@ const Input = React.forwardRef((props: IInput, ref: any) => {
             {meta.password && (
               <SVG
                 onClick={togglePassword}
-                className='SVG'
+                className="SVG"
                 src={type === 'password' ? iconEyeOpen : iconEyeClose}
               />
             )}
@@ -96,13 +99,7 @@ const Input = React.forwardRef((props: IInput, ref: any) => {
         )}
       </div>
       {(error && touched) || (submitted && error) ? (
-        <p
-          className={`${
-            (error && touched) || (submitted && error)
-              ? cn('error-message')
-              : ''
-          }`}
-        >
+        <p className={`${(error && touched) || (submitted && error) ? cn('error-message') : ''}`}>
           {error}
         </p>
       ) : (

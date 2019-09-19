@@ -1,9 +1,7 @@
 declare const window: any;
 export const extractFromUrl = (Languages: string[], defaultLang: string) => {
   try {
-    let language = window.location.href
-      .split('/')
-      .find((p: any) => p.length === 2);
+    let language = window.location.href.split('/').find((p: any) => p.length === 2);
     const match = Languages.find(l => l === language);
     if (match) {
       return match;

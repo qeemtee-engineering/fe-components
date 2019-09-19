@@ -3,15 +3,12 @@ import Select from 'react-select';
 import { TypeAheadProps, TypeAheadState } from 'interfaces';
 import './TypeAhead.scss';
 
-export default class TypeAhead extends Component<
-  TypeAheadProps,
-  TypeAheadState
-> {
+export default class TypeAhead extends Component<TypeAheadProps, TypeAheadState> {
   constructor(props: TypeAheadProps) {
     super(props);
     this.state = {
       optionsToPass: [],
-      valuesToPass: []
+      valuesToPass: [],
     };
   }
 
@@ -27,7 +24,7 @@ export default class TypeAhead extends Component<
     options.forEach(option => {
       tempOptions.push({
         label: option[this.props.labelKey],
-        value: option[this.props.valueKey]
+        value: option[this.props.valueKey],
       });
     });
 
@@ -40,8 +37,8 @@ export default class TypeAhead extends Component<
       this.setState({
         valuesToPass: {
           label: values[this.props.labelKey],
-          value: values[this.props.valueKey]
-        }
+          value: values[this.props.valueKey],
+        },
       });
       return;
     }
@@ -50,7 +47,7 @@ export default class TypeAhead extends Component<
     values.forEach((value: any) => {
       tempValues.push({
         label: value[this.props.labelKey],
-        value: value[this.props.valueKey]
+        value: value[this.props.valueKey],
       });
     });
 
@@ -96,7 +93,7 @@ export default class TypeAhead extends Component<
           this.emitChange(selected); // Handles value change event
         }}
         options={this.state.optionsToPass} // Options
-        classNamePrefix='react-select'
+        classNamePrefix="react-select"
       />
     );
   }

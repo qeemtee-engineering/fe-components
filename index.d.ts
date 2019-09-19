@@ -5,7 +5,11 @@ import {
   ITable,
   IInput,
   ITranslateProvider,
-  ITranslateConnect
+  ITranslateConnect,
+  IOverlayComponent,
+  ICheckbox,
+  INotification,
+  IIcon,
 } from './src/interfaces';
 export function SVG(props: ISVG): any;
 export function Modal(props: IModal): any;
@@ -15,5 +19,11 @@ export function Input(props: IInput): any;
 export function useForm(validate: (values: object) => object): any;
 export function TranslateProvider(props: ITranslateProvider): any;
 export function TranslateConnect(props: ITranslateConnect): any;
-export class TypeAhead {};
-export class PhoneNumber {};
+export function LanguageSwitch(): any;
+export class TypeAhead {}
+export class PhoneNumber {}
+export function OverlayComponent(props: IOverlayComponent): any;
+export function Checkbox(props: ICheckbox): any;
+export function Switch(props: ICheckbox): any;
+export function Icon(props: IIcon): any;
+export function Notification(props: INotification): any;
