@@ -46,6 +46,8 @@ function useForm(validate: (values: object) => object) {
     valid,
     onChange,
     submit,
+    setErrors,
+    setValues,
   };
 }
 

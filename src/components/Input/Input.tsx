@@ -34,10 +34,6 @@ const Input = React.forwardRef((props: IInput, ref: any) => {
     setType(type === 'text' ? 'password' : 'text');
   };
 
-  useEffect(() => {
-    console.log(type);
-  }, [type]);
-
   const _onChange = (event: any) => {
     if (onChange) {
       onChange(event);
@@ -61,7 +57,6 @@ const Input = React.forwardRef((props: IInput, ref: any) => {
 
   const meta: any = { password: otherProps.type === 'password' };
 
-  console.log(type);
   return (
     <label
       className={`Input ${(error && touched) || (submitted && error) ? cn('error') : ''}`}
