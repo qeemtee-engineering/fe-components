@@ -27,7 +27,7 @@ export default class PhoneNumber extends Component<PhoneNumberProps, PhoneNumber
     delete otherProps.hasContact;
     return (
       <PhoneInput
-        {...this.otherProps}
+        {...otherProps}
         value={this.state.valueToPass}
         onChange={(phone: any) => this.emitChange(phone)}
         inputClassName={
