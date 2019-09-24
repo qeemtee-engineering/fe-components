@@ -50,7 +50,7 @@ const App = () => {
         <Checkbox>{day}</Checkbox>
       ))}
       <Input type="password" />
-      <Switch color='secondary' />
+      <Switch color="secondary" />
     </>
   );
 };

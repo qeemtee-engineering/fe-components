@@ -23,13 +23,12 @@ export default class PhoneNumber extends Component<PhoneNumberProps, PhoneNumber
   }
 
   render() {
+    const otherProps = { ...this.props };
+    delete otherProps.hasContact;
     return (
       <PhoneInput
-        placeholder={this.props.placeholder}
+        {...this.props}
         value={this.state.valueToPass}
-        international={this.props.international}
-        displayInitialValueAsLocalNumber={this.props.displayInitialValueAsLocalNumber}
-        countryOptions={this.props.countryOptions}
         onChange={(phone: any) => this.emitChange(phone)}
         inputClassName={
           !this.props.hasContact
