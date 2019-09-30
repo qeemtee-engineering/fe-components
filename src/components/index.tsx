@@ -17,4 +17,3 @@ export { default as Currency } from './Currency';
 export * from './Number';
 export * from './useForm';
 export * from './utils';
-import 'src/styles/style.scss';
