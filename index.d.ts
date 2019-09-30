@@ -11,6 +11,8 @@ import {
   INotification,
   IIcon,
   CollapseProps,
+  INumber,
+  ICurrency,
 } from './src/interfaces';
 export function SVG(props: ISVG): any;
 export function Modal(props: IModal): any;
@@ -29,3 +31,5 @@ export function Switch(props: ICheckbox): any;
 export function Icon(props: IIcon): any;
 export function Notification(props: INotification): any;
 export function Collapse(props: CollapseProps): any;
+export function Number(props: INumber): any;
+export function Currency(props: ICurrency): any;
