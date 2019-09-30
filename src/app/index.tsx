@@ -17,7 +17,7 @@ const App = () => {
   const [visible, setVisible] = useState(false);
   const { Panel } = Collapse;
 
-  function callback(key: string | string[]) {
+  function callback(key: any) {
     console.log(key);
   }
 
