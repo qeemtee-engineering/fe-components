@@ -1,0 +1,137 @@
+@import 'src/styles/utils';
+$self: '.Collapse';
+
+// Collapse
+$collapse-panel-border-radius: $border-radius-base;
+$collapse-header-padding: 12px 16px;
+$collapse-header-padding-extra: 40px;
+$collapse-header-bg: $background-color-light;
+$collapse-content-padding: $padding-md;
+$collapse-content-bg: $component-background;
+
+#{$self} {
+  @include reset-component;
+  background-color: $collapse-header-bg;
+  border: $border-width-base $border-style-base $border-color-base;
+  border-bottom: 0;
+  border-radius: $collapse-panel-border-radius;
+
+  & > &-item {
+    border-bottom: $border-width-base $border-style-base $border-color-base;
+
+    &:last-child {
+      &,
+      & > #{$self}-header {
+        border-radius: 0 0 $collapse-panel-border-radius $collapse-panel-border-radius;
+      }
+    }
+
+    > #{$self}-header {
+      position: relative;
+      padding: $collapse-header-padding;
+      padding-left: $collapse-header-padding-extra;
+      color: $heading-color;
+      line-height: 22px;
+      cursor: pointer;
+      transition: all 0.3s;
+
+      #{$self}-arrow {
+        position: absolute;
+        top: 50%;
+        left: $padding-md;
+        display: inline-block;
+        font-size: 20px;
+        transform: translateY(-50%);
+
+        & svg {
+          transition: transform 0.24s;
+        }
+      }
+
+      #{$self}-extra {
+        float: right;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    &#{$self}-no-arrow {
+      > #{$self}-header {
+        padding-left: 12px;
+      }
+    }
+  }
+
+  // Expand Icon right
+  &-icon-position-right {
+    & > #{$self}-item {
+      > #{$self}-header {
+        padding: $collapse-header-padding;
+        padding-right: $collapse-header-padding-extra;
+
+        #{$self}-arrow {
+          right: $padding-md;
+          left: initial;
+        }
+      }
+    }
+  }
+
+  &-anim-active {
+    transition: height 0.2s $ease-out;
+  }
+
+  &-content {
+    overflow: hidden;
+    color: $text-color;
+    background-color: $collapse-content-bg;
+    border-top: $border-width-base $border-style-base $border-color-base;
+
+    & > &-box {
+      padding: $collapse-content-padding;
+    }
+
+    &-inactive {
+      display: none;
+    }
+  }
+
+  &-item:last-child {
+    > #{$self}-content {
+      border-radius: 0 0 $collapse-panel-border-radius $collapse-panel-border-radius;
+    }
+  }
+
+  &-borderless {
+    background-color: $component-background;
+    border: 0;
+  }
+
+  &-borderless > &-item {
+    border-bottom: 1px solid $border-color-base;
+  }
+
+  &-borderless > &-item:last-child,
+  &-borderless > &-item:last-child &-header {
+    border-radius: 0;
+  }
+
+  &-borderless > &-item > &-content {
+    background-color: transparent;
+    border-top: 0;
+  }
+
+  &-borderless > &-item > &-content > &-content-box {
+    padding-top: 4px;
+  }
+
+  & &-item-disabled > &-header {
+    &,
+    & > .arrow {
+      color: $disabled-color;
+      cursor: not-allowed;
+    }
+  }
+}
