@@ -1,3 +1,5 @@
+@import './variables';
+
 @mixin breakpoint($size) {
   @if $size==desktop {
     @media only screen and (min-width: 1200px) {
@@ -30,4 +32,16 @@
 
 @function shade($color, $percentage) {
   @return mix(black, $color, $percentage);
+}
+
+@mixin reset-component() {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: $black;
+  font-size: $font-size-base;
+  font-variant: font-variant-base;
+  line-height: $line-height-base;
+  list-style: none;
+  font-feature-settings: $font-feature-settings-base;
 }

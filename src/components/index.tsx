@@ -12,5 +12,6 @@ export { default as Checkbox } from './Checkbox';
 export { default as Icon } from './Icon';
 export { default as Notification } from './Notification';
 export { default as Switch } from './Switch';
+export { default as Collapse } from './Collapse';
 export * from './useForm';
 export * from './utils';
