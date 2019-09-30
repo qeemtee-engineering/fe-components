@@ -11,3 +11,5 @@ export * from './checkbox.interface';
 export * from './notification.interface';
 export * from './icon.interface';
 export * from './collapse.interface';
+export * from './number.interface';
+export * from './currency.interface';
