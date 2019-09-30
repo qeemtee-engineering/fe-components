@@ -38,7 +38,7 @@ const App = () => {
   };
 
   return (
-    <div className='container'>
+    <div className="container">
       <div>
         <Button
           onClick={() => {
@@ -82,7 +82,12 @@ const App = () => {
         <Switch color="secondary" />
       </div>
       <div>
-        <Collapse expandIconPosition='right' accordion={true} defaultActiveKey={['1']} onChange={callback}>
+        <Collapse
+          expandIconPosition="right"
+          accordion={true}
+          defaultActiveKey={['1']}
+          onChange={callback}
+        >
           <Panel header="This is panel header 1" key="1">
             <p>{text}</p>
           </Panel>
