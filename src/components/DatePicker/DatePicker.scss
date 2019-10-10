@@ -1,0 +1,16 @@
+// @calendar-prefix-cls: ~'@{ant-prefix}-calendar';
+// @calendar-timepicker-prefix-cls: ~'@{ant-prefix}-calendar-time-picker';
+@import 'src/styles/utils';
+
+$calendar-prefix-cls: '.DatePicker';
+$calendar-timepicker-prefix-cls: '.DatePicker-time-picker';
+
+@import 'Calendar';
+@import 'DecadePanel';
+@import 'MonthPanel';
+@import 'MonthPicker';
+@import 'Picker';
+@import 'RangePicker';
+@import 'TimePicker';
+@import 'WeekPicker';
+@import 'YearPanel';

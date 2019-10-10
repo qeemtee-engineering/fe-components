@@ -2,22 +2,22 @@
 $self: '.Collapse';
 
 // Collapse
-$collapse-panel-border-radius: $border-radius-base;
+$collapse-panel-border-radius: 4px;
 $collapse-header-padding: 12px 16px;
 $collapse-header-padding-extra: 40px;
 $collapse-header-bg: $background-color-light;
 $collapse-content-padding: $padding-md;
-$collapse-content-bg: $component-background;
+$collapse-content-bg: $white;
 
 #{$self} {
   @include reset-component;
   background-color: $collapse-header-bg;
-  border: $border-width-base $border-style-base $border-color-base;
+  border: 1px solid $border-color-base;
   border-bottom: 0;
   border-radius: $collapse-panel-border-radius;
 
   & > &-item {
-    border-bottom: $border-width-base $border-style-base $border-color-base;
+    border-bottom: 1px solid $border-color-base;
 
     &:last-child {
       &,
@@ -87,7 +87,7 @@ $collapse-content-bg: $component-background;
     overflow: hidden;
     color: $text-color;
     background-color: $collapse-content-bg;
-    border-top: $border-width-base $border-style-base $border-color-base;
+    border-top: 1px solid $border-color-base;
 
     & > &-box {
       padding: $collapse-content-padding;
@@ -105,7 +105,7 @@ $collapse-content-bg: $component-background;
   }
 
   &-borderless {
-    background-color: $component-background;
+    background-color: $white;
     border: 0;
   }
 

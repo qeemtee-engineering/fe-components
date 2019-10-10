@@ -55,6 +55,6 @@ export default class Collapse extends Component<CollapseProps> {
   };
 
   render() {
-    return <>{this.renderCollapse()}</>;
+    return this.renderCollapse();
   }
 }

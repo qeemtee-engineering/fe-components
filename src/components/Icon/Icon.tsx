@@ -3,13 +3,26 @@ import cx from 'classnames';
 import { IIcon } from 'interfaces';
 import './Icon.scss';
 
-const Icon: FC<IIcon> = ({ className = '', containerClasses = '', color, icon, style = {} }) => {
+const Icon: FC<IIcon> = ({
+  onClick,
+  className = '',
+  containerClasses = '',
+  color,
+  icon,
+  style = {},
+}) => {
   return (
-    <div className={cx('icon-container', containerClasses)}>
-      <span style={{ color, ...style }} className={cx(className, 'material-icons')}>
+    <span className={cx('icon-container', containerClasses)}>
+      <span
+        onClick={e => {
+          onClick && onClick(e);
+        }}
+        style={{ color, ...style }}
+        className={cx(className, 'material-icons')}
+      >
         {icon}
       </span>
-    </div>
+    </span>
   );
 };
 
