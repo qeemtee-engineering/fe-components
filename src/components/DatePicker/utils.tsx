@@ -1,6 +1,9 @@
 import * as moment from 'moment';
 
-export function formatDate(value: moment.Moment | undefined | null, format: string | string[]): string {
+export function formatDate(
+  value: moment.Moment | undefined | null,
+  format: string | string[]
+): string {
   if (!value) {
     return '';
   }

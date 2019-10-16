@@ -122,12 +122,7 @@ class TimePicker extends React.Component<TimePickerProps, any> {
   }
 
   renderTimePicker = () => {
-    const {
-      className,
-      addon,
-      placeholder,
-      ...props
-    } = this.props;
+    const { className, addon, placeholder, ...props } = this.props;
     const pickerProps = omit(props, ['defaultValue', 'allowEmpty', 'allowClear']);
 
     const format = this.getDefaultFormat();

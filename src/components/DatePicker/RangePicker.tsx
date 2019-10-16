@@ -322,10 +322,8 @@ class RangePicker extends React.Component<any, RangePickerState> {
       calendarProps.mode = props.mode;
     }
 
-    const startPlaceholder =
-      'placeholder' in props ? props.placeholder[0] : 'Start Date';
-    const endPlaceholder =
-      'placeholder' in props ? props.placeholder[1] : 'End Date';
+    const startPlaceholder = 'placeholder' in props ? props.placeholder[0] : 'Start Date';
+    const endPlaceholder = 'placeholder' in props ? props.placeholder[1] : 'End Date';
 
     const calendar = (
       <RangeCalendar
@@ -368,7 +366,12 @@ class RangePicker extends React.Component<any, RangePickerState> {
         />
       ) : null;
 
-    const inputIcon = <Icon icon="calendar_today" className={`${prefixCls}-picker-icon ${prefixCls}-picker-icon-calendar`} />;
+    const inputIcon = (
+      <Icon
+        icon="calendar_today"
+        className={`${prefixCls}-picker-icon ${prefixCls}-picker-icon-calendar`}
+      />
+    );
 
     const input = ({ value: inputValue }: { value: any }) => {
       const [start, end] = inputValue;

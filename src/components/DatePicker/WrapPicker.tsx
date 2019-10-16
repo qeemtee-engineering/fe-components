@@ -14,10 +14,10 @@ interface PickerMap {
 }
 
 const DEFAULT_FORMAT: PickerMap = {
-  date: 'YYYY-MM-DD',
-  dateTime: 'YYYY-MM-DD HH:mm:ss',
+  date: 'DD/MM/YYYY',
+  dateTime: 'DD/MM/YYYY HH:mm:ss',
   week: 'gggg-wo',
-  month: 'YYYY-MM',
+  month: 'MM/YYYY',
 };
 
 function getColumns({ showHour, showMinute, showSecond, use12Hours }: any) {

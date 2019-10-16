@@ -103,12 +103,12 @@
       }
     }
 
-    li.TimePicker-select-option-selected {
+    li.DatePicker-time-picker-select-option-selected {
       font-weight: 600;
       background: $time-picker-selected-bg;
     }
 
-    li.TimePicker-select-option-disabled {
+    li.DatePicker-time-picker-select-option-disabled {
       color: $btn-disable-color;
       &:hover {
         background: transparent;

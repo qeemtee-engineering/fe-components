@@ -169,16 +169,8 @@ const App = () => {
         <br />
         <WeekPicker placeholder="Select week" />
         <br />
-        <DatePicker
-          showTime
-          format="YYYY-MM-DD HH:mm:ss"
-          placeholder="Start"
-        />
-        <DatePicker
-          showTime
-          format="YYYY-MM-DD HH:mm:ss"
-          placeholder="End"
-        />
+        <DatePicker showTime format="YYYY-MM-DD HH:mm:ss" placeholder="Start" />
+        <DatePicker showTime format="YYYY-MM-DD HH:mm:ss" placeholder="End" />
       </div>
     </div>
   );

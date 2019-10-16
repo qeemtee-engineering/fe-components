@@ -86,7 +86,8 @@
   #{$calendar-prefix-cls}-decade-select-arrow,
   #{$calendar-prefix-cls}-year-select-arrow,
   #{$calendar-prefix-cls}-month-select-arrow,
-  #{$calendar-prefix-cls}-month-panel-year-select-arrow {
+  #{$calendar-prefix-cls}-month-panel-year-select-arrow,
+  #{$calendar-prefix-cls}-year-panel-decade-select-arrow {
     display: none;
   }
 
@@ -395,7 +396,7 @@
   }
 
   #{$calendar-prefix-cls}-clear-btn:hover::after {
-    color: $white
+    color: $white;
   }
 
   // #{$calendar-prefix-cls}-ok-btn {
