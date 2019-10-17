@@ -9,7 +9,9 @@ const Currency = React.forwardRef((props: ICurrency, ref: any) => {
   const { className, symbol, symbolClassName, value, fixed, side, delimiter, ...other } = props;
 
   const classes = cs('Currency', className);
-  const symbolClasses = cs('symbol right ', symbolClassName);
+  const symbolClasses = symbolClassName
+    ? cs('symbol right ', symbolClassName)
+    : `symbol right size`;
 
   const _symbol = symbol || '฿';
 
