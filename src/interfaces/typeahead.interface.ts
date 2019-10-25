@@ -3,6 +3,7 @@ export interface TypeAheadProps {
   value: any;
   labelKey: string;
   valueKey: string;
+  placeholder?: string;
   isMulti: boolean;
   onChange: Function;
 }
