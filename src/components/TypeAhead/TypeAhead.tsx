@@ -94,6 +94,7 @@ export default class TypeAhead extends Component<TypeAheadProps, TypeAheadState>
         }}
         options={this.state.optionsToPass} // Options
         classNamePrefix="react-select"
+        placeholder={this.props.placeholder}
       />
     );
   }

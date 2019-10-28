@@ -1,6 +1,6 @@
 {
   "name": "fe-components",
-  "version": "0.4.0",
+  "version": "0.4.2",
   "description": "Reusable react components for Qeemtee front-end apps.",
   "main": "./dist/index.js",
   "repository": {

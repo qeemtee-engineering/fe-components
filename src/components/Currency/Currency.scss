@@ -5,8 +5,11 @@
 
   > .symbol {
     color: currentColor;
-    font-size: 0.7em;
     opacity: 1;
+
+    &.size {
+      font-size: 0.7rem;
+    }
 
     &.left {
       margin-right: 0.3em;
