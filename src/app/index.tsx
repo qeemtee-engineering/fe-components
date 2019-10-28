@@ -11,11 +11,18 @@ import {
   Collapse,
   Currency,
   Number,
+  TimePicker,
+  Tag,
+  DatePicker,
 } from '../components';
+import moment from 'moment';
 
 const App = () => {
   const [visible, setVisible] = useState(false);
+  const [checked, setChecked] = useState(true);
   const { Panel } = Collapse;
+  const { CheckableTag } = Tag;
+  const { MonthPicker, RangePicker, WeekPicker } = DatePicker;
 
   function callback(key: any) {
     console.log(key);
@@ -32,6 +39,10 @@ const App = () => {
         console.log('Notification Clicked!');
       },
     });
+  };
+
+  const handleChange = () => {
+    setChecked(c => !c);
   };
 
   return (
@@ -113,6 +124,53 @@ const App = () => {
         <Number value="750.999966058" fixed={5} />
         <Number value="10012341231252123.12345" fixed={3} />
         <Number value="-10012341231252123.12345" fixed={3} />
+      </div>
+      <div style={{ display: 'flex', flexDirection: 'column' }}>
+        <TimePicker
+          disabledHours={() => [10, 20]}
+          defaultOpenValue={moment('00:00:00', 'HH:mm:ss')}
+        />
+        <TimePicker defaultOpenValue={moment('00:00:00', 'HH:mm:ss')} disabled />
+        <TimePicker minuteStep={15} secondStep={10} />
+        <TimePicker use12Hours />
+        <TimePicker use12Hours format="h:mm:ss A" />
+        <TimePicker use12Hours format="h:mm a" />
+      </div>
+      <div>
+        <Tag color="magenta">magenta</Tag>
+        <Tag color="red">red</Tag>
+        <Tag color="orange">orange</Tag>
+        <Tag color="gold">gold</Tag>
+        <Tag color="lime">lime</Tag>
+        <Tag color="green">green</Tag>
+        <Tag color="cyan">cyan</Tag>
+        <Tag color="blue">blue</Tag>
+        <Tag color="purple">purple</Tag>
+        <CheckableTag checked={checked} onChange={handleChange}>
+          My Tag
+        </CheckableTag>
+        <Tag
+          closable
+          visible={checked}
+          onClose={() => {
+            console.log('clicked');
+            setChecked(false);
+          }}
+        >
+          Movies
+        </Tag>
+      </div>
+      <div>
+        <DatePicker />
+        <br />
+        <MonthPicker placeholder="Select month" />
+        <br />
+        <RangePicker disabled />
+        <br />
+        <WeekPicker placeholder="Select week" />
+        <br />
+        <DatePicker showTime format="YYYY-MM-DD HH:mm:ss" placeholder="Start" />
+        <DatePicker showTime format="YYYY-MM-DD HH:mm:ss" placeholder="End" />
       </div>
     </div>
   );

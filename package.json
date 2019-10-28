@@ -62,16 +62,22 @@
     "classnames": "^2.2.6",
     "dotenv": "^8.0.0",
     "dotenv-webpack": "^1.7.0",
+    "moment": "^2.24.0",
     "normalize.css": "^8.0.1",
+    "omit.js": "^1.0.2",
+    "rc-calendar": "^9.15.6",
     "rc-collapse": "^1.11.7",
     "rc-dialog": "^7.4.1",
     "rc-notification": "^3.3.1",
-    "rc-util": "^4.7.1",
+    "rc-time-picker": "^3.7.2",
+    "rc-util": "^4.10.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-lifecycles-compat": "^3.0.4",
     "react-phone-number-input": "2.3.21",
     "react-router-dom": "^5.0.1",
-    "react-select": "3.0.4"
+    "react-select": "3.0.4",
+    "shallowequal": "^1.1.0"
   },
   "pre-commit": [
     "prettify-code"
