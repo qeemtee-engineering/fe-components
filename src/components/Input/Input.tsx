@@ -5,6 +5,7 @@ import iconEyeOpen from 'src/assets/svg/eye_open.svg';
 import iconEyeClose from 'src/assets/svg/eye_close.svg';
 import { withNaming } from '@bem-react/classname';
 import { IInput } from 'interfaces';
+import cs from 'classnames';
 
 const cn = withNaming({ e: '__', m: '--' })('Input');
 
@@ -25,6 +26,7 @@ const Input = React.forwardRef((props: IInput, ref: any) => {
     placeholder,
     children,
     name,
+    icon,
     ...otherProps
   }: any = props;
 
@@ -64,6 +66,7 @@ const Input = React.forwardRef((props: IInput, ref: any) => {
     >
       {label && <span className={cn('title')}>{label}</span>}
       <div className={cn('input')}>
+        {icon && <div className={cn('meta')}>{icon}</div>}
         <input
           {...otherProps}
           ref={ref}
@@ -75,6 +78,7 @@ const Input = React.forwardRef((props: IInput, ref: any) => {
           placeholder={placeholder}
           disabled={disabled}
           name={name}
+          className={cs(otherProps.className, { 'Input__input-icon': icon })}
         />
         <div
           className={`${cn('input-border')} ${

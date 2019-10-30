@@ -13,4 +13,5 @@ export interface IInput extends Element {
   onBlur?: (event: any) => void;
   onFocus?: (event: any) => void;
   error?: string;
+  icon?: string | React.ReactNode;
 }

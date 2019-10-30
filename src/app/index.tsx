@@ -16,6 +16,7 @@ import {
   DatePicker,
 } from '../components';
 import moment from 'moment';
+import { SVG } from '../..';
 
 const App = () => {
   const [visible, setVisible] = useState(false);

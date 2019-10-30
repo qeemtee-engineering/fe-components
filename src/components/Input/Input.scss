@@ -41,6 +41,10 @@
     align-items: flex-start;
     z-index: 0;
 
+    &-icon {
+      padding-left: 0 !important;
+    }
+
     &-border {
       border: 1px solid #ddd;
       border-radius: 4px;
