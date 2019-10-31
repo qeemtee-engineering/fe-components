@@ -31,8 +31,6 @@ $timepicker-item-height: 32px;
     outline: 0;
     cursor: auto;
 
-    @include placeholder;
-
     &-wrap {
       position: relative;
       padding: 7px 2px 7px $padding-sm;
