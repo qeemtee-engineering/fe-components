@@ -186,11 +186,10 @@ const App = () => {
           ref={richRef}
           value={rich}
           onChange={value => {
-            console.log(value);
             setRich(value);
           }}
-          onBlur={value => {
-            localStorage.setItem('rich__test', JSON.stringify(value));
+          onBlur={editor => {
+            localStorage.setItem('rich__test', editor.target.value || '');
           }}
           error={!rich ? 'Please enter data' : ''}
           label="test"

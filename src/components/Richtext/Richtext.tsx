@@ -29,8 +29,7 @@ class Richtext extends Component<IRichtext, { touched: boolean }> {
     });
     this.trixRef.addEventListener('trix-focus', (event: any) => onFocus && onFocus(event));
     this.trixRef.addEventListener('trix-blur', (event: any) => {
-      var document = this.trixRef.editor.getDocument();
-      onBlur && onBlur(document.toString());
+      onBlur && onBlur(event);
       if (!touched) {
         this.setState({ touched: true });
       }
@@ -50,8 +49,7 @@ class Richtext extends Component<IRichtext, { touched: boolean }> {
     });
     this.trixRef.removeEventListener('trix-focus', (event: any) => onFocus && onFocus(event));
     this.trixRef.removeEventListener('trix-blur', (event: any) => {
-      var document = this.trixRef.editor.getDocument();
-      onBlur && onBlur(document.toString());
+      onBlur && onBlur(event);
       if (!touched) {
         this.setState({ touched: true });
       }
@@ -113,12 +111,12 @@ class Richtext extends Component<IRichtext, { touched: boolean }> {
   }
 
   render() {
-    const { className, error, submitted, label, placeholder } = this.props;
+    const { className, error, submitted, label, placeholder, value } = this.props;
     const { touched } = this.state;
     return (
       <div className={cs(className, cn('', { error: (error && touched) || (submitted && error) }))}>
         {label && <label className={cn('label')}>{label}</label>}
-        <input id="rich-trix" type="hidden" name="content" />
+        <input value={value} id="rich-trix" type="hidden" name="content" />
         <trix-editor
           placeholder={placeholder}
           class="trix-content"
