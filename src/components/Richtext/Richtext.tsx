@@ -113,15 +113,18 @@ class Richtext extends Component<IRichtext, { touched: boolean }> {
   render() {
     const { className, error, submitted, label, placeholder, value } = this.props;
     const { touched } = this.state;
+    const id = Math.random()
+      .toString(36)
+      .substr(2, 9);
     return (
       <div className={cs(className, cn('', { error: (error && touched) || (submitted && error) }))}>
         {label && <label className={cn('label')}>{label}</label>}
-        <input value={value} id="rich-trix" type="hidden" name="content" />
+        <input value={value} id={id} type="hidden" name="content" />
         <trix-editor
           placeholder={placeholder}
           class="trix-content"
           ref={(r: any) => (this.trixRef = r)}
-          input="rich-trix"
+          input={id}
         />
         {(error && touched) || (submitted && error) ? (
           <p className={cn('error-message')}>{error}</p>

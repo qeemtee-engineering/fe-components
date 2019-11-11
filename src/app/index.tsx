@@ -194,6 +194,7 @@ const App = () => {
           error={!rich ? 'Please enter data' : ''}
           label="test"
         />
+        <Richtext value="Faizan" />
       </div>
     </div>
   );
