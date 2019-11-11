@@ -17,6 +17,7 @@ export { default as Currency } from './Currency';
 export { default as DatePicker } from './DatePicker';
 export { default as TimePicker } from './TimePicker';
 export { default as Tag } from './Tag';
+export { default as Richtext } from './Richtext';
 export * from './Number';
 export * from './useForm';
 export * from './utils';

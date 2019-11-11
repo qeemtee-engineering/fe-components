@@ -98,9 +98,7 @@ const Input = React.forwardRef((props: IInput, ref: any) => {
         )}
       </div>
       {(error && touched) || (submitted && error) ? (
-        <p className={`${(error && touched) || (submitted && error) ? cn('error-message') : ''}`}>
-          {error}
-        </p>
+        <p className={cn('error-message')}>{error}</p>
       ) : (
         ''
       )}

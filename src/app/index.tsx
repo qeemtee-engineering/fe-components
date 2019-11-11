@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import './app.scss';
 import {
   Button,
@@ -14,20 +14,28 @@ import {
   TimePicker,
   Tag,
   DatePicker,
+  Richtext,
 } from '../components';
 import moment from 'moment';
 import { SVG } from '../..';
 
 const App = () => {
+  const richRef = useRef<any>(null);
+  const [rich, setRich] = useState(localStorage.getItem('rich__test'));
   const [visible, setVisible] = useState(false);
   const [checked, setChecked] = useState(true);
   const { Panel } = Collapse;
   const { CheckableTag } = Tag;
   const { MonthPicker, RangePicker, WeekPicker } = DatePicker;
-
   function callback(key: any) {
     console.log(key);
   }
+
+  useEffect(() => {
+    if (richRef.current) {
+      // richRef.current.loadJSON(localStorage.getItem('rich__test'));
+    }
+  }, [richRef]);
 
   const openNotification = () => {
     Notification.open({
@@ -172,6 +180,21 @@ const App = () => {
         <br />
         <DatePicker showTime format="YYYY-MM-DD HH:mm:ss" placeholder="Start" />
         <DatePicker showTime format="YYYY-MM-DD HH:mm:ss" placeholder="End" />
+      </div>
+      <div>
+        <Richtext
+          ref={richRef}
+          value={rich}
+          onChange={value => {
+            console.log(value);
+            setRich(value);
+          }}
+          onBlur={value => {
+            localStorage.setItem('rich__test', JSON.stringify(value));
+          }}
+          error={!rich ? 'Please enter data' : ''}
+          label="test"
+        />
       </div>
     </div>
   );

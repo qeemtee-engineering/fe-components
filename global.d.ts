@@ -20,3 +20,9 @@ declare module 'react-phone-number-input';
 declare module 'rc-notification';
 declare module 'rc-collapse';
 declare module 'shallowequal';
+declare module 'trix';
+declare namespace JSX {
+  interface IntrinsicElements {
+    'trix-editor': any;
+  }
+}
