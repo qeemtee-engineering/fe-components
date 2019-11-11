@@ -4,21 +4,9 @@ import cs from 'classnames';
 import './Richtext.scss';
 import 'trix/dist/trix.css';
 import 'trix/dist/trix';
+import { IRichtext } from 'interfaces';
 
 const cn = withNaming({ e: '__', m: '--' })('Richtext');
-
-interface IRichtext {
-  label?: string;
-  value?: any;
-  onChange?: (event: any) => void;
-  onBlur?: (event: any) => void;
-  onFocus?: (event: any) => void;
-  error?: string;
-  className?: string;
-  disabled?: boolean;
-  placeholder?: string;
-  submitted?: boolean;
-}
 
 class Richtext extends Component<IRichtext, { touched: boolean }> {
   trixRef: any;

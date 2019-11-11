@@ -13,6 +13,7 @@ import {
   CollapseProps,
   INumber,
   ICurrency,
+  IRichtext,
 } from './src/interfaces';
 export function SVG(props: ISVG): any;
 export function Modal(props: IModal): any;
@@ -33,3 +34,4 @@ export function Notification(props: INotification): any;
 export function Collapse(props: CollapseProps): any;
 export function Number(props: INumber): any;
 export function Currency(props: ICurrency): any;
+export function Richtext(props: IRichtext): any;

@@ -16,3 +16,4 @@ export * from './currency.interface';
 export * from './datePicker.interface';
 export * from './timePicker.interface';
 export * from './tag.interface';
+export * from './richtext.interface';
