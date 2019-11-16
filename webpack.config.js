@@ -3,9 +3,10 @@ const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const pkg = require('./package.json');
+const webpack = require('webpack');
 
 module.exports = {
-  target: 'web',
+  target: 'node',
   entry: './src/components/index.tsx',
   mode: 'production',
   plugins: [
