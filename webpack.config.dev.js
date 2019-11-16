@@ -1,9 +1,7 @@
-require('dotenv').config();
 const path = require('path');
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   target: 'web',
@@ -11,7 +9,6 @@ module.exports = {
   devtool: 'source-map',
   mode: 'development',
   plugins: [
-    new Dotenv(),
     new CaseSensitivePathsPlugin(),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'public/index.html'),
