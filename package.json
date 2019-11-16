@@ -77,7 +77,8 @@
     "react-phone-number-input": "2.3.21",
     "react-router-dom": "^5.0.1",
     "react-select": "3.0.4",
-    "shallowequal": "^1.1.0"
+    "shallowequal": "^1.1.0",
+    "trix": "^1.2.1"
   },
   "pre-commit": [
     "prettify-code"
