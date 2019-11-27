@@ -35,3 +35,4 @@ export function Collapse(props: CollapseProps): any;
 export function Number(props: INumber): any;
 export function Currency(props: ICurrency): any;
 export function Richtext(props: IRichtext): any;
+export function DatePicker(props: any): any;

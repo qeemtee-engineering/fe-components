@@ -174,7 +174,7 @@ const App = () => {
         <br />
         <MonthPicker placeholder="Select month" />
         <br />
-        <RangePicker disabled />
+        <RangePicker />
         <br />
         <WeekPicker placeholder="Select week" />
         <br />
