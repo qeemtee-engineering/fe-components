@@ -94,6 +94,7 @@ const App = () => {
       </div>
       <div>
         <Input type="password" />
+        <Input type="email" />
       </div>
       <div>
         <Switch color="secondary" />

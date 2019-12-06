@@ -74,7 +74,6 @@
     position: absolute;
     top: 50%;
     right: $padding-sm;
-    z-index: 1;
     width: 14px;
     height: 14px;
     margin-top: -7px;
@@ -85,7 +84,6 @@
   }
 
   &-clear {
-    z-index: 2;
     color: $disabled-color;
     font-size: $font-size-base;
     background: $white;
