@@ -84,7 +84,6 @@ class Richtext extends Component<IRichtext, { touched: boolean }> {
     const xhr = new XMLHttpRequest();
     const HOST = process.env.REACT_APP_API_URL || '';
     const cdn = process.env.REACT_APP_CDN_NAME;
-    console.log(process.env);
     xhr.open('POST', HOST, true);
 
     xhr.upload.addEventListener('progress', function(event) {

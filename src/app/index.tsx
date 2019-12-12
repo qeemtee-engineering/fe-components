@@ -15,6 +15,7 @@ import {
   Tag,
   DatePicker,
   Richtext,
+  FileUploader,
 } from '../components';
 import moment from 'moment';
 import { SVG } from '../..';
@@ -24,6 +25,20 @@ const App = () => {
   const [rich, setRich] = useState(localStorage.getItem('rich__test'));
   const [visible, setVisible] = useState(false);
   const [checked, setChecked] = useState(true);
+  const [file, setFile] = useState<{ mediaUrl: string; mediaType: string; name?: string }[]>([
+    {
+      mediaType: 'image/jpeg',
+      mediaUrl: 'https://dev-assets.qeemtee.com/1576126934174-images(4).jpeg',
+      name: 'images (4).jpeg',
+    },
+  ]);
+  const [defaultFile, setDefaultFile] = useState([
+    {
+      mediaType: 'image/jpeg',
+      mediaUrl: 'https://dev-assets.qeemtee.com/1576126934174-images(4).jpeg',
+      name: 'images (4).jpeg',
+    },
+  ]);
   const { Panel } = Collapse;
   const { CheckableTag } = Tag;
   const { MonthPicker, RangePicker, WeekPicker } = DatePicker;
@@ -196,6 +211,9 @@ const App = () => {
           label="test"
         />
         <Richtext value="Faizan" />
+      </div>
+      <div>
+        <FileUploader onUpload={setFile} defaultValue={defaultFile} />
       </div>
     </div>
   );
