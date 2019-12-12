@@ -141,10 +141,24 @@ const FileUploader: FC<IFileUploader> = props => {
 
     xhr.addEventListener('readystatechange', function(e) {
       if (xhr.readyState == 4 && xhr.status == 200) {
-        setUploaded(f => [
-          ...f,
-          { mediaType: file.type, mediaUrl: JSON.parse(xhr.response).result.file, name: file.name },
-        ]);
+        if (props.multiple) {
+          setUploaded(f => [
+            ...f,
+            {
+              mediaType: file.type,
+              mediaUrl: JSON.parse(xhr.response).result.file,
+              name: file.name,
+            },
+          ]);
+        } else {
+          setUploaded([
+            {
+              mediaType: file.type,
+              mediaUrl: JSON.parse(xhr.response).result.file,
+              name: file.name,
+            },
+          ]);
+        }
         updateProgress(i, 100); // <- Add this
       } else if (xhr.readyState == 4 && xhr.status != 200) {
         // Error. Inform the user
