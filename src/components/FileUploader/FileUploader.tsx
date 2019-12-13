@@ -3,11 +3,13 @@ import './FileUploader.scss';
 import { withNaming } from '@bem-react/classname';
 import Icon from '../Icon';
 import { IFileUploader } from 'interfaces';
+import { newId } from '../utils';
 
 const url = `${process.env.REACT_APP_API_URL || 'http://localhost/api/v1'}/file-upload`;
 const cn = withNaming({ e: '__', m: '--' })('FileUploader');
 
 const FileUploader: FC<IFileUploader> = props => {
+  const [id, setId] = useState('');
   const fileWrapper = useRef<HTMLDivElement>(null);
   const progressBar = useRef<HTMLProgressElement>(null);
   let uploadProgress: any[] = [];
@@ -48,6 +50,10 @@ const FileUploader: FC<IFileUploader> = props => {
       };
     }
   }, [fileWrapper.current]);
+
+  useEffect(() => {
+    setId(newId('File-Uploader-'));
+  }, []);
 
   useEffect(() => {
     props.onUpload && props.onUpload(uploaded);
@@ -175,10 +181,10 @@ const FileUploader: FC<IFileUploader> = props => {
   return (
     <div className={cn('', { error: props.error ? true : false })} ref={fileWrapper}>
       <div className={cn('form')}>
-        <label className={cn('button')} htmlFor="FileUploader">
+        <label className={cn('button')} htmlFor={id}>
           Select Files
         </label>
-        <input hidden id="FileUploader" onChange={onChange} type="file" multiple={props.multiple} />
+        <input hidden id={id} onChange={onChange} type="file" multiple={props.multiple} />
       </div>
       <progress className={cn('progress')} ref={progressBar} max={100} value={0} />
       {uploaded.length ? (

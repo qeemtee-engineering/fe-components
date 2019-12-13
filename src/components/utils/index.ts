@@ -18,3 +18,10 @@ export const getDataOrAriaProps = (props: any) => {
     return prev;
   }, {});
 };
+
+let lastId = 0;
+
+export function newId(prefix = 'id') {
+  lastId++;
+  return `${prefix}${lastId}`;
+}

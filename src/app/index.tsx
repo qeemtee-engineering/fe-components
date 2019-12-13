@@ -213,7 +213,10 @@ const App = () => {
         <Richtext value="Faizan" />
       </div>
       <div>
-        <FileUploader onUpload={setFile} error={'Please select file'} />
+        <FileUploader onUpload={setFile} />
+      </div>
+      <div>
+        <FileUploader onUpload={setFile} />
       </div>
     </div>
   );
