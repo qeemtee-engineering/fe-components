@@ -183,12 +183,12 @@ const FileUploader: FC<IFileUploader> = props => {
 
   return (
     <div className={cn()} ref={fileWrapper}>
-      <form className={cn('form')}>
+      <div className={cn('form')}>
         <label className={cn('button')} htmlFor="FileUploader">
           Select Files
         </label>
         <input hidden id="FileUploader" onChange={onChange} type="file" multiple={props.multiple} />
-      </form>
+      </div>
       <progress className={cn('progress')} ref={progressBar} max={100} value={0} />
       {uploaded.length ? (
         <>
