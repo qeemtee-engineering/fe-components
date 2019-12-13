@@ -5,6 +5,12 @@ import Icon from '../Icon';
 import { IFileUploader } from 'interfaces';
 import { newId } from '../utils';
 
+interface Media {
+  mediaUrl: string;
+  mediaType: string;
+  name?: string;
+}
+
 const url = `${process.env.REACT_APP_API_URL || 'http://localhost/api/v1'}/file-upload`;
 const cn = withNaming({ e: '__', m: '--' })('FileUploader');
 
@@ -12,11 +18,8 @@ const FileUploader: FC<IFileUploader> = props => {
   const [id, setId] = useState('');
   const fileWrapper = useRef<HTMLDivElement>(null);
   const progressBar = useRef<HTMLProgressElement>(null);
-  let uploadProgress: any[] = [];
   const [files, setFiles] = useState<File[]>([]);
-  const [uploaded, setUploaded] = useState<
-    { mediaUrl: string; mediaType: string; name?: string }[]
-  >([]);
+  let uploadProgress: any[] = [];
 
   useEffect(() => {
     if (fileWrapper) {
@@ -56,22 +59,13 @@ const FileUploader: FC<IFileUploader> = props => {
   }, []);
 
   useEffect(() => {
-    props.onUpload && props.onUpload(uploaded);
-  }, [uploaded]);
-
-  useEffect(() => {
-    if (
-      props.defaultValue &&
-      props.defaultValue.length &&
-      JSON.stringify(props.defaultValue) !== JSON.stringify(uploaded)
-    ) {
-      setUploaded([...props.defaultValue!]);
+    if (files.length) {
+      initializeProgress(files.length);
+      Promise.all(files.map(uploadFile)).then(data => {
+        sendFile(data);
+        setFiles([]);
+      });
     }
-  }, [props.defaultValue]);
-
-  useEffect(() => {
-    initializeProgress(files.length);
-    files.forEach(uploadFile);
   }, [files]);
 
   function preventDefaults(e: { preventDefault: () => void; stopPropagation: () => void }) {
@@ -124,45 +118,35 @@ const FileUploader: FC<IFileUploader> = props => {
   }
 
   function uploadFile(file: File, i: any) {
-    var xhr = new XMLHttpRequest();
-    const date = new Date();
-    const key = `${date.getTime()}-${file.name}`.replace(/ /g, '');
-    const formData = createFormData(file, key);
-    xhr.open('POST', url, true);
-    xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+    return new Promise((resolve, reject) => {
+      var xhr = new XMLHttpRequest();
+      const date = new Date();
+      const key = `${date.getTime()}-${file.name}`.replace(/ /g, '');
+      const formData = createFormData(file, key);
+      xhr.open('POST', url, true);
+      xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
 
-    // Update progress (can be used to show progress indicator)
-    xhr.upload.addEventListener('progress', function(e) {
-      updateProgress(i, (e.loaded * 100.0) / e.total || 100);
-    });
+      // Update progress (can be used to show progress indicator)
+      xhr.upload.addEventListener('progress', function(e) {
+        updateProgress(i, (e.loaded * 100.0) / e.total || 100);
+      });
 
-    xhr.addEventListener('readystatechange', function(e) {
-      if (xhr.readyState == 4 && xhr.status == 200) {
-        if (props.multiple) {
-          setUploaded(f => [
-            ...f,
-            {
-              mediaType: file.type,
-              mediaUrl: JSON.parse(xhr.response).result.file,
-              name: file.name,
-            },
-          ]);
-        } else {
-          setUploaded([
-            {
-              mediaType: file.type,
-              mediaUrl: JSON.parse(xhr.response).result.file,
-              name: file.name,
-            },
-          ]);
+      xhr.addEventListener('readystatechange', function(e) {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+          resolve({
+            mediaType: file.type,
+            mediaUrl: JSON.parse(xhr.response).result.file,
+            name: file.name,
+          });
+          updateProgress(i, 100); // <- Add this
+        } else if (xhr.readyState == 4 && xhr.status != 200) {
+          // Error. Inform the user
+          reject('error');
         }
-        updateProgress(i, 100); // <- Add this
-      } else if (xhr.readyState == 4 && xhr.status != 200) {
-        // Error. Inform the user
-      }
-    });
+      });
 
-    xhr.send(formData);
+      xhr.send(formData);
+    });
   }
 
   function createFormData(file: File, key: string) {
@@ -172,10 +156,22 @@ const FileUploader: FC<IFileUploader> = props => {
   }
 
   const removeFile = (i: number) => (e: MouseEvent<HTMLElement>) => {
-    setUploaded(u => {
-      u.splice(i, 1);
-      return [...u];
-    });
+    const { value } = props;
+    if (value) {
+      value.splice(i, 1);
+      props.onChange && props.onChange([...value]);
+    }
+  };
+
+  const sendFile = (data: any) => {
+    const { value } = props;
+    if (props.onChange) {
+      let files = [...(value || []), ...data];
+      if (!props.multiple) {
+        return props.onChange([files[0]]);
+      }
+      props.onChange(files);
+    }
   };
 
   return (
@@ -187,10 +183,10 @@ const FileUploader: FC<IFileUploader> = props => {
         <input hidden id={id} onChange={onChange} type="file" multiple={props.multiple} />
       </div>
       <progress className={cn('progress')} ref={progressBar} max={100} value={0} />
-      {uploaded.length ? (
+      {props.value && props.value.length ? (
         <>
           <div className={cn('uploaded')}>
-            {uploaded.map(
+            {props.value!.map(
               (u, i) =>
                 u.mediaType.includes('image') && (
                   <div key={i} className={cn('uploaded__wrapper')}>
@@ -201,7 +197,7 @@ const FileUploader: FC<IFileUploader> = props => {
             )}
           </div>
           <div className={cn('uploaded')}>
-            {uploaded.map(
+            {props.value!.map(
               (u, i) =>
                 !u.mediaType.includes('image') && (
                   <div key={i} className={cn('uploaded__wrapper')}>

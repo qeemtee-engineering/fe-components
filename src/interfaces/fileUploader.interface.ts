@@ -1,6 +1,6 @@
 export interface IFileUploader {
   multiple?: boolean;
-  onUpload?(files: { mediaUrl: string; mediaType: string; name?: string }[]): void;
-  defaultValue?: { mediaUrl: string; mediaType: string; name?: string }[];
+  onChange?(files: { mediaUrl: string; mediaType: string; name?: string }[]): void;
+  value?: { mediaUrl: string; mediaType: string; name?: string }[];
   error?: string;
 }

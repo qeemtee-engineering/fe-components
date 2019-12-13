@@ -32,13 +32,6 @@ const App = () => {
       name: 'images (4).jpeg',
     },
   ]);
-  const [defaultFile, setDefaultFile] = useState([
-    {
-      mediaType: 'image/jpeg',
-      mediaUrl: 'https://dev-assets.qeemtee.com/1576126934174-images(4).jpeg',
-      name: 'images (4).jpeg',
-    },
-  ]);
   const { Panel } = Collapse;
   const { CheckableTag } = Tag;
   const { MonthPicker, RangePicker, WeekPicker } = DatePicker;
@@ -213,10 +206,10 @@ const App = () => {
         <Richtext value="Faizan" />
       </div>
       <div>
-        <FileUploader onUpload={setFile} />
+        <FileUploader value={file} onChange={setFile} />
       </div>
       <div>
-        <FileUploader onUpload={setFile} />
+        <FileUploader onChange={setFile} />
       </div>
     </div>
   );
