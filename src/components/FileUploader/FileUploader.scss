@@ -4,7 +4,21 @@
   border: 2px dashed #ccc;
   border-radius: 20px;
   width: 600px;
+  position: relative;
   padding: 20px;
+
+  &--error {
+    color: red;
+    border-color: red;
+  }
+
+  &__error {
+    position: absolute;
+    bottom: 5px;
+    font-size: 13px;
+    color: red;
+    right: 10px;
+  }
 
   &__uploaded {
     margin: 20px 0 0;

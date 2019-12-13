@@ -1,18 +1,9 @@
-import React, {
-  useRef,
-  FC,
-  useEffect,
-  useState,
-  ChangeEvent,
-  MouseEvent,
-  useLayoutEffect,
-} from 'react';
+import React, { useRef, FC, useEffect, useState, ChangeEvent, MouseEvent } from 'react';
 import './FileUploader.scss';
 import { withNaming } from '@bem-react/classname';
 import Icon from '../Icon';
 import { IFileUploader } from 'interfaces';
 
-const cdn = process.env.REACT_APP_CDN_NAME || 'https://dev-assets.qeemtee.com';
 const url = `${process.env.REACT_APP_API_URL || 'http://localhost/api/v1'}/file-upload`;
 const cn = withNaming({ e: '__', m: '--' })('FileUploader');
 
@@ -182,7 +173,7 @@ const FileUploader: FC<IFileUploader> = props => {
   };
 
   return (
-    <div className={cn()} ref={fileWrapper}>
+    <div className={cn('', { error: props.error ? true : false })} ref={fileWrapper}>
       <div className={cn('form')}>
         <label className={cn('button')} htmlFor="FileUploader">
           Select Files
@@ -218,6 +209,7 @@ const FileUploader: FC<IFileUploader> = props => {
           </div>
         </>
       ) : null}
+      {props.error ? <p className={cn('error')}>{props.error}</p> : null}
     </div>
   );
 };
