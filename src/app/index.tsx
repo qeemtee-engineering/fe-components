@@ -16,6 +16,7 @@ import {
   DatePicker,
   Richtext,
   FileUploader,
+  Radio,
 } from '../components';
 import moment from 'moment';
 import { SVG } from '../..';
@@ -101,7 +102,7 @@ const App = () => {
         ))}
       </div>
       <div>
-        <Input type="password" />
+        <Input disabled type="password" />
         <Input type="email" />
       </div>
       <div>
@@ -210,6 +211,9 @@ const App = () => {
       </div>
       <div>
         <FileUploader onChange={setFile} />
+      </div>
+      <div>
+        <Radio color='secondary' />
       </div>
     </div>
   );

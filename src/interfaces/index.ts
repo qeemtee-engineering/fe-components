@@ -18,3 +18,4 @@ export * from './timePicker.interface';
 export * from './tag.interface';
 export * from './richtext.interface';
 export * from './fileUploader.interface';
+export * from './radio.interface';

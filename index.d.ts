@@ -15,6 +15,7 @@ import {
   ICurrency,
   IRichtext,
   IFileUploader,
+  IRadio,
 } from './src/interfaces';
 export function SVG(props: ISVG): any;
 export function Modal(props: IModal): any;
@@ -38,3 +39,4 @@ export function Currency(props: ICurrency): any;
 export function Richtext(props: IRichtext): any;
 export function DatePicker(props: any): any;
 export function FileUploader(props: IFileUploader): any;
+export function Radio(props: IRadio): any;

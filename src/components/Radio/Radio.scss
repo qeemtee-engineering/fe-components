@@ -1,0 +1,68 @@
+@import 'src/styles/utils';
+
+.Radio {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  user-select: none;
+
+  &-disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  > .label {
+    flex: 1 1 auto;
+    margin-left: 15px;
+
+    &::first-letter {
+      text-transform: uppercase;
+    }
+  }
+
+  > .radio {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 1px $grey;
+    flex: 0 0 auto;
+    user-select: none;
+    cursor: pointer;
+    transition: box-shadow 0.2s;
+  }
+
+  > input {
+    visibility: hidden;
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+
+    &:checked {
+      + .radio {
+        box-shadow: inset 0 0 0 5px $primary;
+      }
+    }
+  }
+
+  &-color {
+    &-primary {
+      > input {
+        &:checked {
+          + .radio {
+            box-shadow: inset 0 0 0 5px $primary;
+          }
+        }
+      }
+    }
+    &-secondary {
+      > input {
+        &:checked {
+          + .radio {
+            box-shadow: inset 0 0 0 5px $purple;
+          }
+        }
+      }
+    }
+  }
+}
