@@ -10,7 +10,6 @@ const Radio = React.forwardRef((props: IRadio, ref: any) => {
     className = '',
     name,
     checked,
-    light,
     onChange,
     value,
     label,
@@ -30,6 +29,7 @@ const Radio = React.forwardRef((props: IRadio, ref: any) => {
       <input
         {...other}
         type="radio"
+        checked={checked}
         name={name}
         value={value}
         onChange={onChange}
