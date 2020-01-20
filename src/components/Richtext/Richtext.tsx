@@ -82,7 +82,7 @@ class Richtext extends Component<IRichtext, { touched: boolean }> {
 
     const formData = this.createFormData(file, key);
     const xhr = new XMLHttpRequest();
-    const HOST = process.env.REACT_APP_API_URL || '';
+    const HOST = `${process.env.REACT_APP_API_URL}/file-upload` || '';
     const cdn = process.env.REACT_APP_CDN_NAME;
     xhr.open('POST', HOST, true);
 
