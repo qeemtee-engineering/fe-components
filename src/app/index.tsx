@@ -17,6 +17,7 @@ import {
   Richtext,
   FileUploader,
   Radio,
+  RichTextDisplay,
 } from '../components';
 import moment from 'moment';
 import { SVG } from '../..';
@@ -206,6 +207,7 @@ const App = () => {
         />
         <Richtext value="Faizan" />
       </div>
+      <RichTextDisplay data={rich} />
       <div>
         <FileUploader value={file} onChange={setFile} />
       </div>
@@ -213,7 +215,7 @@ const App = () => {
         <FileUploader onChange={setFile} />
       </div>
       <div>
-        <Radio color='secondary' />
+        <Radio color="secondary" />
       </div>
     </div>
   );

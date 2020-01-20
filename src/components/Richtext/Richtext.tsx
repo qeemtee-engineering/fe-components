@@ -36,7 +36,7 @@ class Richtext extends Component<IRichtext, { touched: boolean }> {
     });
   }
 
-  changed = (e: any) => this.props.onChange && this.props.onChange(e.target.innerHTML);
+  changed = (e: any) => this.props.onChange && this.props.onChange(this.trixRef.value);
 
   componentWillUnmount() {
     const { onFocus, onBlur } = this.props;
@@ -84,7 +84,7 @@ class Richtext extends Component<IRichtext, { touched: boolean }> {
     const xhr = new XMLHttpRequest();
     console.log(process.env);
     const url = `${process.env.REACT_APP_API_URL || 'http://localhost/api/v1'}/file-upload`;
-    const cdn = process.env.REACT_APP_CDN_NAME;
+    const cdn = process.env.REACT_APP_CDN_NAME || 'https://dev-assets.qeemtee.com';
     xhr.open('POST', url, true);
 
     xhr.upload.addEventListener('progress', function(event) {
@@ -94,9 +94,11 @@ class Richtext extends Component<IRichtext, { touched: boolean }> {
 
     xhr.addEventListener('load', function(event) {
       if (xhr.status == 200) {
+        const response = JSON.parse(xhr.response);
+
         const attributes = {
-          url: `${cdn}/${key}`,
-          href: `${cdn}/${key}'?content-disposition=attachment`,
+          url: response.result.file,
+          href: `${response.result.file}?content-disposition=attachment`,
         };
         successCallback(attributes);
       }
@@ -138,3 +140,7 @@ class Richtext extends Component<IRichtext, { touched: boolean }> {
 }
 
 export default Richtext;
+
+export const RichTextDisplay = ({ data }: { data: string | null }) => {
+  return <div className="trix-content" dangerouslySetInnerHTML={{ __html: data! }} />;
+};

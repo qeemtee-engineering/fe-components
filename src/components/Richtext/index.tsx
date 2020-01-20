@@ -1,1 +1,1 @@
-export { default } from './Richtext';
+export { default, RichTextDisplay } from './Richtext';
