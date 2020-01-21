@@ -16,6 +16,7 @@ const Switch = React.forwardRef((props: ICheckbox, ref: any) => {
     children,
     color = 'primary',
     name,
+    required,
     ...other
   } = props;
 
@@ -41,7 +42,11 @@ const Switch = React.forwardRef((props: ICheckbox, ref: any) => {
           <div className="switch"></div>
         </div>
       </label>
-      {(children || label) && <span className="label">{children || label}</span>}
+      {(children || label) && (
+        <span className="label">
+          {children || label} {required && <span className={cn('required')}>*</span>}
+        </span>
+      )}
     </div>
   );
 });

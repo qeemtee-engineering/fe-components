@@ -27,6 +27,7 @@ const Input = React.forwardRef((props: IInput, ref: any) => {
     children,
     name,
     icon,
+    required,
     ...otherProps
   }: any = props;
 
@@ -64,7 +65,11 @@ const Input = React.forwardRef((props: IInput, ref: any) => {
       className={`Input ${(error && touched) || (submitted && error) ? cn('error') : ''}`}
       ref={ref}
     >
-      {label && <span className={cn('title')}>{label}</span>}
+      {label && (
+        <span className={cn('title')}>
+          {label} {required && <span className={cn('required')}>*</span>}
+        </span>
+      )}
       <div className={cn('input')}>
         {icon && <div className={cn('meta')}>{icon}</div>}
         <input

@@ -5,6 +5,10 @@
   flex-direction: row;
   align-items: center;
 
+  &__required {
+    color: $red;
+  }
+
   &__disabled {
     opacity: 0.5;
     cursor: not-allowed;

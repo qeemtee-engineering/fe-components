@@ -8,5 +8,6 @@ export interface IRichtext {
   className?: string;
   disabled?: boolean;
   placeholder?: string;
+  required?: boolean;
   submitted?: boolean;
 }

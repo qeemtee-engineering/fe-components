@@ -6,6 +6,10 @@
   align-items: center;
   user-select: none;
 
+  &__required {
+    color: $red;
+  }
+
   &-disabled {
     opacity: 0.5;
     cursor: not-allowed;

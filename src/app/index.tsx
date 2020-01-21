@@ -99,15 +99,15 @@ const App = () => {
       </div>
       <div>
         {['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'].map(day => (
-          <Checkbox>{day}</Checkbox>
+          <Checkbox label='check' required>{day}</Checkbox>
         ))}
       </div>
       <div>
-        <Input disabled type="password" />
+        <Input label='Password' required disabled type="password" />
         <Input type="email" />
       </div>
       <div>
-        <Switch color="secondary" />
+        <Switch label=' ' required color="secondary" />
       </div>
       <div>
         <Collapse

@@ -16,6 +16,7 @@ const Radio = React.forwardRef((props: IRadio, ref: any) => {
     children,
     disabled,
     color = 'primary',
+    required,
     ...other
   } = props;
 
@@ -37,7 +38,9 @@ const Radio = React.forwardRef((props: IRadio, ref: any) => {
         ref={ref}
       />
       <div className="radio"></div>
-      <span className="label">{children || label || value}</span>
+      <span className="label">
+        {children || label || value} {required && <span className={cn('required')}>*</span>}
+      </span>
     </label>
   );
 });

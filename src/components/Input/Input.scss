@@ -9,6 +9,10 @@
   color: $black;
   margin-bottom: 20px;
 
+  &__required {
+    color: $red;
+  }
+
   &__error {
     color: $red;
 

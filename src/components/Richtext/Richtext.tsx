@@ -121,7 +121,11 @@ class Richtext extends Component<IRichtext, { touched: boolean }> {
       .substr(2, 9);
     return (
       <div className={cs(className, cn('', { error: (error && touched) || (submitted && error) }))}>
-        {label && <label className={cn('label')}>{label}</label>}
+        {label && (
+          <label className={cn('label')}>
+            {label} {this.props.required && <span className={cn('required')}>*</span>}
+          </label>
+        )}
         <input value={value} id={id} type="hidden" name="content" />
         <trix-editor
           placeholder={placeholder}

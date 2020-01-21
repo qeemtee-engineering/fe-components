@@ -17,6 +17,7 @@ const Checkbox = React.forwardRef((props: ICheckbox, ref: any) => {
     children,
     color = 'primary',
     name,
+    required,
     ...other
   } = props;
 
@@ -42,7 +43,12 @@ const Checkbox = React.forwardRef((props: ICheckbox, ref: any) => {
           <SVG className="SVG icon" src={iconSuccess} />
         </div>
       </label>
-      {(children || label) && <span className="label">{children || label}</span>}
+      {(children || label) && (
+        <span className="label">
+          {children || label}
+          {required && <span className={cn('required')}>*</span>}
+        </span>
+      )}
     </div>
   );
 });
