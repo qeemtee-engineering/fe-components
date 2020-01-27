@@ -33,7 +33,7 @@ export function OverlayComponent(props: IOverlayComponent): any;
 export function Checkbox(props: ICheckbox): any;
 export function Switch(props: ICheckbox): any;
 export function Icon(props: IIcon): any;
-export function Notification(props: NotificationApi): any;
+export const Notification: NotificationApi;
 export function Collapse(props: CollapseProps): any;
 export function Number(props: INumber): any;
 export function Currency(props: ICurrency): any;
