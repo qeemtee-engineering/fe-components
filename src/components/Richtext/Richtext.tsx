@@ -82,7 +82,6 @@ class Richtext extends Component<IRichtext, { touched: boolean }> {
 
     const formData = this.createFormData(file, key);
     const xhr = new XMLHttpRequest();
-    console.log(process.env);
     const url = `${process.env.REACT_APP_API_URL || 'http://localhost/api/v1'}/file-upload`;
     const cdn = process.env.REACT_APP_CDN_NAME || 'https://dev-assets.qeemtee.com';
     xhr.open('POST', url, true);

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Notification from 'rc-notification';
 import Icon from '../Icon';
-import { INotification, NotificationPlacement } from 'interfaces';
+import { INotification, NotificationPlacement, NotificationApi, ConfigProps } from 'interfaces';
 import './Notification.scss';
 
 const notificationInstance: { [key: string]: any } = {};
@@ -10,14 +10,6 @@ let defaultTop = 24;
 let defaultBottom = 24;
 let defaultPlacement: NotificationPlacement = 'topRight';
 let defaultGetContainer: () => HTMLElement;
-
-export interface ConfigProps {
-  top?: number;
-  bottom?: number;
-  duration?: number;
-  placement?: NotificationPlacement;
-  getContainer?: () => HTMLElement;
-}
 
 function setNotificationConfig(options: ConfigProps) {
   const { duration, placement, bottom, top, getContainer } = options;
@@ -200,17 +192,5 @@ const api: any = {
 });
 
 api.warn = api.warning;
-
-export interface NotificationApi {
-  success(args: INotification): void;
-  error(args: INotification): void;
-  info(args: INotification): void;
-  warn(args: INotification): void;
-  warning(args: INotification): void;
-  open(args: INotification): void;
-  close(key: string): void;
-  config(options: ConfigProps): void;
-  destroy(): void;
-}
 
 export default api as NotificationApi;
