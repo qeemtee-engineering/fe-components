@@ -3,7 +3,7 @@ const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const pkg = require('./package.json');
-const webpack = require('webpack');
+const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
   target: 'node',
@@ -68,5 +68,5 @@ module.exports = {
     filename: 'index.js',
     libraryTarget: 'commonjs2',
   },
-  externals: [...Object.keys(pkg.dependencies || {})],
+  externals: [...Object.keys(pkg.dependencies || {}), nodeExternals()],
 };
