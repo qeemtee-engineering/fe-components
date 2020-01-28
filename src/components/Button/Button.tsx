@@ -1,5 +1,4 @@
-import React, { MouseEvent, ReactNode } from 'react';
-import iconSpinner from '../../assets/svg/spinner.svg';
+import React from 'react';
 import { withNaming } from '@bem-react/classname';
 import { SVG } from '../utils';
 import './Button.scss';
@@ -31,7 +30,11 @@ const Button = (props: IButton) => {
       {icon && <SVG wrapper="span" className={`${cn('icon')} ${cn('SVG')}`} src={icon} />}
       {children}
       {loading && (
-        <SVG wrapper="span" className={`${cn('spinner')} ${cn('SVG')}`} src={iconSpinner} />
+        <SVG
+          wrapper="span"
+          className={`${cn('spinner')} ${cn('SVG')}`}
+          src={'https://qeemtee-assets.s3-ap-southeast-1.amazonaws.com/component/spinner.svg'}
+        />
       )}
     </button>
   );

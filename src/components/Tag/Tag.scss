@@ -90,12 +90,12 @@ $self: '.Tag';
       $lightColor: lighten($color, 40%);
       $lightBorderColor: lighten($color, 15%);
       $darkColor: darken($color, 7%);
-      &-#{$color} {
+      &-#{"" + $color} {
         color: $darkColor;
         background: $lightColor;
         border-color: $lightBorderColor;
       }
-      &-#{$color}-inverse {
+      &-#{"" + $color}-inverse {
         color: #fff;
         background: $darkColor;
         border-color: $darkColor;
