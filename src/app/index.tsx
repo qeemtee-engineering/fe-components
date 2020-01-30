@@ -20,7 +20,6 @@ import {
   RichTextDisplay,
 } from '../components';
 import moment from 'moment';
-import { SVG } from '../..';
 
 const App = () => {
   const richRef = useRef<any>(null);

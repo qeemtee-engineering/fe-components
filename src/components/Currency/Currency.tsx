@@ -3,7 +3,7 @@ import { ICurrency } from 'interfaces';
 import cs from 'classnames';
 
 import './Currency.scss';
-import { Number } from '../';
+import Number from '../Number';
 
 const Currency = React.forwardRef((props: ICurrency, ref: any) => {
   const { className, symbol, symbolClassName, value, fixed, side, delimiter, ...other } = props;
