@@ -17,9 +17,8 @@ import Tag from './Tag';
 import Richtext, { RichTextDisplay } from './Richtext';
 import FileUploader from './FileUploader';
 import Radio from './Radio';
-import Number from './Number';
 import { useForm, validate } from './useForm';
-
+import Number from './Number';
 export {
   Button,
   useForm,

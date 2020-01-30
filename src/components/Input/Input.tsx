@@ -1,8 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { SVG } from '../utils';
 import './Input.scss';
-import iconEyeOpen from 'src/assets/svg/eye_open.svg';
-import iconEyeClose from 'src/assets/svg/eye_close.svg';
 import { withNaming } from '@bem-react/classname';
 import { IInput } from 'interfaces';
 import cs from 'classnames';
@@ -96,7 +94,11 @@ const Input = React.forwardRef((props: IInput, ref: any) => {
               <SVG
                 onClick={togglePassword}
                 className="SVG"
-                src={type === 'password' ? iconEyeOpen : iconEyeClose}
+                src={
+                  type === 'password'
+                    ? 'https://qeemtee-assets.s3-ap-southeast-1.amazonaws.com/component/eye_open.svg'
+                    : 'https://qeemtee-assets.s3-ap-southeast-1.amazonaws.com/component/eye_close.svg'
+                }
               />
             )}
           </div>

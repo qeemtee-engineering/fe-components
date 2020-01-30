@@ -3,7 +3,6 @@ import { SVG } from '../utils';
 import { withNaming } from '@bem-react/classname';
 import './Checkbox.scss';
 import { ICheckbox } from 'interfaces';
-import iconSuccess from 'src/assets/svg/success.svg';
 const cn = withNaming({ e: '__', m: '-' })('Checkbox');
 
 const Checkbox = React.forwardRef((props: ICheckbox, ref: any) => {
@@ -40,7 +39,10 @@ const Checkbox = React.forwardRef((props: ICheckbox, ref: any) => {
           ref={ref}
         />
         <div className="checkbox">
-          <SVG className="SVG icon" src={iconSuccess} />
+          <SVG
+            className="SVG icon"
+            src={'https://qeemtee-assets.s3-ap-southeast-1.amazonaws.com/component/success.svg'}
+          />
         </div>
       </label>
       {(children || label) && (
