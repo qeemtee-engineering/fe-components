@@ -9,7 +9,11 @@ module.exports = {
   target: 'node',
   entry: './src/components/index.tsx',
   mode: 'production',
-  plugins: [new CaseSensitivePathsPlugin(), new CleanWebpackPlugin()],
+  plugins: [
+    new CaseSensitivePathsPlugin(),
+    new CleanWebpackPlugin(),
+    new CopyWebpackPlugin([{ from: './src/assets', to: 'assets' }]),
+  ],
   module: {
     rules: [
       // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.

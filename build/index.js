@@ -1,8 +1,8 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('react'), require('@bem-react/classname'), require('react-phone-number-input'), require('rc-dialog'), require('react-dom'), require('classnames'), require('react-select'), require('rc-notification'), require('rc-collapse'), require('rc-calendar'), require('react-lifecycles-compat'), require('moment'), require('omit.js')) :
-    typeof define === 'function' && define.amd ? define(['exports', 'react', '@bem-react/classname', 'react-phone-number-input', 'rc-dialog', 'react-dom', 'classnames', 'react-select', 'rc-notification', 'rc-collapse', 'rc-calendar', 'react-lifecycles-compat', 'moment', 'omit.js'], factory) :
-    (global = global || self, factory(global.Component = {}, global.React, global.classname, global.PhoneInput, global.Dialog, global.ReactDOM, global.classNames, global.Select, global.Notification, global.RcCollapse, global.Calendar, global.reactLifecyclesCompat, global.moment, global.omit));
-}(this, (function (exports, React, classname, PhoneInput, Dialog, ReactDOM, classNames, Select, Notification, RcCollapse, Calendar, reactLifecyclesCompat, moment, omit) { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('react'), require('@bem-react/classname'), require('react-phone-number-input'), require('assets/svg/spinner.svg'), require('rc-dialog'), require('react-dom'), require('classnames'), require('src/assets/svg/eye_open.svg'), require('src/assets/svg/eye_close.svg'), require('react-select'), require('src/assets/svg/success.svg'), require('rc-notification'), require('rc-collapse'), require('rc-calendar'), require('react-lifecycles-compat'), require('moment'), require('omit.js')) :
+    typeof define === 'function' && define.amd ? define(['exports', 'react', '@bem-react/classname', 'react-phone-number-input', 'assets/svg/spinner.svg', 'rc-dialog', 'react-dom', 'classnames', 'src/assets/svg/eye_open.svg', 'src/assets/svg/eye_close.svg', 'react-select', 'src/assets/svg/success.svg', 'rc-notification', 'rc-collapse', 'rc-calendar', 'react-lifecycles-compat', 'moment', 'omit.js'], factory) :
+    (global = global || self, factory(global.Component = {}, global.React, global.classname, global.PhoneInput, global.iconSpinner, global.Dialog, global.ReactDOM, global.classNames, global.iconEyeOpen, global.iconEyeClose, global.Select, global.iconSuccess, global.Notification, global.RcCollapse, global.Calendar, global.reactLifecyclesCompat, global.moment, global.omit));
+}(this, (function (exports, React, classname, PhoneInput, iconSpinner, Dialog, ReactDOM, classNames, iconEyeOpen, iconEyeClose, Select, iconSuccess, Notification, RcCollapse, Calendar, reactLifecyclesCompat, moment, omit) { 'use strict';
 
     function ___$insertStyle(css) {
       if (!css) {
@@ -22,10 +22,14 @@
 
     var React__default = 'default' in React ? React['default'] : React;
     var PhoneInput__default = 'default' in PhoneInput ? PhoneInput['default'] : PhoneInput;
+    iconSpinner = iconSpinner && iconSpinner.hasOwnProperty('default') ? iconSpinner['default'] : iconSpinner;
     Dialog = Dialog && Dialog.hasOwnProperty('default') ? Dialog['default'] : Dialog;
     var ReactDOM__default = 'default' in ReactDOM ? ReactDOM['default'] : ReactDOM;
     classNames = classNames && classNames.hasOwnProperty('default') ? classNames['default'] : classNames;
+    iconEyeOpen = iconEyeOpen && iconEyeOpen.hasOwnProperty('default') ? iconEyeOpen['default'] : iconEyeOpen;
+    iconEyeClose = iconEyeClose && iconEyeClose.hasOwnProperty('default') ? iconEyeClose['default'] : iconEyeClose;
     Select = Select && Select.hasOwnProperty('default') ? Select['default'] : Select;
+    iconSuccess = iconSuccess && iconSuccess.hasOwnProperty('default') ? iconSuccess['default'] : iconSuccess;
     Notification = Notification && Notification.hasOwnProperty('default') ? Notification['default'] : Notification;
     RcCollapse = RcCollapse && RcCollapse.hasOwnProperty('default') ? RcCollapse['default'] : RcCollapse;
     Calendar = Calendar && Calendar.hasOwnProperty('default') ? Calendar['default'] : Calendar;
@@ -199,7 +203,7 @@
         return (React__default.createElement("button", __assign({}, other, { type: type || 'button', disabled: loading || disabled, className: classes }),
             icon && React__default.createElement(SVG, { wrapper: "span", className: cn('icon') + " " + cn('SVG'), src: icon }),
             children,
-            loading && (React__default.createElement(SVG, { wrapper: "span", className: cn('spinner') + " " + cn('SVG'), src: 'https://qeemtee-assets.s3-ap-southeast-1.amazonaws.com/component/spinner.svg' }))));
+            loading && (React__default.createElement(SVG, { wrapper: "span", className: cn('spinner') + " " + cn('SVG'), src: iconSpinner }))));
     };
 
     ___$insertStyle(".Modal {\n  position: relative;\n  width: auto;\n  margin: 10px;\n}\n@media only screen and (min-width: 768px) {\n  .Modal {\n    width: 600px;\n    margin: 30px auto;\n  }\n}\n.Modal-mask {\n  position: fixed;\n  top: 0;\n  right: 0;\n  left: 0;\n  bottom: 0;\n  background-color: #333745;\n  background-color: rgba(55, 55, 55, 0.6);\n  height: 100%;\n  filter: alpha(opacity=50);\n  z-index: 1050;\n}\n.Modal-mask-hidden {\n  display: none;\n}\n.Modal-wrap {\n  position: fixed;\n  overflow: auto;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  z-index: 1050;\n  -webkit-overflow-scrolling: touch;\n  outline: 0;\n}\n.Modal-title {\n  margin: 0;\n  font-size: 18px;\n  line-height: 21px;\n  font-weight: bold;\n}\n.Modal-content {\n  position: relative;\n  background-color: #fff;\n  border: none;\n  border-radius: 6px 6px;\n  background-clip: padding-box;\n}\n.Modal-close {\n  border-radius: 50%;\n  position: absolute;\n  top: 10px;\n  right: 10px;\n  height: 32px;\n  overflow: hidden;\n  padding: 4px;\n  margin: 4px;\n  width: 32px;\n  z-index: 2;\n  transition: background-color 0.1s, color 0.1s;\n  transform: scale(1.3);\n  cursor: pointer;\n}\n.Modal-close:focus {\n  outline: 0;\n}\n.Modal-close:hover {\n  background-color: rgba(9, 30, 66, 0.13);\n}\n.Modal-close-x:after {\n  content: \"X\";\n}\n.Modal-header {\n  padding: 20px;\n  border-radius: 5px 5px 0 0;\n  background: #fff;\n  color: #333745;\n  border-bottom: 1px solid #d8d8d8;\n}\n.Modal-body {\n  padding: 20px;\n}\n.Modal-footer {\n  border-top: 1px solid #d8d8d8;\n  padding: 10px 20px;\n  text-align: right;\n  border-radius: 0 0 5px 5px;\n}\n.Modal-zoom-enter, .Modal-zoom-appear {\n  opacity: 0;\n  animation-duration: 0.3s;\n  animation-fill-mode: both;\n  animation-timing-function: cubic-bezier(0.08, 0.82, 0.17, 1);\n  animation-play-state: paused;\n}\n.Modal-zoom-leave {\n  animation-duration: 0.3s;\n  animation-fill-mode: both;\n  animation-timing-function: cubic-bezier(0.6, 0.04, 0.98, 0.34);\n  animation-play-state: paused;\n}\n.Modal-zoom-enter.Modal-zoom-enter-active, .Modal-zoom-appear.Modal-zoom-appear-active {\n  animation-name: DialogZoomIn;\n  animation-play-state: running;\n}\n.Modal-zoom-leave.Modal-zoom-leave-active {\n  animation-name: DialogZoomOut;\n  animation-play-state: running;\n}\n.Modal-fade-enter, .Modal-fade-appear {\n  opacity: 0;\n  animation-duration: 0.3s;\n  animation-fill-mode: both;\n  animation-timing-function: cubic-bezier(0.55, 0, 0.55, 0.2);\n  animation-play-state: paused;\n}\n.Modal-fade-leave {\n  animation-duration: 0.3s;\n  animation-fill-mode: both;\n  animation-timing-function: cubic-bezier(0.55, 0, 0.55, 0.2);\n  animation-play-state: paused;\n}\n.Modal-fade-enter.Modal-fade-enter-active, .Modal-fade-appear.Modal-fade-appear-active {\n  animation-name: DialogFadeIn;\n  animation-play-state: running;\n}\n.Modal-fade-leave.Modal-fade-leave-active {\n  animation-name: DialogFadeOut;\n  animation-play-state: running;\n}\n.Modal-center {\n  text-align: center;\n}\n.Modal-center::before {\n  display: inline-block;\n  width: 0;\n  height: 100%;\n  vertical-align: middle;\n  content: \"\";\n}\n.Modal-center .Modal {\n  top: 0;\n  display: inline-block;\n  text-align: left;\n  vertical-align: middle;\n}\n@media only screen and (max-width: 599px) {\n  .Modal-center .Modal {\n    flex: 1;\n  }\n}\n.Modal__footer button + button {\n  margin-left: 10px;\n}\n\n@keyframes DialogZoomIn {\n  0% {\n    opacity: 0;\n    transform: scale(0, 0);\n  }\n  100% {\n    opacity: 1;\n    transform: scale(1, 1);\n  }\n}\n@keyframes DialogZoomOut {\n  0% {\n    transform: scale(1, 1);\n  }\n  100% {\n    opacity: 0;\n    transform: scale(0, 0);\n  }\n}\n@keyframes DialogFadeIn {\n  0% {\n    opacity: 0;\n  }\n  100% {\n    opacity: 1;\n  }\n}\n@keyframes DialogFadeOut {\n  0% {\n    opacity: 1;\n  }\n  100% {\n    opacity: 0;\n  }\n}");
@@ -809,9 +813,7 @@
                 icon && React__default.createElement("div", { className: cn$3('meta') }, icon),
                 React__default.createElement("input", __assign({}, otherProps, { ref: ref, type: type, value: _value, onChange: _onChange, onFocus: _onFocus, onBlur: _onBlur, placeholder: placeholder, disabled: disabled, name: name, className: classNames(otherProps.className, { 'Input__input-icon': icon }) })),
                 React__default.createElement("div", { className: cn$3('input-border') + " " + ((error && touched) || (submitted && error) ? cn$3('error-border') : '') }),
-                meta.password && (React__default.createElement("div", { className: cn$3('meta') }, meta.password && (React__default.createElement(SVG, { onClick: togglePassword, className: "SVG", src: type === 'password'
-                        ? 'https://qeemtee-assets.s3-ap-southeast-1.amazonaws.com/component/eye_open.svg'
-                        : 'https://qeemtee-assets.s3-ap-southeast-1.amazonaws.com/component/eye_close.svg' }))))),
+                meta.password && (React__default.createElement("div", { className: cn$3('meta') }, meta.password && (React__default.createElement(SVG, { onClick: togglePassword, className: "SVG", src: type === 'password' ? iconEyeOpen : iconEyeClose }))))),
             (error && touched) || (submitted && error) ? (React__default.createElement("p", { className: cn$3('error-message') }, error)) : ('')));
     });
 
@@ -1014,7 +1016,7 @@
             React__default.createElement("label", null,
                 React__default.createElement("input", __assign({}, other, { type: "checkbox", value: value, checked: checked, onChange: onChange, disabled: disabled, name: name, ref: ref })),
                 React__default.createElement("div", { className: "checkbox" },
-                    React__default.createElement(SVG, { className: "SVG icon", src: 'https://qeemtee-assets.s3-ap-southeast-1.amazonaws.com/component/success.svg' }))),
+                    React__default.createElement(SVG, { className: "SVG icon", src: iconSuccess }))),
             (children || label) && (React__default.createElement("span", { className: "label" },
                 children || label,
                 required && React__default.createElement("span", { className: cn$6('required') }, "*")))));

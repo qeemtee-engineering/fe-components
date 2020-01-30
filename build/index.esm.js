@@ -17,10 +17,14 @@ function ___$insertStyle(css) {
 import React__default, { useState, useEffect, Component, useContext, Fragment, createElement, useRef } from 'react';
 import { withNaming } from '@bem-react/classname';
 import PhoneInput, { isValidPhoneNumber, parsePhoneNumber } from 'react-phone-number-input';
+import iconSpinner from 'assets/svg/spinner.svg';
 import Dialog from 'rc-dialog';
 import ReactDOM, { findDOMNode, createPortal } from 'react-dom';
 import classNames from 'classnames';
+import iconEyeOpen from 'src/assets/svg/eye_open.svg';
+import iconEyeClose from 'src/assets/svg/eye_close.svg';
 import Select from 'react-select';
+import iconSuccess from 'src/assets/svg/success.svg';
 import Notification from 'rc-notification';
 import RcCollapse from 'rc-collapse';
 import Calendar from 'rc-calendar';
@@ -195,7 +199,7 @@ var Button = function (props) {
     return (React__default.createElement("button", __assign({}, other, { type: type || 'button', disabled: loading || disabled, className: classes }),
         icon && React__default.createElement(SVG, { wrapper: "span", className: cn('icon') + " " + cn('SVG'), src: icon }),
         children,
-        loading && (React__default.createElement(SVG, { wrapper: "span", className: cn('spinner') + " " + cn('SVG'), src: 'https://qeemtee-assets.s3-ap-southeast-1.amazonaws.com/component/spinner.svg' }))));
+        loading && (React__default.createElement(SVG, { wrapper: "span", className: cn('spinner') + " " + cn('SVG'), src: iconSpinner }))));
 };
 
 ___$insertStyle(".Modal {\n  position: relative;\n  width: auto;\n  margin: 10px;\n}\n@media only screen and (min-width: 768px) {\n  .Modal {\n    width: 600px;\n    margin: 30px auto;\n  }\n}\n.Modal-mask {\n  position: fixed;\n  top: 0;\n  right: 0;\n  left: 0;\n  bottom: 0;\n  background-color: #333745;\n  background-color: rgba(55, 55, 55, 0.6);\n  height: 100%;\n  filter: alpha(opacity=50);\n  z-index: 1050;\n}\n.Modal-mask-hidden {\n  display: none;\n}\n.Modal-wrap {\n  position: fixed;\n  overflow: auto;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  z-index: 1050;\n  -webkit-overflow-scrolling: touch;\n  outline: 0;\n}\n.Modal-title {\n  margin: 0;\n  font-size: 18px;\n  line-height: 21px;\n  font-weight: bold;\n}\n.Modal-content {\n  position: relative;\n  background-color: #fff;\n  border: none;\n  border-radius: 6px 6px;\n  background-clip: padding-box;\n}\n.Modal-close {\n  border-radius: 50%;\n  position: absolute;\n  top: 10px;\n  right: 10px;\n  height: 32px;\n  overflow: hidden;\n  padding: 4px;\n  margin: 4px;\n  width: 32px;\n  z-index: 2;\n  transition: background-color 0.1s, color 0.1s;\n  transform: scale(1.3);\n  cursor: pointer;\n}\n.Modal-close:focus {\n  outline: 0;\n}\n.Modal-close:hover {\n  background-color: rgba(9, 30, 66, 0.13);\n}\n.Modal-close-x:after {\n  content: \"X\";\n}\n.Modal-header {\n  padding: 20px;\n  border-radius: 5px 5px 0 0;\n  background: #fff;\n  color: #333745;\n  border-bottom: 1px solid #d8d8d8;\n}\n.Modal-body {\n  padding: 20px;\n}\n.Modal-footer {\n  border-top: 1px solid #d8d8d8;\n  padding: 10px 20px;\n  text-align: right;\n  border-radius: 0 0 5px 5px;\n}\n.Modal-zoom-enter, .Modal-zoom-appear {\n  opacity: 0;\n  animation-duration: 0.3s;\n  animation-fill-mode: both;\n  animation-timing-function: cubic-bezier(0.08, 0.82, 0.17, 1);\n  animation-play-state: paused;\n}\n.Modal-zoom-leave {\n  animation-duration: 0.3s;\n  animation-fill-mode: both;\n  animation-timing-function: cubic-bezier(0.6, 0.04, 0.98, 0.34);\n  animation-play-state: paused;\n}\n.Modal-zoom-enter.Modal-zoom-enter-active, .Modal-zoom-appear.Modal-zoom-appear-active {\n  animation-name: DialogZoomIn;\n  animation-play-state: running;\n}\n.Modal-zoom-leave.Modal-zoom-leave-active {\n  animation-name: DialogZoomOut;\n  animation-play-state: running;\n}\n.Modal-fade-enter, .Modal-fade-appear {\n  opacity: 0;\n  animation-duration: 0.3s;\n  animation-fill-mode: both;\n  animation-timing-function: cubic-bezier(0.55, 0, 0.55, 0.2);\n  animation-play-state: paused;\n}\n.Modal-fade-leave {\n  animation-duration: 0.3s;\n  animation-fill-mode: both;\n  animation-timing-function: cubic-bezier(0.55, 0, 0.55, 0.2);\n  animation-play-state: paused;\n}\n.Modal-fade-enter.Modal-fade-enter-active, .Modal-fade-appear.Modal-fade-appear-active {\n  animation-name: DialogFadeIn;\n  animation-play-state: running;\n}\n.Modal-fade-leave.Modal-fade-leave-active {\n  animation-name: DialogFadeOut;\n  animation-play-state: running;\n}\n.Modal-center {\n  text-align: center;\n}\n.Modal-center::before {\n  display: inline-block;\n  width: 0;\n  height: 100%;\n  vertical-align: middle;\n  content: \"\";\n}\n.Modal-center .Modal {\n  top: 0;\n  display: inline-block;\n  text-align: left;\n  vertical-align: middle;\n}\n@media only screen and (max-width: 599px) {\n  .Modal-center .Modal {\n    flex: 1;\n  }\n}\n.Modal__footer button + button {\n  margin-left: 10px;\n}\n\n@keyframes DialogZoomIn {\n  0% {\n    opacity: 0;\n    transform: scale(0, 0);\n  }\n  100% {\n    opacity: 1;\n    transform: scale(1, 1);\n  }\n}\n@keyframes DialogZoomOut {\n  0% {\n    transform: scale(1, 1);\n  }\n  100% {\n    opacity: 0;\n    transform: scale(0, 0);\n  }\n}\n@keyframes DialogFadeIn {\n  0% {\n    opacity: 0;\n  }\n  100% {\n    opacity: 1;\n  }\n}\n@keyframes DialogFadeOut {\n  0% {\n    opacity: 1;\n  }\n  100% {\n    opacity: 0;\n  }\n}");
@@ -805,9 +809,7 @@ var Input = React__default.forwardRef(function (props, ref) {
             icon && React__default.createElement("div", { className: cn$3('meta') }, icon),
             React__default.createElement("input", __assign({}, otherProps, { ref: ref, type: type, value: _value, onChange: _onChange, onFocus: _onFocus, onBlur: _onBlur, placeholder: placeholder, disabled: disabled, name: name, className: classNames(otherProps.className, { 'Input__input-icon': icon }) })),
             React__default.createElement("div", { className: cn$3('input-border') + " " + ((error && touched) || (submitted && error) ? cn$3('error-border') : '') }),
-            meta.password && (React__default.createElement("div", { className: cn$3('meta') }, meta.password && (React__default.createElement(SVG, { onClick: togglePassword, className: "SVG", src: type === 'password'
-                    ? 'https://qeemtee-assets.s3-ap-southeast-1.amazonaws.com/component/eye_open.svg'
-                    : 'https://qeemtee-assets.s3-ap-southeast-1.amazonaws.com/component/eye_close.svg' }))))),
+            meta.password && (React__default.createElement("div", { className: cn$3('meta') }, meta.password && (React__default.createElement(SVG, { onClick: togglePassword, className: "SVG", src: type === 'password' ? iconEyeOpen : iconEyeClose }))))),
         (error && touched) || (submitted && error) ? (React__default.createElement("p", { className: cn$3('error-message') }, error)) : ('')));
 });
 
@@ -1010,7 +1012,7 @@ var Checkbox = React__default.forwardRef(function (props, ref) {
         React__default.createElement("label", null,
             React__default.createElement("input", __assign({}, other, { type: "checkbox", value: value, checked: checked, onChange: onChange, disabled: disabled, name: name, ref: ref })),
             React__default.createElement("div", { className: "checkbox" },
-                React__default.createElement(SVG, { className: "SVG icon", src: 'https://qeemtee-assets.s3-ap-southeast-1.amazonaws.com/component/success.svg' }))),
+                React__default.createElement(SVG, { className: "SVG icon", src: iconSuccess }))),
         (children || label) && (React__default.createElement("span", { className: "label" },
             children || label,
             required && React__default.createElement("span", { className: cn$6('required') }, "*")))));

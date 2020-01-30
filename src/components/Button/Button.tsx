@@ -3,6 +3,8 @@ import { withNaming } from '@bem-react/classname';
 import { SVG } from '../utils';
 import './Button.scss';
 import { IButton } from 'interfaces';
+import iconSpinner from 'assets/svg/spinner.svg';
+
 const cn = withNaming({ e: '__', m: '-' })('Button');
 
 const Button = (props: IButton) => {
@@ -30,11 +32,7 @@ const Button = (props: IButton) => {
       {icon && <SVG wrapper="span" className={`${cn('icon')} ${cn('SVG')}`} src={icon} />}
       {children}
       {loading && (
-        <SVG
-          wrapper="span"
-          className={`${cn('spinner')} ${cn('SVG')}`}
-          src={'https://qeemtee-assets.s3-ap-southeast-1.amazonaws.com/component/spinner.svg'}
-        />
+        <SVG wrapper="span" className={`${cn('spinner')} ${cn('SVG')}`} src={iconSpinner} />
       )}
     </button>
   );
