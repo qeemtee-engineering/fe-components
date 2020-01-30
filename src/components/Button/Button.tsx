@@ -3,7 +3,7 @@ import { withNaming } from '@bem-react/classname';
 import { SVG } from '../utils';
 import './Button.scss';
 import { IButton } from 'interfaces';
-import iconSpinner from 'assets/svg/spinner.svg';
+import iconSpinner from '../../assets/svg/spinner.svg';
 
 const cn = withNaming({ e: '__', m: '-' })('Button');
 

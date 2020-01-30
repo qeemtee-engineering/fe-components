@@ -4,8 +4,8 @@ import './Input.scss';
 import { withNaming } from '@bem-react/classname';
 import { IInput } from 'interfaces';
 import cs from 'classnames';
-import iconEyeOpen from 'src/assets/svg/eye_open.svg';
-import iconEyeClose from 'src/assets/svg/eye_close.svg';
+import iconEyeOpen from '../../assets/svg/eye_open.svg';
+import iconEyeClose from '../../assets/svg/eye_close.svg';
 
 const cn = withNaming({ e: '__', m: '--' })('Input');
 

@@ -21,6 +21,6 @@ export { default as Richtext } from './Richtext';
 export { RichTextDisplay } from './Richtext';
 export { default as FileUploader } from './FileUploader';
 export { default as Radio } from './Radio';
-export * from './Number';
+export { default as Number } from './Number';
 export * from './useForm';
 export * from './utils';

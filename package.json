@@ -2,16 +2,14 @@
   "name": "fe-components",
   "version": "0.4.3",
   "description": "Reusable react components for Qeemtee front-end apps.",
-  "main": "build/index.cjs.js",
-  "module": "build/index.esm.js",
-  "browser": "build/index.js",
+  "main": "dist/index.js",
   "repository": {
     "type": "git",
     "url": "https://bitbucket.org/qeemtee/fe-components.git"
   },
   "scripts": {
     "start": "webpack-dev-server --config ./webpack.config.dev.js",
-    "build": "rollup -c",
+    "build": "webpack",
     "lint": "tslint -c tslint.json --project tsconfig.json 'src/**/*.{ts,tsx}'",
     "prettify-code": "prettier --write '**/*.{js,jsx,ts,tsx}'"
   },
@@ -65,7 +63,8 @@
     "url-loader": "^2.0.1",
     "webpack": "^4.35.2",
     "webpack-cli": "^3.3.5",
-    "webpack-dev-server": "^3.7.2"
+    "webpack-dev-server": "^3.7.2",
+    "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {
     "@bem-react/classname": "^1.5.2",

@@ -3,7 +3,7 @@ import { SVG } from '../utils';
 import { withNaming } from '@bem-react/classname';
 import './Checkbox.scss';
 import { ICheckbox } from 'interfaces';
-import iconSuccess from 'src/assets/svg/success.svg';
+import iconSuccess from '../../assets/svg/success.svg';
 
 const cn = withNaming({ e: '__', m: '-' })('Checkbox');
 
