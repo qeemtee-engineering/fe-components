@@ -1,47 +1,26 @@
-import Button from './Button';
-import Modal from './Modal';
-import Table from './Table';
-import Input from './Input';
-import TypeAhead from './TypeAhead';
-import PhoneNumber from './PhoneNumber';
-import OverlayComponent from './OverlayComponent';
-import Checkbox from './Checkbox';
-import Icon from './Icon';
-import Notification from './Notification';
-import Switch from './Switch';
-import Collapse from './Collapse';
-import Currency from './Currency';
-import DatePicker from './DatePicker';
-import TimePicker from './TimePicker';
-import Tag from './Tag';
-import Richtext, { RichTextDisplay } from './Richtext';
-import FileUploader from './FileUploader';
-import Radio from './Radio';
-import Number from './Number';
-import { useForm, validate } from './useForm';
-
-export {
-  Button,
-  useForm,
-  validate,
-  Modal,
-  Table,
-  Input,
-  TypeAhead,
-  PhoneNumber,
-  OverlayComponent,
-  Checkbox,
-  Icon,
-  Notification,
-  Switch,
-  Collapse,
-  Currency,
-  DatePicker,
-  TimePicker,
-  Tag,
-  Richtext,
-  FileUploader,
-  RichTextDisplay,
-  Radio,
-  Number,
-};
+export { default as Button } from './Button';
+export { default as Modal } from './Modal';
+export { default as Table } from './Table';
+export { default as Input } from './Input';
+export { default as TranslateProvider } from './TranslateProvider';
+export { default as TranslateConnect } from './TranslateConnect';
+export { default as TypeAhead } from './TypeAhead';
+export { default as LanguageSwitch } from './LanguageSwitch';
+export { default as PhoneNumber } from './PhoneNumber';
+export { default as OverlayComponent } from './OverlayComponent';
+export { default as Checkbox } from './Checkbox';
+export { default as Icon } from './Icon';
+export { default as Notification } from './Notification';
+export { default as Switch } from './Switch';
+export { default as Collapse } from './Collapse';
+export { default as Currency } from './Currency';
+export { default as DatePicker } from './DatePicker';
+export { default as TimePicker } from './TimePicker';
+export { default as Tag } from './Tag';
+export { default as Richtext } from './Richtext';
+export { RichTextDisplay } from './Richtext';
+export { default as FileUploader } from './FileUploader';
+export { default as Radio } from './Radio';
+export * from './Number';
+export * from './useForm';
+export * from './utils';
