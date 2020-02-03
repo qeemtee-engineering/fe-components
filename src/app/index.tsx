@@ -18,10 +18,18 @@ import {
   FileUploader,
   Radio,
   RichTextDisplay,
+  PhoneNumber,
+  getPassedPhoneNumber,
+  checkPhoneNumberValidity,
 } from '../components';
 import moment from 'moment';
 
 const App = () => {
+  const [contactNumber, setContactNumber] = useState<null | {
+    nationalNumber: string;
+    countryCode: string;
+  }>();
+  const [hasContact, setHasContact] = useState(true);
   const richRef = useRef<any>(null);
   const [rich, setRich] = useState(localStorage.getItem('rich__test'));
   const [visible, setVisible] = useState(false);
@@ -45,6 +53,30 @@ const App = () => {
       // richRef.current.loadJSON(localStorage.getItem('rich__test'));
     }
   }, [richRef]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setContactNumber({ countryCode: '91', nationalNumber: '8850513594' });
+    }, 500);
+  }, []);
+
+  const onPhoneChange = (value: any) => {
+    const phone = value && value.phone;
+    const parsedNum = getPassedPhoneNumber(phone || '') || {};
+    let flag = true;
+    if (!phone) {
+      flag = false;
+    } else {
+      if (!parsedNum || !checkPhoneNumberValidity(phone)) {
+        flag = false;
+      }
+    }
+    setContactNumber({
+      countryCode: parsedNum.countryCallingCode,
+      nationalNumber: parsedNum.nationalNumber,
+    });
+    setHasContact(flag);
+  };
 
   const openNotification = () => {
     Notification.open({
@@ -217,6 +249,20 @@ const App = () => {
       </div>
       <div>
         <Radio color="secondary" />
+      </div>
+      <div>
+        <PhoneNumber
+          value={
+            contactNumber && contactNumber.nationalNumber
+              ? `+${contactNumber.countryCode}${contactNumber.nationalNumber}`
+              : ''
+          }
+          hasContact={hasContact}
+          placeholder="Enter phone number"
+          international={false}
+          displayInitialValueAsLocalNumber={true}
+          onChange={(phone: any) => onPhoneChange({ phone })}
+        />
       </div>
     </div>
   );

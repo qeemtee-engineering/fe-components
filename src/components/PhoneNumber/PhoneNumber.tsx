@@ -16,19 +16,13 @@ export default class PhoneNumber extends Component<PhoneNumberProps, PhoneNumber
     this.props.onChange(selected);
   }
 
-  componentWillMount() {
-    if (this.props.value) {
-      this.setState({ valueToPass: this.props.value });
-    }
-  }
-
   render() {
     const otherProps = { ...this.props };
     delete otherProps.hasContact;
     return (
       <PhoneInput
         {...otherProps}
-        value={this.state.valueToPass}
+        value={this.props.value}
         onChange={(phone: any) => this.emitChange(phone)}
         inputClassName={
           !this.props.hasContact

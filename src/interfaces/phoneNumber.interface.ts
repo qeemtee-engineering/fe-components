@@ -3,7 +3,7 @@ export interface PhoneNumberProps {
   value: string;
   international: boolean;
   displayInitialValueAsLocalNumber: boolean;
-  countryOptions: Array<any>;
+  countryOptions?: Array<any>;
   onChange: Function;
   hasContact: boolean;
   className?: string;
