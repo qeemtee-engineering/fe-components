@@ -54,7 +54,8 @@ module.exports = {
     path: path.resolve(__dirname, 'dist/'),
     publicPath: '',
     filename: 'index.js',
-    libraryTarget: 'commonjs2',
+    library: 'fe-components',
+    libraryTarget: 'umd',
   },
   externals: [...Object.keys(pkg.dependencies || {}), nodeExternals()],
 };
