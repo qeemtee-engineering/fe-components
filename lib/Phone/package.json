@@ -1,0 +1,6 @@
+{
+  "name": "fe-components/Phone",
+  "private": true,
+  "main": "../cjs/Phone",
+  "module": "../esm/Phone"
+}
