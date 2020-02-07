@@ -10,7 +10,7 @@
   },
   "scripts": {
     "start": "webpack-dev-server --config ./webpack.config.dev.js",
-    "build": "node tools/build.js && rm -rf lib/*.interface && npm run gulp",
+    "build": "rm -rf css && node tools/build.js && rm -rf lib/*.interface && npm run gulp",
     "webpack-build": "webpack",
     "gulp": "gulp",
     "lint": "tslint -c tslint.json --project tsconfig.json 'src/**/*.{ts,tsx}'"

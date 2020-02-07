@@ -1,6 +1,6 @@
 {
   "name": "fe-components/Radio",
   "private": true,
-  "main": "../cjs/Radio.js",
-  "module": "../esm/Radio.js"
+  "main": "../cjs/Radio",
+  "module": "../esm/Radio"
 }

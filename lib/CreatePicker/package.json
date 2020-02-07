@@ -1,6 +1,6 @@
 {
   "name": "fe-components/CreatePicker",
   "private": true,
-  "main": "../cjs/CreatePicker.js",
-  "module": "../esm/CreatePicker.js"
+  "main": "../cjs/CreatePicker",
+  "module": "../esm/CreatePicker"
 }

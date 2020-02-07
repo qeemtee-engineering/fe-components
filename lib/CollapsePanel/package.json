@@ -1,6 +1,6 @@
 {
   "name": "fe-components/CollapsePanel",
   "private": true,
-  "main": "../cjs/CollapsePanel.js",
-  "module": "../esm/CollapsePanel.js"
+  "main": "../cjs/CollapsePanel",
+  "module": "../esm/CollapsePanel"
 }

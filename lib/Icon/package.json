@@ -1,6 +1,6 @@
 {
   "name": "fe-components/Icon",
   "private": true,
-  "main": "../cjs/Icon.js",
-  "module": "../esm/Icon.js"
+  "main": "../cjs/Icon",
+  "module": "../esm/Icon"
 }

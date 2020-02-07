@@ -1,6 +1,6 @@
 {
   "name": "fe-components/language",
   "private": true,
-  "main": "../cjs/language.js",
-  "module": "../esm/language.js"
+  "main": "../cjs/language",
+  "module": "../esm/language"
 }

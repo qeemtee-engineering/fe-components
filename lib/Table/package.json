@@ -1,6 +1,6 @@
 {
   "name": "fe-components/Table",
   "private": true,
-  "main": "../cjs/Table.js",
-  "module": "../esm/Table.js"
+  "main": "../cjs/Table",
+  "module": "../esm/Table"
 }

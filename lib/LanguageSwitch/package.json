@@ -1,6 +1,6 @@
 {
   "name": "fe-components/LanguageSwitch",
   "private": true,
-  "main": "../cjs/LanguageSwitch.js",
-  "module": "../esm/LanguageSwitch.js"
+  "main": "../cjs/LanguageSwitch",
+  "module": "../esm/LanguageSwitch"
 }

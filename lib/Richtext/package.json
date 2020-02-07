@@ -1,6 +1,6 @@
 {
   "name": "fe-components/Richtext",
   "private": true,
-  "main": "../cjs/Richtext.js",
-  "module": "../esm/Richtext.js"
+  "main": "../cjs/Richtext",
+  "module": "../esm/Richtext"
 }

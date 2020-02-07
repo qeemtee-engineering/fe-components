@@ -1,6 +1,6 @@
 {
   "name": "fe-components/Button",
   "private": true,
-  "main": "../cjs/Button.js",
-  "module": "../esm/Button.js"
+  "main": "../cjs/Button",
+  "module": "../esm/Button"
 }

@@ -1,6 +1,6 @@
 {
   "name": "fe-components/Notification",
   "private": true,
-  "main": "../cjs/Notification.js",
-  "module": "../esm/Notification.js"
+  "main": "../cjs/Notification",
+  "module": "../esm/Notification"
 }

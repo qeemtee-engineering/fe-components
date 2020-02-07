@@ -1,6 +1,6 @@
 {
   "name": "fe-components/Checkbox",
   "private": true,
-  "main": "../cjs/Checkbox.js",
-  "module": "../esm/Checkbox.js"
+  "main": "../cjs/Checkbox",
+  "module": "../esm/Checkbox"
 }

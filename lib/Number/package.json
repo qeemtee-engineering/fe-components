@@ -1,6 +1,6 @@
 {
   "name": "fe-components/Number",
   "private": true,
-  "main": "../cjs/Number.js",
-  "module": "../esm/Number.js"
+  "main": "../cjs/Number",
+  "module": "../esm/Number"
 }

@@ -1,6 +1,6 @@
 {
   "name": "fe-components/colors",
   "private": true,
-  "main": "../cjs/colors.js",
-  "module": "../esm/colors.js"
+  "main": "../cjs/colors",
+  "module": "../esm/colors"
 }
