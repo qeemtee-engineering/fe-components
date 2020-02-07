@@ -38,4 +38,14 @@ gulp.task('submodules', function(done) {
     .pipe(gulp.dest('./lib'));
 });
 
-gulp.task('default', gulp.series('sass', 'cjs', 'cjs-replace', 'esm', 'esm-replace', 'submodules'));
+gulp.task('PhoneNumber', function() {
+  return gulp
+    .src('./lib/PhoneNumber/package.json')
+    .pipe(replace('phoneNumber', 'PhoneNumber'))
+    .pipe(gulp.dest('./lib/PhoneNumber'));
+});
+
+gulp.task(
+  'default',
+  gulp.series('sass', 'cjs', 'cjs-replace', 'esm', 'esm-replace', 'submodules', 'PhoneNumber')
+);

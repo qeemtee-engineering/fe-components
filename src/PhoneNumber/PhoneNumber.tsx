@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { PhoneNumberProps, PhoneNumberState } from '../interfaces';
 import 'react-phone-number-input/style.css';
 import PhoneInput from 'react-phone-number-input';
-import './Phone.scss';
+import './PhoneNumber.scss';
 
-export default class Phone extends Component<PhoneNumberProps, PhoneNumberState> {
+export default class PhoneNumber extends Component<PhoneNumberProps, PhoneNumberState> {
   constructor(props: PhoneNumberProps) {
     super(props);
     this.state = {
