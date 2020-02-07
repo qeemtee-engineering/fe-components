@@ -24,7 +24,7 @@ gulp.task('esm', function(done) {
   gulp
     .src('./lib/esm/**')
     .pipe(replace('.scss', '.css'))
-    .pipe(gulp.dest('./lib/cjs'));
+    .pipe(gulp.dest('./lib/esm'));
   done();
 });
 
