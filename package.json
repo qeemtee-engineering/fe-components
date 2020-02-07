@@ -18,6 +18,9 @@
   "author": "",
   "license": "ISC",
   "homepage": "https://bitbucket.org/qeemtee/fe-components#readme",
+  "files": [
+    "lib"
+  ],
   "devDependencies": {
     "@babel/core": "^7.5.0",
     "@babel/preset-env": "^7.5.0",
