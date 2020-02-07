@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  font-size: 100%;
+  background: transparent;
+  box-sizing: border-box;
+  touch-action: manipulation; }
+
+html,
+body {
+  width: 100%; }
+
+body {
+  color: #333745;
+  background-color: #fff;
+  font-weight: normal;
+  font-style: normal;
+  position: relative;
+  overflow-x: hidden; }
+
+img,
+embed,
+object,
+video {
+  height: auto; }
+
+ul {
+  list-style-type: none; }
+
+.Currency {
+  margin: 0 !important; }
+  .Currency > .symbol {
+    color: currentColor;
+    opacity: 1; }
+    .Currency > .symbol.size {
+      font-size: 0.7rem; }
+    .Currency > .symbol.left {
+      margin-right: 0.3em; }
+    .Currency > .symbol.right {
+      margin-left: 0.3em; }

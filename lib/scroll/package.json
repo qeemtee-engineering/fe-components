@@ -1,0 +1,6 @@
+{
+  "name": "fe-components/scroll",
+  "private": true,
+  "main": "../cjs/scroll.js",
+  "module": "../esm/scroll.js"
+}

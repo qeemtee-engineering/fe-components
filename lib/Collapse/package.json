@@ -1,0 +1,6 @@
+{
+  "name": "fe-components/Collapse",
+  "private": true,
+  "main": "../cjs/Collapse.js",
+  "module": "../esm/Collapse.js"
+}

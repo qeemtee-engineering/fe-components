@@ -1,0 +1,6 @@
+{
+  "name": "fe-components/warning",
+  "private": true,
+  "main": "../cjs/warning.js",
+  "module": "../esm/warning.js"
+}

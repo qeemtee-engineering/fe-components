@@ -1,0 +1,202 @@
+@import '../styles/utils.scss';
+$self: '.Modal';
+
+#{$self} {
+  position: relative;
+  width: auto;
+  margin: 10px;
+
+  @include breakpoint-min(768) {
+    width: 600px;
+    margin: 30px auto;
+  }
+
+  &-mask {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: $black;
+    background-color: rgba(55, 55, 55, 0.6);
+    height: 100%;
+    filter: alpha(opacity=50);
+    z-index: 1050;
+    &-hidden {
+      display: none;
+    }
+  }
+  &-wrap {
+    position: fixed;
+    overflow: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1050;
+    -webkit-overflow-scrolling: touch;
+    outline: 0;
+  }
+  &-title {
+    margin: 0;
+    font-size: 18px;
+    line-height: 21px;
+    font-weight: bold;
+  }
+  &-content {
+    position: relative;
+    background-color: $white;
+    border: none;
+    border-radius: 6px 6px;
+    background-clip: padding-box;
+  }
+  &-close {
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    height: 32px;
+    overflow: hidden;
+    padding: 4px;
+    margin: 4px;
+    width: 32px;
+    z-index: 2;
+    transition: background-color 0.1s, color 0.1s;
+    transform: scale(1.3);
+    cursor: pointer;
+    &:focus {
+      outline: 0;
+    }
+    &:hover {
+      background-color: rgba(9, 30, 66, 0.13);
+    }
+    &-x {
+      &:after {
+        content: 'X';
+      }
+    }
+  }
+  &-header {
+    padding: 20px;
+    border-radius: 5px 5px 0 0;
+    background: $white;
+    color: $black;
+    border-bottom: 1px solid $lightGrey;
+  }
+  &-body {
+    padding: 20px;
+  }
+  &-footer {
+    border-top: 1px solid $lightGrey;
+    padding: 10px 20px;
+    text-align: right;
+    border-radius: 0 0 5px 5px;
+  }
+  &-zoom-enter,
+  &-zoom-appear {
+    opacity: 0;
+    animation-duration: 0.3s;
+    animation-fill-mode: both;
+    animation-timing-function: cubic-bezier(0.08, 0.82, 0.17, 1);
+    animation-play-state: paused;
+  }
+  &-zoom-leave {
+    animation-duration: 0.3s;
+    animation-fill-mode: both;
+    animation-timing-function: cubic-bezier(0.6, 0.04, 0.98, 0.34);
+    animation-play-state: paused;
+  }
+  &-zoom-enter#{$self}-zoom-enter-active,
+  &-zoom-appear#{$self}-zoom-appear-active {
+    animation-name: DialogZoomIn;
+    animation-play-state: running;
+  }
+  &-zoom-leave#{$self}-zoom-leave-active {
+    animation-name: DialogZoomOut;
+    animation-play-state: running;
+  }
+  &-fade-enter,
+  &-fade-appear {
+    opacity: 0;
+    animation-duration: 0.3s;
+    animation-fill-mode: both;
+    animation-timing-function: cubic-bezier(0.55, 0, 0.55, 0.2);
+    animation-play-state: paused;
+  }
+  &-fade-leave {
+    animation-duration: 0.3s;
+    animation-fill-mode: both;
+    animation-timing-function: cubic-bezier(0.55, 0, 0.55, 0.2);
+    animation-play-state: paused;
+  }
+  &-fade-enter#{$self}-fade-enter-active,
+  &-fade-appear#{$self}-fade-appear-active {
+    animation-name: DialogFadeIn;
+    animation-play-state: running;
+  }
+  &-fade-leave#{$self}-fade-leave-active {
+    animation-name: DialogFadeOut;
+    animation-play-state: running;
+  }
+  &-center {
+    text-align: center;
+    &::before {
+      display: inline-block;
+      width: 0;
+      height: 100%;
+      vertical-align: middle;
+      content: '';
+    }
+    #{$self} {
+      top: 0;
+      display: inline-block;
+      text-align: left;
+      vertical-align: middle;
+      @include breakpoint(599) {
+        flex: 1;
+      }
+    }
+  }
+  &__footer {
+    button + button {
+      margin-left: 10px;
+    }
+  }
+}
+
+@keyframes DialogZoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+}
+@keyframes DialogZoomOut {
+  0% {
+    transform: scale(1, 1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0, 0);
+  }
+}
+
+@keyframes DialogFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes DialogFadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

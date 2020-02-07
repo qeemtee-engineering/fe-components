@@ -1,0 +1,6 @@
+{
+  "name": "fe-components/WrapPicker",
+  "private": true,
+  "main": "../cjs/WrapPicker.js",
+  "module": "../esm/WrapPicker.js"
+}

@@ -1,0 +1,6 @@
+{
+  "name": "fe-components/WeekPicker",
+  "private": true,
+  "main": "../cjs/WeekPicker.js",
+  "module": "../esm/WeekPicker.js"
+}

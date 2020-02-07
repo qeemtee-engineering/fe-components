@@ -1,0 +1,6 @@
+{
+  "name": "fe-components/TranslateProvider",
+  "private": true,
+  "main": "../cjs/TranslateProvider.js",
+  "module": "../esm/TranslateProvider.js"
+}

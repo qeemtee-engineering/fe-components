@@ -1,11 +1,10 @@
 const path = require('path');
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   target: 'web',
-  entry: './src/index.tsx',
+  entry: './app/index.tsx',
   devtool: 'source-map',
   mode: 'development',
   plugins: [
@@ -14,7 +13,6 @@ module.exports = {
       template: path.resolve(__dirname, 'public/index.html'),
       filename: './index.html',
     }),
-    new CopyWebpackPlugin([{ from: './src/assets', to: 'assets' }]),
   ],
   module: {
     rules: [
@@ -59,9 +57,11 @@ module.exports = {
     ],
   },
   resolve: {
-    alias: {
-      src: path.resolve(__dirname, 'src/'),
-    },
+    modules: [
+      path.resolve(__dirname, 'app'),
+      path.resolve(__dirname, 'node_modules'),
+      path.resolve(__dirname, 'src'),
+    ],
     extensions: ['.ts', '.tsx', '.scss', '.js', '.json', '.png', '.gif', '.jpg', '.svg'],
   },
   devServer: {

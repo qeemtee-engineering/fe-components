@@ -1,0 +1,110 @@
+@import '../styles/utils.scss';
+
+.Switch {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  &__required {
+    color: $red;
+  }
+
+  &-disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  > .label {
+    flex: 1 1 auto;
+    margin-left: 15px;
+  }
+
+  .checkbox {
+    flex: 0 0 auto;
+    position: relative;
+    user-select: none;
+    cursor: pointer;
+
+    > .switch {
+      position: relative;
+      width: 45px;
+      height: 24px;
+      border-radius: 16px;
+      border: 2px solid $grey;
+      background-color: transparent;
+      transition-property: background-color, border-color;
+      transition-duration: 0.2s;
+
+      &:after {
+        content: '';
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        border: 2px solid $grey;
+        position: relative;
+        top: 2px;
+        left: 3px;
+        transition-property: background-color, border-color, transform;
+        transition-duration: 0.2s;
+      }
+    }
+
+    > input {
+      visibility: hidden;
+      position: absolute;
+      opacity: 0;
+      width: 1px;
+      height: 1px;
+
+      &:checked {
+        + .switch {
+          background-color: $primary;
+          border-color: $primary;
+
+          &:after {
+            border-color: #fff;
+            background-color: #fff;
+            transform: translateX(20px);
+          }
+        }
+      }
+    }
+  }
+
+  &-color {
+    &-primary {
+      input {
+        &:checked {
+          + .switch {
+            background-color: $primary !important;
+            border-color: $primary !important;
+
+            &:after {
+              border-color: #fff;
+              background-color: #fff;
+              transform: translateX(20px);
+            }
+          }
+        }
+      }
+    }
+
+    &-secondary {
+      input {
+        &:checked {
+          + .switch {
+            background-color: $purple !important;
+            border-color: $purple !important;
+
+            &:after {
+              border-color: #fff;
+              background-color: #fff;
+              transform: translateX(20px);
+            }
+          }
+        }
+      }
+    }
+  }
+}

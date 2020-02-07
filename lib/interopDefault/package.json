@@ -1,0 +1,6 @@
+{
+  "name": "fe-components/interopDefault",
+  "private": true,
+  "main": "../cjs/interopDefault.js",
+  "module": "../esm/interopDefault.js"
+}

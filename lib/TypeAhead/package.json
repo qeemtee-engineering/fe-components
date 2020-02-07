@@ -1,0 +1,6 @@
+{
+  "name": "fe-components/TypeAhead",
+  "private": true,
+  "main": "../cjs/TypeAhead.js",
+  "module": "../esm/TypeAhead.js"
+}

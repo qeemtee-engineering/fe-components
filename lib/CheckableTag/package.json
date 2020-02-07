@@ -1,0 +1,6 @@
+{
+  "name": "fe-components/CheckableTag",
+  "private": true,
+  "main": "../cjs/CheckableTag.js",
+  "module": "../esm/CheckableTag.js"
+}

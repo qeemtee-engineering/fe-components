@@ -1,0 +1,6 @@
+{
+  "name": "fe-components/Modal",
+  "private": true,
+  "main": "../cjs/Modal.js",
+  "module": "../esm/Modal.js"
+}

@@ -1,0 +1,6 @@
+{
+  "name": "fe-components/Tag",
+  "private": true,
+  "main": "../cjs/Tag.js",
+  "module": "../esm/Tag.js"
+}

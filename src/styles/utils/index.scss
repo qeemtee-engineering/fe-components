@@ -1,2 +1,40 @@
 @import 'mixins';
 @import 'variables';
+
+// Global
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  font-size: 100%;
+  background: transparent;
+  box-sizing: border-box;
+  touch-action: manipulation;
+}
+
+html,
+body {
+  width: 100%;
+}
+
+body {
+  color: $black;
+  background-color: $white;
+  font-weight: normal;
+  font-style: normal;
+  position: relative;
+  overflow-x: hidden;
+}
+
+img,
+embed,
+object,
+video {
+  height: auto;
+}
+
+ul {
+  list-style-type: none;
+}

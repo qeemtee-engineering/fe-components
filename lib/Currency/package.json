@@ -1,0 +1,6 @@
+{
+  "name": "fe-components/Currency",
+  "private": true,
+  "main": "../cjs/Currency.js",
+  "module": "../esm/Currency.js"
+}

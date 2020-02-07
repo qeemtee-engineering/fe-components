@@ -9,9 +9,7 @@ interface Element extends React.HTMLProps<any> {
 
 export interface IButton extends Element {
   children: ReactNode;
-  loading?: boolean;
   type?: 'button' | 'submit';
   color?: 'primary' | 'secondary' | 'success' | 'reject';
   layout?: 'solid' | 'outline';
-  icon?: string;
 }

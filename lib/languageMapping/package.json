@@ -1,0 +1,6 @@
+{
+  "name": "fe-components/languageMapping",
+  "private": true,
+  "main": "../cjs/languageMapping.js",
+  "module": "../esm/languageMapping.js"
+}
