@@ -1,0 +1,182 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  font-size: 100%;
+  background: transparent;
+  box-sizing: border-box;
+  touch-action: manipulation; }
+
+html,
+body {
+  width: 100%; }
+
+body {
+  color: #333745;
+  background-color: #fff;
+  font-weight: normal;
+  font-style: normal;
+  position: relative;
+  overflow-x: hidden; }
+
+img,
+embed,
+object,
+video {
+  height: auto; }
+
+ul {
+  list-style-type: none; }
+
+.Tag {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: #333745;
+  font-size: 15px;
+  font-variant: font-variant-base;
+  line-height: 1.5;
+  list-style: none;
+  font-feature-settings: "tnum";
+  display: inline-block;
+  height: auto;
+  margin-right: 8px;
+  padding: 0 7px;
+  font-size: 12px;
+  line-height: 20px;
+  white-space: nowrap;
+  background: #fafafa;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  cursor: default;
+  opacity: 1;
+  transition: all 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86); }
+  .Tag:hover {
+    opacity: 0.85; }
+  .Tag,
+  .Tag a,
+  .Tag a:hover {
+    color: #333745; }
+  .Tag > a:first-child:last-child {
+    display: inline-block;
+    margin: 0 -8px;
+    padding: 0 8px; }
+  .Tag .Tag-close {
+    font-size: 12px;
+    margin-left: 3px;
+    color: #494949;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86); }
+    .Tag .Tag-close:hover {
+      color: #d9d9d9; }
+  .Tag-has-color {
+    border-color: transparent; }
+    .Tag-has-color,
+    .Tag-has-color a,
+    .Tag-has-color a:hover,
+    .Tag-has-color .Tag-close,
+    .Tag-has-color .Tag-close:hover {
+      color: white; }
+  .Tag-checkable {
+    background-color: transparent;
+    border-color: transparent; }
+    .Tag-checkable:not(.Tag-checkable-checked):hover {
+      color: #f9285c; }
+    .Tag-checkable:active, .Tag-checkable-checked {
+      color: white; }
+    .Tag-checkable-checked {
+      background-color: #f9285c; }
+    .Tag-checkable:active {
+      background-color: #f9285c; }
+  .Tag-hidden {
+    display: none; }
+  .Tag-pink {
+    color: #ff9cae;
+    background: white;
+    border-color: white; }
+  .Tag-pink-inverse {
+    color: #fff;
+    background: #ff9cae;
+    border-color: #ff9cae; }
+  .Tag-magenta {
+    color: #db00db;
+    background: #ffccff;
+    border-color: #ff4dff; }
+  .Tag-magenta-inverse {
+    color: #fff;
+    background: #db00db;
+    border-color: #db00db; }
+  .Tag-red {
+    color: #db0000;
+    background: #ffcccc;
+    border-color: #ff4d4d; }
+  .Tag-red-inverse {
+    color: #fff;
+    background: #db0000;
+    border-color: #db0000; }
+  .Tag-orange {
+    color: #db8e00;
+    background: #ffedcc;
+    border-color: #ffc04d; }
+  .Tag-orange-inverse {
+    color: #fff;
+    background: #db8e00;
+    border-color: #db8e00; }
+  .Tag-yellow {
+    color: #dbdb00;
+    background: #ffffcc;
+    border-color: #ffff4d; }
+  .Tag-yellow-inverse {
+    color: #fff;
+    background: #dbdb00;
+    border-color: #dbdb00; }
+  .Tag-gold {
+    color: #dbb900;
+    background: #fff7cc;
+    border-color: #ffe34d; }
+  .Tag-gold-inverse {
+    color: #fff;
+    background: #dbb900;
+    border-color: #dbb900; }
+  .Tag-cyan {
+    color: #00dbdb;
+    background: #ccffff;
+    border-color: #4dffff; }
+  .Tag-cyan-inverse {
+    color: #fff;
+    background: #00dbdb;
+    border-color: #00dbdb; }
+  .Tag-lime {
+    color: #00db00;
+    background: #ccffcc;
+    border-color: #4dff4d; }
+  .Tag-lime-inverse {
+    color: #fff;
+    background: #00db00;
+    border-color: #00db00; }
+  .Tag-green {
+    color: #005c00;
+    background: #4dff4d;
+    border-color: #00cd00; }
+  .Tag-green-inverse {
+    color: #fff;
+    background: #005c00;
+    border-color: #005c00; }
+  .Tag-blue {
+    color: #0000db;
+    background: #ccccff;
+    border-color: #4d4dff; }
+  .Tag-blue-inverse {
+    color: #fff;
+    background: #0000db;
+    border-color: #0000db; }
+  .Tag-purple {
+    color: #5c005c;
+    background: #ff4dff;
+    border-color: #cd00cd; }
+  .Tag-purple-inverse {
+    color: #fff;
+    background: #5c005c;
+    border-color: #5c005c; }

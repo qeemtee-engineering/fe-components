@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  font-size: 100%;
+  background: transparent;
+  box-sizing: border-box;
+  touch-action: manipulation; }
+
+html,
+body {
+  width: 100%; }
+
+body {
+  color: #333745;
+  background-color: #fff;
+  font-weight: normal;
+  font-style: normal;
+  position: relative;
+  overflow-x: hidden; }
+
+img,
+embed,
+object,
+video {
+  height: auto; }
+
+ul {
+  list-style-type: none; }
+
+.LanguageSwitch span {
+  font-size: 16px; }
+
+.LanguageSwitch > span:first-child {
+  margin-right: 10px;
+  margin-left: 0;
+  cursor: pointer; }
+
+.LanguageSwitch > span:last-child {
+  margin-left: 10px;
+  margin-right: 0;
+  cursor: pointer; }
+
+.LanguageSwitch span:nth-of-type(even) {
+  margin: 0 10px;
+  cursor: pointer; }
+
+.LanguageSwitch__active {
+  color: #8480b6; }

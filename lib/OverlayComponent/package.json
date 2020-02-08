@@ -1,0 +1,6 @@
+{
+  "name": "fe-components/OverlayComponent",
+  "private": true,
+  "main": "../cjs/OverlayComponent",
+  "module": "../esm/OverlayComponent"
+}

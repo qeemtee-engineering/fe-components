@@ -1,0 +1,6 @@
+{
+  "name": "fe-components/FileUploader",
+  "private": true,
+  "main": "../cjs/FileUploader",
+  "module": "../esm/FileUploader"
+}

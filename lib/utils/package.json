@@ -1,0 +1,6 @@
+{
+  "name": "fe-components/utils",
+  "private": true,
+  "main": "../cjs/utils",
+  "module": "../esm/utils"
+}

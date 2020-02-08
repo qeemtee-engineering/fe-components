@@ -1,0 +1,6 @@
+{
+  "name": "fe-components/TranslateConnect",
+  "private": true,
+  "main": "../cjs/TranslateConnect",
+  "module": "../esm/TranslateConnect"
+}

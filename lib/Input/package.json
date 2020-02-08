@@ -1,0 +1,6 @@
+{
+  "name": "fe-components/Input",
+  "private": true,
+  "main": "../cjs/Input",
+  "module": "../esm/Input"
+}

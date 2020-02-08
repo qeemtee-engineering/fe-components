@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  font-size: 100%;
+  background: transparent;
+  box-sizing: border-box;
+  touch-action: manipulation; }
+
+html,
+body {
+  width: 100%; }
+
+body {
+  color: #333745;
+  background-color: #fff;
+  font-weight: normal;
+  font-style: normal;
+  position: relative;
+  overflow-x: hidden; }
+
+img,
+embed,
+object,
+video {
+  height: auto; }
+
+ul {
+  list-style-type: none; }
+
+.Notification {
+  color: rgba(0, 0, 0, 0.65);
+  position: fixed;
+  z-index: 9999999999999;
+  width: 384px;
+  max-width: calc(100vw - 25px);
+  margin-right: 16px; }
+  .Notification-topLeft, .Notification-bottomLeft {
+    margin-right: 0;
+    margin-left: 24px; }
+    .Notification-topLeft .Notification-fade-enter.Notification-fade-enter-active,
+    .Notification-topLeft .Notification-fade-appear.Notification-fade-appear-active, .Notification-bottomLeft .Notification-fade-enter.Notification-fade-enter-active,
+    .Notification-bottomLeft .Notification-fade-appear.Notification-fade-appear-active {
+      animation-name: NotificationLeftFadeIn; }
+  .Notification-close-icon {
+    font-size: 18px !important;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.45); }
+    .Notification-close-icon:hover {
+      color: rgba(0, 0, 0, 0.67); }
+  .Notification-notice {
+    position: relative;
+    margin-bottom: 16px;
+    padding: 16px 16px;
+    overflow: hidden;
+    line-height: 1.5;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); }
+    .Notification-notice-message {
+      display: inline-block;
+      margin-bottom: 8px;
+      color: rgba(0, 0, 0, 0.85);
+      font-size: 16px;
+      line-height: 24px; }
+      .Notification-notice-message-single-line-auto-margin {
+        display: block;
+        width: 'calc(${notification-width} - ${notification-padding-horizontal} * 2 - 24px - 48px - 100%)';
+        max-width: 4px;
+        background-color: transparent;
+        pointer-events: none; }
+        .Notification-notice-message-single-line-auto-margin::before {
+          display: block;
+          content: ''; }
+    .Notification-notice-description {
+      font-size: 14px; }
+    .Notification-notice-closable .Notification-notice-message {
+      padding-right: 24px; }
+    .Notification-notice-with-icon .Notification-notice-message {
+      margin-bottom: 4px;
+      margin-left: 35px;
+      font-size: 16px; }
+    .Notification-notice-with-icon .Notification-notice-description {
+      margin-left: 35px;
+      font-size: 14px; }
+    .Notification-notice-icon {
+      position: absolute;
+      margin-left: 4px;
+      font-size: 24px;
+      line-height: 24px; }
+    .Notification-notice-close {
+      position: absolute;
+      top: 16px;
+      right: 22px;
+      outline: none; }
+    .Notification-notice-btn {
+      float: right;
+      margin-top: 16px; }
+  .Notification .notification-fade-effect {
+    animation-duration: 0.24s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both; }
+  .Notification-fade-enter, .Notification-fade-appear {
+    opacity: 0;
+    animation-play-state: paused; }
+  .Notification-fade-leave {
+    animation-duration: 0.2s;
+    animation-play-state: paused; }
+  .Notification-fade-enter.Notification-fade-enter-active, .Notification-fade-appear.Notification-fade-appear-active {
+    animation-name: NotificationFadeIn;
+    animation-play-state: running; }
+  .Notification-fade-leave.Notification-fade-leave-active {
+    animation-name: NotificationFadeOut;
+    animation-play-state: running; }
+
+@keyframes NotificationFadeIn {
+  0% {
+    left: 384px;
+    opacity: 0; }
+  100% {
+    left: 0;
+    opacity: 1; } }
+
+@keyframes NotificationLeftFadeIn {
+  0% {
+    right: 384px;
+    opacity: 0; }
+  100% {
+    right: 0;
+    opacity: 1; } }
+
+@keyframes NotificationFadeOut {
+  0% {
+    max-height: 150px;
+    margin-bottom: 16px;
+    padding-top: 16px 16px;
+    padding-bottom: 16px 16px;
+    opacity: 1; }
+  100% {
+    max-height: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    opacity: 0; } }

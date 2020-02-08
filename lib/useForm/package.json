@@ -1,0 +1,6 @@
+{
+  "name": "fe-components/useForm",
+  "private": true,
+  "main": "../cjs/useForm",
+  "module": "../esm/useForm"
+}

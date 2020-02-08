@@ -1,19 +1,14 @@
 const path = require('path');
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const pkg = require('./package.json');
 const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
   target: 'node',
-  entry: './src/components/index.tsx',
+  entry: './src/index.tsx',
   mode: 'production',
-  plugins: [
-    new CaseSensitivePathsPlugin(),
-    new CleanWebpackPlugin(),
-    new CopyWebpackPlugin([{ from: './src/assets', to: 'assets' }]),
-  ],
+  plugins: [new CaseSensitivePathsPlugin(), new CleanWebpackPlugin()],
   module: {
     rules: [
       // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.

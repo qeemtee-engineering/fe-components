@@ -1,0 +1,155 @@
+@import '../styles/utils.scss';
+$self: '.Button';
+
+#{$self} {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: 4px;
+  text-align: center;
+  cursor: pointer;
+  word-break: keep-all;
+  user-select: none;
+  padding: 10px 16px;
+  transition: all 0.3s;
+  opacity: 1;
+  font-weight: 500;
+  min-width: 69px;
+  height: 42px;
+  font-size: 15px;
+
+  &-loading {
+    padding-right: 40px;
+  }
+
+  &:hover {
+    box-shadow: 0 0 8px rgba(33, 33, 33, 0.6);
+  }
+
+  &:focus {
+    outline: 0;
+  }
+
+  &__SVG {
+    line-height: 1;
+    position: relative;
+    color: $primary;
+
+    svg {
+      height: 20px;
+      width: auto;
+      fill: currentColor;
+      stroke: currentColor;
+    }
+  }
+
+  &__icon {
+    margin-right: 10px;
+  }
+
+  &__spinner {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 8px;
+  }
+
+  // colors
+
+  &-color {
+    &-primary {
+      background: $primary;
+      border-color: $primary;
+    }
+
+    &-secondary {
+      background: $secondary;
+      border-color: $secondary;
+    }
+
+    &-success {
+      background: $success;
+      border-color: $success;
+    }
+
+    &-reject {
+      background: $reject;
+      border-color: $reject;
+    }
+  }
+
+  // button types
+
+  &-layout {
+    &-solid {
+      color: $white;
+      background: $primary;
+      border: 1px solid $primary;
+
+      #{$self}__SVG {
+        color: $white;
+      }
+
+      &#{$self}-color-secondary {
+        background: $secondary;
+        border-color: $secondary;
+        color: $black;
+      }
+
+      &#{$self}-color-success {
+        background: $success;
+        border-color: $success;
+      }
+
+      &#{$self}-color-reject {
+        background: $reject;
+        border-color: $reject;
+      }
+    }
+
+    &-outline {
+      color: $primary;
+      background: transparent;
+      border: 1px solid $primary;
+
+      #{$self}__SVG {
+        color: $primary;
+      }
+
+      &#{$self}-color-secondary {
+        color: $secondary;
+        border-color: $secondary;
+
+        #{$self}__SVG {
+          color: $secondary;
+        }
+      }
+
+      &#{$self}-color-success {
+        color: $success;
+        border-color: $success;
+
+        #{$self}__SVG {
+          color: $success;
+        }
+      }
+
+      &#{$self}-color-reject {
+        color: $reject;
+        border-color: $reject;
+
+        #{$self}__SVG {
+          color: $reject;
+        }
+      }
+    }
+  }
+}
+
+a {
+  &#{$self} {
+    line-height: 1.3;
+    height: 42px;
+  }
+}

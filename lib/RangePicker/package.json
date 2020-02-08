@@ -1,0 +1,6 @@
+{
+  "name": "fe-components/RangePicker",
+  "private": true,
+  "main": "../cjs/RangePicker",
+  "module": "../esm/RangePicker"
+}

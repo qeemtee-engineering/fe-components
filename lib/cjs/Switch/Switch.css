@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  font-size: 100%;
+  background: transparent;
+  box-sizing: border-box;
+  touch-action: manipulation; }
+
+html,
+body {
+  width: 100%; }
+
+body {
+  color: #333745;
+  background-color: #fff;
+  font-weight: normal;
+  font-style: normal;
+  position: relative;
+  overflow-x: hidden; }
+
+img,
+embed,
+object,
+video {
+  height: auto; }
+
+ul {
+  list-style-type: none; }
+
+.Switch {
+  display: flex;
+  flex-direction: row;
+  align-items: center; }
+  .Switch__required {
+    color: red; }
+  .Switch-disabled {
+    opacity: 0.5;
+    cursor: not-allowed; }
+  .Switch > .label {
+    flex: 1 1 auto;
+    margin-left: 15px; }
+  .Switch .checkbox {
+    flex: 0 0 auto;
+    position: relative;
+    user-select: none;
+    cursor: pointer; }
+    .Switch .checkbox > .switch {
+      position: relative;
+      width: 45px;
+      height: 24px;
+      border-radius: 16px;
+      border: 2px solid #666666;
+      background-color: transparent;
+      transition-property: background-color, border-color;
+      transition-duration: 0.2s; }
+      .Switch .checkbox > .switch:after {
+        content: '';
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        border: 2px solid #666666;
+        position: relative;
+        top: 2px;
+        left: 3px;
+        transition-property: background-color, border-color, transform;
+        transition-duration: 0.2s; }
+    .Switch .checkbox > input {
+      visibility: hidden;
+      position: absolute;
+      opacity: 0;
+      width: 1px;
+      height: 1px; }
+      .Switch .checkbox > input:checked + .switch {
+        background-color: #f9285c;
+        border-color: #f9285c; }
+        .Switch .checkbox > input:checked + .switch:after {
+          border-color: #fff;
+          background-color: #fff;
+          transform: translateX(20px); }
+  .Switch-color-primary input:checked + .switch {
+    background-color: #f9285c !important;
+    border-color: #f9285c !important; }
+    .Switch-color-primary input:checked + .switch:after {
+      border-color: #fff;
+      background-color: #fff;
+      transform: translateX(20px); }
+  .Switch-color-secondary input:checked + .switch {
+    background-color: #8480b6 !important;
+    border-color: #8480b6 !important; }
+    .Switch-color-secondary input:checked + .switch:after {
+      border-color: #fff;
+      background-color: #fff;
+      transform: translateX(20px); }

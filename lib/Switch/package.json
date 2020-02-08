@@ -1,0 +1,6 @@
+{
+  "name": "fe-components/Switch",
+  "private": true,
+  "main": "../cjs/Switch",
+  "module": "../esm/Switch"
+}

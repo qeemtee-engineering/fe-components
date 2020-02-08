@@ -1,0 +1,107 @@
+@import '../styles/utils.scss';
+$self: '.Tag';
+
+#{$self} {
+  @include reset-component;
+
+  display: inline-block;
+  height: auto;
+  margin-right: 8px;
+  padding: 0 7px;
+  font-size: $tag-font-size;
+  line-height: 20px;
+  white-space: nowrap;
+  background: $tag-default-bg;
+  border: 1px solid $border-color-base;
+  border-radius: 4px;
+  cursor: default;
+  opacity: 1;
+  transition: all 0.3s $ease-in-out-circ;
+
+  &:hover {
+    opacity: 0.85;
+  }
+
+  &,
+  a,
+  a:hover {
+    color: $tag-default-color;
+  }
+
+  > a:first-child:last-child {
+    display: inline-block;
+    margin: 0 -8px;
+    padding: 0 8px;
+  }
+
+  #{$self}-close {
+    font-size: 12px;
+    margin-left: 3px;
+    color: #494949;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s $ease-in-out-circ;
+
+    &:hover {
+      color: $heading-color;
+    }
+  }
+
+  &-has-color {
+    border-color: transparent;
+    &,
+    a,
+    a:hover,
+    #{$self}-close,
+    #{$self}-close:hover {
+      color: white;
+    }
+  }
+
+  &-checkable {
+    background-color: transparent;
+    border-color: transparent;
+    &:not(&-checked):hover {
+      color: $primary;
+    }
+    &:active,
+    &-checked {
+      color: white;
+    }
+    &-checked {
+      background-color: $primary;
+    }
+    &:active {
+      background-color: $primary;
+    }
+  }
+
+  &-hidden {
+    display: none;
+  }
+
+  // mixin to iterate over colors and create CSS class for each one
+  @mixin make-color-classes() {
+    @for $i from 1 through length($preset-colors) {
+      $color: nth(
+        $list: $preset-colors,
+        $n: $i,
+      );
+      $lightColor: lighten($color, 40%);
+      $lightBorderColor: lighten($color, 15%);
+      $darkColor: darken($color, 7%);
+      &-#{"" + $color} {
+        color: $darkColor;
+        background: $lightColor;
+        border-color: $lightBorderColor;
+      }
+      &-#{"" + $color}-inverse {
+        color: #fff;
+        background: $darkColor;
+        border-color: $darkColor;
+      }
+    }
+  }
+
+  @include make-color-classes();
+}

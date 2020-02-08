@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  font-size: 100%;
+  background: transparent;
+  box-sizing: border-box;
+  touch-action: manipulation; }
+
+html,
+body {
+  width: 100%; }
+
+body {
+  color: #333745;
+  background-color: #fff;
+  font-weight: normal;
+  font-style: normal;
+  position: relative;
+  overflow-x: hidden; }
+
+img,
+embed,
+object,
+video {
+  height: auto; }
+
+ul {
+  list-style-type: none; }
+
+.Checkbox {
+  display: flex;
+  flex-direction: row;
+  align-items: center; }
+  .Checkbox__required {
+    color: red; }
+  .Checkbox__disabled {
+    opacity: 0.5;
+    cursor: not-allowed; }
+  .Checkbox > .label {
+    flex: 1 1 auto;
+    margin-left: 15px; }
+  .Checkbox input {
+    visibility: hidden;
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px; }
+    .Checkbox input:checked + .checkbox > .icon {
+      opacity: 1;
+      transform: scale(0.7); }
+  .Checkbox .checkbox {
+    flex: 0 0 auto;
+    position: relative;
+    width: 22px;
+    height: 22px;
+    border-radius: 2px;
+    user-select: none;
+    cursor: pointer;
+    transition-property: all;
+    transition-duration: 0.2s;
+    border: 2px solid #666666; }
+    .Checkbox .checkbox > .icon {
+      display: inline-block;
+      transform: scale(0);
+      opacity: 0;
+      transition-property: opacity, transform;
+      transition-duration: 0.2s;
+      position: relative;
+      top: 2px;
+      left: -1px; }
+      .Checkbox .checkbox > .icon > svg {
+        width: 13px; }
+  .Checkbox-color-primary input:checked + .checkbox {
+    border-color: #f9285c;
+    background-color: #f9285c; }
+  .Checkbox-color-secondary input:checked + .checkbox {
+    border-color: #8480b6;
+    background-color: #8480b6; }

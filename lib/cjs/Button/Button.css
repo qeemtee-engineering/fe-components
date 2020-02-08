@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  font-size: 100%;
+  background: transparent;
+  box-sizing: border-box;
+  touch-action: manipulation; }
+
+html,
+body {
+  width: 100%; }
+
+body {
+  color: #333745;
+  background-color: #fff;
+  font-weight: normal;
+  font-style: normal;
+  position: relative;
+  overflow-x: hidden; }
+
+img,
+embed,
+object,
+video {
+  height: auto; }
+
+ul {
+  list-style-type: none; }
+
+.Button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: 4px;
+  text-align: center;
+  cursor: pointer;
+  word-break: keep-all;
+  user-select: none;
+  padding: 10px 16px;
+  transition: all 0.3s;
+  opacity: 1;
+  font-weight: 500;
+  min-width: 69px;
+  height: 42px;
+  font-size: 15px; }
+  .Button-loading {
+    padding-right: 40px; }
+  .Button:hover {
+    box-shadow: 0 0 8px rgba(33, 33, 33, 0.6); }
+  .Button:focus {
+    outline: 0; }
+  .Button__SVG {
+    line-height: 1;
+    position: relative;
+    color: #f9285c; }
+    .Button__SVG svg {
+      height: 20px;
+      width: auto;
+      fill: currentColor;
+      stroke: currentColor; }
+  .Button__icon {
+    margin-right: 10px; }
+  .Button__spinner {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 8px; }
+  .Button-color-primary {
+    background: #f9285c;
+    border-color: #f9285c; }
+  .Button-color-secondary {
+    background: #fff;
+    border-color: #fff; }
+  .Button-color-success {
+    background: #2cb446;
+    border-color: #2cb446; }
+  .Button-color-reject {
+    background: #9e2222;
+    border-color: #9e2222; }
+  .Button-layout-solid {
+    color: #fff;
+    background: #f9285c;
+    border: 1px solid #f9285c; }
+    .Button-layout-solid .Button__SVG {
+      color: #fff; }
+    .Button-layout-solid.Button-color-secondary {
+      background: #fff;
+      border-color: #fff;
+      color: #333745; }
+    .Button-layout-solid.Button-color-success {
+      background: #2cb446;
+      border-color: #2cb446; }
+    .Button-layout-solid.Button-color-reject {
+      background: #9e2222;
+      border-color: #9e2222; }
+  .Button-layout-outline {
+    color: #f9285c;
+    background: transparent;
+    border: 1px solid #f9285c; }
+    .Button-layout-outline .Button__SVG {
+      color: #f9285c; }
+    .Button-layout-outline.Button-color-secondary {
+      color: #fff;
+      border-color: #fff; }
+      .Button-layout-outline.Button-color-secondary .Button__SVG {
+        color: #fff; }
+    .Button-layout-outline.Button-color-success {
+      color: #2cb446;
+      border-color: #2cb446; }
+      .Button-layout-outline.Button-color-success .Button__SVG {
+        color: #2cb446; }
+    .Button-layout-outline.Button-color-reject {
+      color: #9e2222;
+      border-color: #9e2222; }
+      .Button-layout-outline.Button-color-reject .Button__SVG {
+        color: #9e2222; }
+
+a.Button {
+  line-height: 1.3;
+  height: 42px; }

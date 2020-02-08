@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  font-size: 100%;
+  background: transparent;
+  box-sizing: border-box;
+  touch-action: manipulation; }
+
+html,
+body {
+  width: 100%; }
+
+body {
+  color: #333745;
+  background-color: #fff;
+  font-weight: normal;
+  font-style: normal;
+  position: relative;
+  overflow-x: hidden; }
+
+img,
+embed,
+object,
+video {
+  height: auto; }
+
+ul {
+  list-style-type: none; }
+
+.Radio {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  user-select: none; }
+  .Radio__required {
+    color: red; }
+  .Radio-disabled {
+    opacity: 0.5;
+    cursor: not-allowed; }
+  .Radio > .label {
+    flex: 1 1 auto;
+    margin-left: 15px; }
+    .Radio > .label::first-letter {
+      text-transform: uppercase; }
+  .Radio > .radio {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 1px #666666;
+    flex: 0 0 auto;
+    user-select: none;
+    cursor: pointer;
+    transition: box-shadow 0.2s; }
+  .Radio > input {
+    visibility: hidden;
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px; }
+    .Radio > input:checked + .radio {
+      box-shadow: inset 0 0 0 5px #f9285c; }
+  .Radio-color-primary > input:checked + .radio {
+    box-shadow: inset 0 0 0 5px #f9285c; }
+  .Radio-color-secondary > input:checked + .radio {
+    box-shadow: inset 0 0 0 5px #8480b6; }

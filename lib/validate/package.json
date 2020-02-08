@@ -1,0 +1,6 @@
+{
+  "name": "fe-components/validate",
+  "private": true,
+  "main": "../cjs/validate",
+  "module": "../esm/validate"
+}
