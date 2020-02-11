@@ -95,8 +95,8 @@ const Input = React.forwardRef((props: IInput, ref: any) => {
                 className="eye"
                 src={
                   type === 'password'
-                    ? 'https://qeemtee-assets.s3-ap-southeast-1.amazonaws.com/component/eye_open.svg'
-                    : 'https://qeemtee-assets.s3-ap-southeast-1.amazonaws.com/component/eye_close.svg'
+                    ? 'https://web-assets.qeemtee.com/component/eye_open.svg'
+                    : 'https://web-assets.qeemtee.com/component/eye_close.svg'
                 }
               />
             )}
