@@ -21,7 +21,7 @@ import {
   PhoneNumber,
   getPassedPhoneNumber,
   checkPhoneNumberValidity,
-} from '../lib/cjs';
+} from '../src';
 import moment from 'moment';
 
 const App = () => {
@@ -53,12 +53,6 @@ const App = () => {
       // richRef.current.loadJSON(localStorage.getItem('rich__test'));
     }
   }, [richRef]);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setContactNumber({ countryCode: '91', nationalNumber: '8850513594' });
-    }, 500);
-  }, []);
 
   const onPhoneChange = (value: any) => {
     const phone = value && value.phone;
@@ -260,6 +254,7 @@ const App = () => {
           hasContact={hasContact}
           placeholder="Enter phone number"
           international={false}
+          defaultCountry='IN'
           displayInitialValueAsLocalNumber={true}
           onChange={(phone: any) => onPhoneChange({ phone })}
         />

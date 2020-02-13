@@ -7,6 +7,8 @@ export interface PhoneNumberProps {
   onChange: Function;
   hasContact: boolean;
   className?: string;
+  defaultCountry?: string;
+  country?: string;
 }
 
 export interface PhoneNumberState {
