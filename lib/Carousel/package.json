@@ -1,0 +1,6 @@
+{
+  "name": "fe-components/Carousel",
+  "private": true,
+  "main": "../cjs/Carousel",
+  "module": "../esm/Carousel"
+}
