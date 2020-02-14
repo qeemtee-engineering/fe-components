@@ -21,6 +21,7 @@ import {
   PhoneNumber,
   getPassedPhoneNumber,
   checkPhoneNumberValidity,
+  Carousel,
 } from '../src';
 import moment from 'moment';
 
@@ -92,6 +93,20 @@ const App = () => {
   return (
     <div className="container">
       <div>
+        <Carousel
+          autoPlay={false}
+          autoPlayDuration={5}
+          images={[
+            'https://caferati.me/images/series/bojack-0.png',
+            'https://caferati.me/images/series/bojack-5.jpg',
+            'https://caferati.me/images/series/bojack-3.jpg',
+            'https://caferati.me/images/series/bojack-4.jpg',
+            'https://caferati.me/images/series/bojack-1.png',
+            'https://caferati.me/images/series/bojack-2.png',
+          ]}
+        />
+      </div>
+      <div>
         <Button
           onClick={() => {
             setVisible(true);
@@ -124,7 +139,7 @@ const App = () => {
       </div>
       <div>
         {['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'].map(day => (
-          <Checkbox label="check" required>
+          <Checkbox key={day} label="check" required>
             {day}
           </Checkbox>
         ))}
@@ -254,7 +269,7 @@ const App = () => {
           hasContact={hasContact}
           placeholder="Enter phone number"
           international={false}
-          defaultCountry='IN'
+          country="IN"
           displayInitialValueAsLocalNumber={true}
           onChange={(phone: any) => onPhoneChange({ phone })}
         />

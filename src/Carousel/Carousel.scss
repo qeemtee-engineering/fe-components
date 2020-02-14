@@ -1,0 +1,126 @@
+.Carousel {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 60vh;
+
+  &__control {
+    position: absolute;
+    bottom: 0;
+    z-index: 999;
+    width: calc(100% - 50px);
+    left: 25px;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.2);
+
+    &__data {
+      height: 4px;
+      flex: 1;
+      margin-right: 5px;
+      position: relative;
+      cursor: pointer;
+      background-color: rgba(255, 255, 255, 0.4);
+      &__complete {
+        background-color: rgb(255, 255, 255);
+        height: 100%;
+        width: 100%;
+        transform-origin: 0% center;
+      }
+      &__active {
+        background-color: white;
+        height: 100%;
+        transform-origin: 0% center;
+        animation-name: Carousel-progress;
+        animation-timing-function: linear;
+        &--stop {
+          animation-play-state: paused;
+        }
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__pause-play {
+    position: absolute;
+    z-index: 2;
+    bottom: 40px;
+    right: 20px;
+    color: white;
+    cursor: pointer;
+    .material-icons {
+      font-size: 30px;
+    }
+  }
+
+  &__wrapper {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: height 0.15s ease-in;
+  }
+
+  &__slider {
+    display: flex;
+    transition: all 0.35s ease-in-out;
+    transition-duration: 350ms;
+    position: relative;
+    height: 100%;
+  }
+
+  &__slide {
+    min-width: 100%;
+    margin: 0;
+    position: relative;
+    text-align: center;
+    background: #000;
+    img {
+      object-fit: contain;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__button {
+    position: absolute;
+    height: 100%;
+    z-index: 1;
+    width: 10%;
+    cursor: pointer;
+
+    &--left {
+      left: 0;
+      background: linear-gradient(to left, transparent 0%, rgba(0, 0, 0, 0.25) 100%);
+    }
+
+    &--right {
+      right: 0;
+      background: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.25) 100%);
+    }
+    .icon-container {
+      width: 100%;
+      position: relative;
+      .material-icons {
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 60px;
+        color: white;
+      }
+    }
+  }
+}
+
+@keyframes Carousel-progress {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}

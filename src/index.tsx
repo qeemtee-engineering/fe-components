@@ -31,3 +31,4 @@ export {
   checkPhoneNumberValidity,
   getPassedPhoneNumber,
 } from './utils';
+export { default as Carousel } from './Carousel';
