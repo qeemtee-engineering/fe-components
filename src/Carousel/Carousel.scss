@@ -1,3 +1,5 @@
+@import '../styles/utils';
+
 .Carousel {
   display: block;
   position: relative;
@@ -92,15 +94,6 @@
     width: 10%;
     cursor: pointer;
 
-    &--left {
-      left: 0;
-      background: linear-gradient(to left, transparent 0%, rgba(0, 0, 0, 0.25) 100%);
-    }
-
-    &--right {
-      right: 0;
-      background: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.25) 100%);
-    }
     .icon-container {
       width: 100%;
       position: relative;
@@ -111,6 +104,27 @@
         transform: translate(-50%, -50%);
         font-size: 60px;
         color: white;
+        margin-right: 0;
+      }
+    }
+
+    &--left {
+      left: 0;
+      background: linear-gradient(to left, transparent 0%, rgba(0, 0, 0, 0.25) 100%);
+      @include breakpoint(599) {
+        .material-icons {
+          left: 100% !important;
+        }
+      }
+    }
+
+    &--right {
+      right: 0;
+      background: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.25) 100%);
+      @include breakpoint(599) {
+        .material-icons {
+          left: 0 !important;
+        }
       }
     }
   }

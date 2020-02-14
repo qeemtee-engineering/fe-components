@@ -72,12 +72,6 @@
     z-index: 1;
     width: 10%;
     cursor: pointer; }
-    .Carousel__button--left {
-      left: 0;
-      background: linear-gradient(to left, transparent 0%, rgba(0, 0, 0, 0.25) 100%); }
-    .Carousel__button--right {
-      right: 0;
-      background: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.25) 100%); }
     .Carousel__button .icon-container {
       width: 100%;
       position: relative; }
@@ -87,7 +81,20 @@
         top: 50%;
         transform: translate(-50%, -50%);
         font-size: 60px;
-        color: white; }
+        color: white;
+        margin-right: 0; }
+    .Carousel__button--left {
+      left: 0;
+      background: linear-gradient(to left, transparent 0%, rgba(0, 0, 0, 0.25) 100%); }
+      @media only screen and (max-width: 599px) {
+        .Carousel__button--left .material-icons {
+          left: 100% !important; } }
+    .Carousel__button--right {
+      right: 0;
+      background: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.25) 100%); }
+      @media only screen and (max-width: 599px) {
+        .Carousel__button--right .material-icons {
+          left: 0 !important; } }
 
 @keyframes Carousel-progress {
   0% {
