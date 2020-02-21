@@ -16,6 +16,10 @@ $collapse-content-bg: $white;
   border-bottom: 0;
   border-radius: $collapse-panel-border-radius;
 
+  ul {
+    padding: 16px;
+  }
+
   & > &-item {
     border-bottom: 1px solid $border-color-base;
 

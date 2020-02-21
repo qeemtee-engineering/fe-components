@@ -12,6 +12,8 @@
   border: 1px solid #d9d9d9;
   border-bottom: 0;
   border-radius: 4px; }
+  .Collapse ul {
+    padding: 16px; }
   .Collapse > .Collapse-item {
     border-bottom: 1px solid #d9d9d9; }
     .Collapse > .Collapse-item:last-child,
