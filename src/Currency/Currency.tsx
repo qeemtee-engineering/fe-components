@@ -6,7 +6,7 @@ import './Currency.scss';
 import Number from '../Number';
 
 const Currency = React.forwardRef((props: ICurrency, ref: any) => {
-  const { className, symbol, symbolClassName, value, fixed = 2, side, delimiter, ...other } = props;
+  const { className, symbol, symbolClassName, value, fixed, side, delimiter, ...other } = props;
 
   const classes = cs('Currency', className);
   const symbolClasses = symbolClassName

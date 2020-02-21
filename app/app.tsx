@@ -176,10 +176,10 @@ const App = () => {
       </div>
       <div style={{ display: 'flex', flexDirection: 'column' }}>
         <Currency style={{ color: '#f9285c', fontSize: '22px' }} value="1000.25" />
-        <Currency value="100.123" fixed={0} />
-        <Currency value="100" side="left" fixed={1} symbol="€" />
-        <Currency value="100.000000001" fixed={false} symbol="TBH" />
-        <Currency value="10012341231252123.12345" fixed={3} />
+        <Currency value="100.123" />
+        <Currency value="100" side="left" symbol="€" />
+        <Currency value="100.000000001" symbol="TBH" />
+        <Currency value="10012341231252123.12345" />
       </div>
       <div style={{ display: 'flex', flexDirection: 'column' }}>
         <Number value="100.123" fixed={0} />

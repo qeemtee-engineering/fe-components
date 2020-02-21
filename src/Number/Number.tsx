@@ -51,7 +51,7 @@ const _Number = React.forwardRef((props: INumber, ref: any) => {
       {mantissa && fixed !== 0 && (
         <span className="decimals">
           {(delimiter && delimiter.decimals) || '.'}
-          {mantissa}
+          {mantissa.substring(0, 3)}
         </span>
       )}
     </span>
