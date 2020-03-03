@@ -58,10 +58,7 @@ const Input = React.forwardRef((props: IInput, ref: any) => {
   const meta: any = { password: otherProps.type === 'password' };
 
   return (
-    <label
-      className={`Input ${(error && touched) || (submitted && error) ? cn('error') : ''}`}
-      ref={ref}
-    >
+    <label className={`Input ${(error && touched) || (submitted && error) ? cn('error') : ''}`}>
       {label && (
         <span className={cn('title')}>
           {label} {required && <span className={cn('required')}>*</span>}
