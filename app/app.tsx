@@ -96,6 +96,8 @@ const App = () => {
         <Carousel
           autoPlay={false}
           autoPlayDuration={5}
+          showDots={true}
+          disableArrow={true}
           images={[
             'https://caferati.me/images/series/bojack-0.png',
             'https://caferati.me/images/series/bojack-5.jpg',
@@ -104,6 +106,7 @@ const App = () => {
             'https://caferati.me/images/series/bojack-1.png',
             'https://caferati.me/images/series/bojack-2.png',
           ]}
+          captions={['test1', 'test2', 'test3', 'test4', 'test5']}
         />
       </div>
       <div>

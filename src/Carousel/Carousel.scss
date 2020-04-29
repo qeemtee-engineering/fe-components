@@ -6,6 +6,41 @@
   width: 100%;
   height: 60vh;
 
+  &__caption {
+    position: absolute;
+    top: 35px;
+    left: 30px;
+    z-index: 2;
+    transform: translateY(-50%);
+    font-size: 24px;
+    color: white;
+    font-weight: bold;
+  }
+
+  &__dots {
+    position: absolute;
+    top: 0;
+    height: 70px;
+    background: rgba(0, 0, 0, 0.3);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+    align-items: center;
+    &-item {
+      cursor: pointer;
+      height: 12px;
+      width: 12px;
+      border-radius: 50px;
+      margin-right: 10px;
+      background: rgba(255, 255, 255, 0.5);
+
+      &--active {
+        background: rgb(255, 255, 255);
+      }
+    }
+  }
+
   &__control {
     position: absolute;
     bottom: 0;

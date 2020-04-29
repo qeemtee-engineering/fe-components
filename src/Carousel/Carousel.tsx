@@ -11,6 +11,9 @@ interface ICarouselProps {
   autoPlay?: boolean;
   autoPlayDuration?: number;
   startIndex?: number;
+  showDots?: boolean;
+  disableArrow?: boolean;
+  captions?: string[];
 }
 
 const Carousel: FC<ICarouselProps> = props => {
@@ -70,39 +73,61 @@ const Carousel: FC<ICarouselProps> = props => {
     <div className={cn()}>
       {props.images.length > 1 && (
         <>
-          <div className={cn('pause-play')}>
-            {isAuto ? (
-              <Icon onClick={() => setAuto(false)} icon="pause_circle_outline" />
-            ) : (
-              <Icon onClick={() => setAuto(true)} icon="play_circle_outline" />
-            )}
-          </div>
-          <a
-            onClick={goPrev}
-            style={{ display: props.images.length ? 'flex' : 'none' }}
-            className={cn('button', { left: true })}
-          >
-            <Icon icon="keyboard_arrow_left" />
-          </a>
-          <a
-            onClick={goNext}
-            style={{ display: props.images.length ? 'flex' : 'none' }}
-            className={cn('button', { right: true })}
-          >
-            <Icon icon="keyboard_arrow_right" />
-          </a>
-          <div className={cn('control')}>
-            {Array(props.images.length)
-              .fill(0)
-              .map((_, i) => (
-                <div onClick={gotoActive(i)} key={i} className={cn('control__data')}>
+          {!props.showDots && (
+            <div className={cn('pause-play')}>
+              {isAuto ? (
+                <Icon onClick={() => setAuto(false)} icon="pause_circle_outline" />
+              ) : (
+                <Icon onClick={() => setAuto(true)} icon="play_circle_outline" />
+              )}
+            </div>
+          )}
+          {!props.disableArrow && (
+            <>
+              <a
+                onClick={goPrev}
+                style={{ display: props.images.length ? 'flex' : 'none' }}
+                className={cn('button', { left: true })}
+              >
+                <Icon icon="keyboard_arrow_left" />
+              </a>
+              <a
+                onClick={goNext}
+                style={{ display: props.images.length ? 'flex' : 'none' }}
+                className={cn('button', { right: true })}
+              >
+                <Icon icon="keyboard_arrow_right" />
+              </a>
+            </>
+          )}
+          {!props.showDots && (
+            <div className={cn('control')}>
+              {Array(props.images.length)
+                .fill(0)
+                .map((_, i) => (
+                  <div onClick={gotoActive(i)} key={i} className={cn('control__data')}>
+                    <div
+                      className={getClass(i)}
+                      style={{
+                        animationDuration: i === active ? `${props.autoPlayDuration}s` : '',
+                      }}
+                    />
+                  </div>
+                ))}
+            </div>
+          )}
+          {props.showDots && (
+            <div className={cn('dots')}>
+              {Array(props.images.length)
+                .fill(0)
+                .map((_, i) => (
                   <div
-                    className={getClass(i)}
-                    style={{ animationDuration: i === active ? `${props.autoPlayDuration}s` : '' }}
-                  />
-                </div>
-              ))}
-          </div>
+                    onClick={() => setActive(i)}
+                    className={cn('dots-item', { active: i === active })}
+                  ></div>
+                ))}
+            </div>
+          )}
         </>
       )}
       <div className={cn('wrapper')}>
@@ -116,6 +141,9 @@ const Carousel: FC<ICarouselProps> = props => {
             </li>
           ))}
         </ul>
+      </div>
+      <div className={cn('caption')}>
+        <p>{props.captions![active]}</p>
       </div>
     </div>
   );
