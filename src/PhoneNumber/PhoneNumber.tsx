@@ -3,6 +3,7 @@ import { PhoneNumberProps, PhoneNumberState } from '../interfaces';
 import 'react-phone-number-input/style.css';
 import PhoneInput from 'react-phone-number-input';
 import './PhoneNumber.scss';
+import cs from 'classnames';
 
 export default class PhoneNumber extends Component<PhoneNumberProps, PhoneNumberState> {
   constructor(props: PhoneNumberProps) {
@@ -18,18 +19,21 @@ export default class PhoneNumber extends Component<PhoneNumberProps, PhoneNumber
 
   render() {
     const otherProps = { ...this.props };
+
     delete otherProps.hasContact;
+
     return (
       <PhoneInput
         {...otherProps}
         value={this.props.value}
         onChange={(phone: any) => this.emitChange(phone)}
-        inputClassName={
+        className={cs(
+          'react-input-custom-width',
+          this.props.className,
           !this.props.hasContact
             ? 'error-react-phone-number-input react-phone-number-input-padding'
             : 'react-phone-number-input-padding'
-        }
-        className={this.props.className ? 'react-input-custom-width' : ''}
+        )}
       />
     );
   }

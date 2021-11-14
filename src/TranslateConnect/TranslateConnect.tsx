@@ -22,7 +22,7 @@ const TranslateConnect = <P extends ITranslateConnect>(Component: React.Componen
     };
     return (
       <LanguageContext.Consumer>
-        {value => <Component translation={selectLanguage(value)} {...(props as P)} />}
+        {(value) => <Component {...(props as P)} translation={selectLanguage(value)} />}
       </LanguageContext.Consumer>
     );
   };

@@ -87,7 +87,7 @@ const App = () => {
   };
 
   const handleChange = () => {
-    setChecked(c => !c);
+    setChecked((c) => !c);
   };
 
   return (
@@ -141,11 +141,13 @@ const App = () => {
         />
       </div>
       <div>
-        {['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'].map(day => (
-          <Checkbox key={day} label="check" required>
-            {day}
-          </Checkbox>
-        ))}
+        {['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'].map(
+          (day) => (
+            <Checkbox key={day} label="check" required>
+              {day}
+            </Checkbox>
+          )
+        )}
       </div>
       <div>
         <Input label="Password" required disabled type="password" />

@@ -12,7 +12,7 @@ export const disableScroll = (preventDefault: (event: any) => any, overflow = fa
     window.addEventListener('keydown', preventDefault, { passive: false });
   } else {
     window.onwheel = preventDefault; // modern standard
-    window.onmousewheel = document.onmousewheel = preventDefault; // older browsers, IE
+    document.onmousewheel = preventDefault; // older browsers, IE
     window.ontouchmove = preventDefault; // mobile
   }
 };
@@ -27,7 +27,7 @@ export const enableScroll = (preventDefault: (event: any) => any, overflow = fal
     window.removeEventListener('wheel', preventDefault);
     window.removeEventListener('touchmove', preventDefault);
   } else {
-    window.onmousewheel = document.onmousewheel = null;
+    document.onmousewheel = null;
     window.onwheel = null;
     window.ontouchmove = null;
   }

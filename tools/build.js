@@ -8,7 +8,6 @@ const cherryPick = require('cherry-pick').default;
 const getConfig = require('./webpack.config');
 
 const targets = process.argv.slice(2);
-const srcRoot = path.join(__dirname, '../src/components');
 
 const libRoot = path.join(__dirname, '../lib');
 const distRoot = path.join(libRoot, 'dist');
@@ -23,9 +22,9 @@ const step = (name, fn) => async () => {
   console.log(cyan('Built: ') + green(name));
 };
 
-const shell = cmd => execa(cmd, { stdio: ['pipe', 'pipe', 'inherit'], shell: true });
+const shell = (cmd) => execa(cmd, { stdio: ['pipe', 'pipe', 'inherit'], shell: true });
 
-const has = t => !targets.length || targets.includes(t);
+const has = (t) => !targets.length || targets.includes(t);
 
 /**
  * Run babel over the src directory and output
@@ -67,7 +66,7 @@ const buildDirectories = step('Linking directories', () =>
     cjsDir: 'cjs',
     esmDir: 'esm',
     cwd: libRoot,
-  }).then(cherryPicked => console.log(`Created proxy directories: ${cherryPicked.join(', ')}`))
+  }).then((cherryPicked) => console.log(`Created proxy directories: ${cherryPicked.join(', ')}`))
 );
 
 console.log(green(`Building targets: ${targets.length ? targets.join(', ') : 'all'}\n`));
@@ -76,7 +75,7 @@ clean();
 
 Promise.all([has('lib') && buildLib(), has('es') && buildEsm(), has('dist') && buildDist()])
   .then(buildDirectories)
-  .catch(err => {
+  .catch((err) => {
     if (err) console.error(red(err.stack || err.toString()));
     process.exit(1);
   });

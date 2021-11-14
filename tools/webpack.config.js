@@ -12,7 +12,7 @@ module.exports = (distRoot, optimize) => ({
   },
   module: {
     rules: [
-      { test: /\.tsx?$/, loader: 'awesome-typescript-loader' },
+      { test: /\.tsx?$/, loader: 'ts-loader' },
       {
         test: /\.scss$/,
         use: [{ loader: 'style-loader' }, { loader: 'css-loader' }, { loader: 'sass-loader' }],

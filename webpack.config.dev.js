@@ -1,6 +1,7 @@
 const path = require('path');
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
   target: 'web',
@@ -8,6 +9,9 @@ module.exports = {
   devtool: 'source-map',
   mode: 'development',
   plugins: [
+    new webpack.ProvidePlugin({
+      process: 'process/browser',
+    }),
     new CaseSensitivePathsPlugin(),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'public/index.html'),
@@ -16,8 +20,8 @@ module.exports = {
   ],
   module: {
     rules: [
-      // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
-      { test: /\.tsx?$/, loader: 'awesome-typescript-loader' },
+      // All files with a '.ts' or '.tsx' extension will be handled by 'ts-loader'.
+      { test: /\.tsx?$/, loader: 'ts-loader' },
       // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
       { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' },
       {
@@ -30,7 +34,7 @@ module.exports = {
       },
       {
         test: /\.svg$/,
-        use: function({ realResource }) {
+        use: function ({ realResource }) {
           const loaders = [];
 
           let ext = realResource.split('.');
@@ -67,8 +71,12 @@ module.exports = {
   devServer: {
     compress: true,
     port: 9000,
-    progress: true,
-    publicPath: '/',
+    static: {
+      publicPath: '/',
+    },
+    client: {
+      progress: true,
+    },
     historyApiFallback: true,
   },
 };

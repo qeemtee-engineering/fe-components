@@ -11,8 +11,8 @@ module.exports = {
   plugins: [new CaseSensitivePathsPlugin(), new CleanWebpackPlugin()],
   module: {
     rules: [
-      // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
-      { test: /\.tsx?$/, loader: 'awesome-typescript-loader' },
+      // All files with a '.ts' or '.tsx' extension will be handled by 'ts-loader'.
+      { test: /\.tsx?$/, loader: 'ts-loader' },
       {
         test: /\.scss$/,
         use: [{ loader: 'style-loader' }, { loader: 'css-loader' }, { loader: 'sass-loader' }],
@@ -23,7 +23,7 @@ module.exports = {
       },
       {
         test: /\.svg$/,
-        use: function({ realResource }) {
+        use: function ({ realResource }) {
           const loaders = [];
 
           let ext = realResource.split('.');

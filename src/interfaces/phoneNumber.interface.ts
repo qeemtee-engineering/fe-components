@@ -5,7 +5,7 @@ export interface PhoneNumberProps {
   displayInitialValueAsLocalNumber: boolean;
   countryOptions?: Array<any>;
   onChange: Function;
-  hasContact: boolean;
+  hasContact?: boolean;
   className?: string;
   country?: string;
 }
