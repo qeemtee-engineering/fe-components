@@ -1,6 +1,7 @@
-import * as React from 'react';
-import RcCollapse from 'rc-collapse';
 import classNames from 'classnames';
+import RcCollapse from 'rc-collapse';
+import * as React from 'react';
+
 import { CollapsePanelProps } from '../interfaces';
 
 export default class CollapsePanel extends React.Component<CollapsePanelProps, {}> {

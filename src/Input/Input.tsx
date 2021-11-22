@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import './Input.scss';
 import { withNaming } from '@bem-react/classname';
-import { IInput } from '../interfaces';
 import cs from 'classnames';
+import React, { useEffect, useState } from 'react';
+
+import { IInput } from '../interfaces';
+import './Input.scss';
 
 const cn = withNaming({ e: '__', m: '--' })('Input');
 

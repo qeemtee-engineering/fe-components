@@ -1,5 +1,6 @@
-import * as React from 'react';
 import * as moment from 'moment';
+import * as React from 'react';
+
 import { TimePickerProps } from './timePicker.interface';
 
 export const tuple = <T extends string[]>(...args: T) => args;
@@ -42,9 +43,7 @@ export interface DatePickerProps extends PickerProps, SinglePickerProps {
   showTime?: TimePickerProps | boolean;
   showToday?: boolean;
   open?: boolean;
-  disabledTime?: (
-    current: moment.Moment | undefined
-  ) => {
+  disabledTime?: (current: moment.Moment | undefined) => {
     disabledHours?: () => number[];
     disabledMinutes?: () => number[];
     disabledSeconds?: () => number[];

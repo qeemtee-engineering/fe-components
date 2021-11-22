@@ -1,9 +1,10 @@
-import * as React from 'react';
-import { PhoneNumberProps } from '../interfaces';
-import 'react-phone-number-input/style.css';
-import PhoneInput from 'react-phone-number-input';
-import './PhoneNumber.scss';
 import cs from 'classnames';
+import * as React from 'react';
+import PhoneInput from 'react-phone-number-input';
+import 'react-phone-number-input/style.css';
+
+import { PhoneNumberProps } from '../interfaces';
+import './PhoneNumber.scss';
 
 const PhoneNumber: React.FC<PhoneNumberProps> = ({ hasContact, ...props }) => {
   const emitChange = (selected: any) => {

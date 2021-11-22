@@ -1,9 +1,9 @@
-import React from 'react';
-import { ICurrency } from '../interfaces';
 import cs from 'classnames';
+import React from 'react';
 
-import './Currency.scss';
 import Number from '../Number';
+import { ICurrency } from '../interfaces';
+import './Currency.scss';
 
 const Currency = React.forwardRef((props: ICurrency, ref: any) => {
   const { className, symbol, symbolClassName, value, fixed, side, delimiter, ...other } = props;

@@ -1,9 +1,10 @@
-import React, { useRef, FC, useEffect, useState, ChangeEvent, MouseEvent } from 'react';
-import './FileUploader.scss';
 import { withNaming } from '@bem-react/classname';
+import React, { ChangeEvent, FC, MouseEvent, useEffect, useRef, useState } from 'react';
+
 import Icon from '../Icon';
 import { IFileUploader } from '../interfaces';
 import { newId } from '../utils';
+import './FileUploader.scss';
 
 interface Media {
   mediaUrl: string;
@@ -14,7 +15,7 @@ interface Media {
 const url = `${process.env.REACT_APP_API_URL || 'http://localhost/api/v1'}/file-upload`;
 const cn = withNaming({ e: '__', m: '--' })('FileUploader');
 
-const FileUploader: FC<IFileUploader> = props => {
+const FileUploader: FC<IFileUploader> = (props) => {
   const [id, setId] = useState('');
   const fileWrapper = useRef<HTMLDivElement>(null);
   const progressBar = useRef<HTMLProgressElement>(null);
@@ -23,30 +24,30 @@ const FileUploader: FC<IFileUploader> = props => {
 
   useEffect(() => {
     if (fileWrapper) {
-      ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+      ['dragenter', 'dragover', 'dragleave', 'drop'].forEach((eventName) => {
         fileWrapper.current!.addEventListener(eventName, preventDefaults, false);
         document.body.addEventListener(eventName, preventDefaults, false);
       });
 
       // Highlight drop area when item is dragged over it
-      ['dragenter', 'dragover'].forEach(eventName => {
+      ['dragenter', 'dragover'].forEach((eventName) => {
         fileWrapper.current!.addEventListener(eventName, highlight, false);
       });
-      ['dragleave', 'drop'].forEach(eventName => {
+      ['dragleave', 'drop'].forEach((eventName) => {
         fileWrapper.current!.addEventListener(eventName, unhighlight, false);
       });
 
       fileWrapper.current!.addEventListener('drop', handleDrop, false);
 
       return () => {
-        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach((eventName) => {
           fileWrapper.current!.removeEventListener(eventName, preventDefaults, false);
           document.body.removeEventListener(eventName, preventDefaults, false);
         });
-        ['dragenter', 'dragover'].forEach(eventName => {
+        ['dragenter', 'dragover'].forEach((eventName) => {
           fileWrapper.current!.removeEventListener(eventName, highlight, false);
         });
-        ['dragleave', 'drop'].forEach(eventName => {
+        ['dragleave', 'drop'].forEach((eventName) => {
           fileWrapper.current!.removeEventListener(eventName, unhighlight, false);
         });
         fileWrapper.current!.removeEventListener('drop', handleDrop, false);
@@ -61,7 +62,7 @@ const FileUploader: FC<IFileUploader> = props => {
   useEffect(() => {
     if (files.length) {
       initializeProgress(files.length);
-      Promise.all(files.map(uploadFile)).then(data => {
+      Promise.all(files.map(uploadFile)).then((data) => {
         sendFile(data);
         setFiles([]);
       });
@@ -127,11 +128,11 @@ const FileUploader: FC<IFileUploader> = props => {
       xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
 
       // Update progress (can be used to show progress indicator)
-      xhr.upload.addEventListener('progress', function(e) {
+      xhr.upload.addEventListener('progress', function (e) {
         updateProgress(i, (e.loaded * 100.0) / e.total || 100);
       });
 
-      xhr.addEventListener('readystatechange', function(e) {
+      xhr.addEventListener('readystatechange', function (e) {
         if (xhr.readyState == 4 && xhr.status == 200) {
           resolve({
             mediaType: file.type,

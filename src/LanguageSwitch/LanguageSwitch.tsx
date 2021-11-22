@@ -1,9 +1,11 @@
-import React, { Fragment, useContext } from 'react';
-import './LanguageSwitch.scss';
-import { extractFromUrl, changeUrlLanguage } from '../utils/language';
-import languageMapping from './languageMapping';
 import { withNaming } from '@bem-react/classname';
+import React, { Fragment, useContext } from 'react';
+
 import { LanguageContext } from '../TranslateProvider/TranslateProvider';
+import { changeUrlLanguage, extractFromUrl } from '../utils/language';
+import './LanguageSwitch.scss';
+import languageMapping from './languageMapping';
+
 const cn = withNaming({ e: '__', m: '--' })('LanguageSwitch');
 
 const LanguageSwitch = () => {

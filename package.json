@@ -12,7 +12,8 @@
     "start": "webpack-dev-server --config ./webpack.config.dev.js",
     "build": "rm -rf css && node tools/build.js && rm -rf lib/*.interface && yarn gulp",
     "webpack-build": "webpack",
-    "gulp": "gulp"
+    "gulp": "gulp",
+    "prettify-code": "prettier --write '**/*.{js,jsx,ts,tsx}'"
   },
   "author": "",
   "license": "ISC",
@@ -24,6 +25,7 @@
     "@babel/core": "^7.5.0",
     "@babel/preset-env": "^7.5.0",
     "@babel/preset-react": "^7.0.0",
+    "@trivago/prettier-plugin-sort-imports": "^3.1.1",
     "@types/classnames": "^2.2.9",
     "@types/react": "^17.0.34",
     "@types/react-dom": "^17.0.11",

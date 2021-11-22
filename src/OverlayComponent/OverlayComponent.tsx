@@ -1,8 +1,9 @@
+import { withNaming } from '@bem-react/classname';
 import React, { FC } from 'react';
-import './OverlayComponent.scss';
+
 import Button from '../Button';
 import { IOverlayComponent } from '../interfaces';
-import { withNaming } from '@bem-react/classname';
+import './OverlayComponent.scss';
 
 const cn = withNaming({ e: '__', m: '-' })('OverlayComponent');
 

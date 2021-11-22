@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Select from 'react-select';
+
 import { TypeAheadProps, TypeAheadState } from '../interfaces';
 import './TypeAhead.scss';
 
@@ -21,7 +22,7 @@ export default class TypeAhead extends Component<TypeAheadProps, TypeAheadState>
 
   mapOptions(options: Array<any>) {
     let tempOptions: Array<any> = [];
-    options.forEach(option => {
+    options.forEach((option) => {
       tempOptions.push({
         label: option[this.props.labelKey],
         value: option[this.props.valueKey],

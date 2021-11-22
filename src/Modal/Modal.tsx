@@ -1,10 +1,12 @@
-import React, { FC } from 'react';
-import Dialog from 'rc-dialog';
 import { withNaming } from '@bem-react/classname';
-import './Modal.scss';
+import Dialog from 'rc-dialog';
 import addEventListener from 'rc-util/lib/Dom/addEventListener';
-import { IModal } from '../interfaces';
+import React, { FC } from 'react';
+
 import Button from '../Button';
+import { IModal } from '../interfaces';
+import './Modal.scss';
+
 const cn = withNaming({ e: '__', m: '-' })('Modal');
 let mousePosition: { x: number; y: number } | undefined;
 
@@ -20,7 +22,7 @@ if (typeof window !== 'undefined' && window.document && window.document.document
   addEventListener(document.documentElement, 'click', getClickPosition);
 }
 
-const Modal: FC<IModal> = props => {
+const Modal: FC<IModal> = (props) => {
   const className = `${props.wrapClassName || ''} ${props.centered ? 'Modal-center' : ''}`.trim();
 
   const handleCancel = (e: React.SyntheticEvent) => {

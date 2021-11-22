@@ -1,5 +1,6 @@
-import React, { FC } from 'react';
 import cx from 'classnames';
+import React, { FC } from 'react';
+
 import { IIcon } from '../interfaces';
 import './Icon.scss';
 
@@ -14,7 +15,7 @@ const Icon: FC<IIcon> = ({
   return (
     <span className={cx('icon-container', containerClasses)}>
       <span
-        onClick={e => {
+        onClick={(e) => {
           onClick && onClick(e);
         }}
         style={{ color, ...style }}

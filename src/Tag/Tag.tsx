@@ -1,14 +1,16 @@
-import * as React from 'react';
 import classNames from 'classnames';
 import omit from 'omit.js';
+import * as React from 'react';
 import { polyfill } from 'react-lifecycles-compat';
+
 import Icon from '../Icon';
-import CheckableTag from './CheckableTag';
+import { TagProps } from '../interfaces';
 import { PresetColorTypes } from '../utils/colors';
 import warning from '../utils/warning';
+import CheckableTag from './CheckableTag';
 import './Tag.scss';
+
 export { CheckableTagProps } from './CheckableTag';
-import { TagProps } from '../interfaces';
 
 interface TagState {
   visible: boolean;

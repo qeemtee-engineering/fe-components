@@ -1,8 +1,9 @@
-import React from 'react';
 import { withNaming } from '@bem-react/classname';
+import React from 'react';
 
-import './Switch.scss';
 import { ICheckbox } from '../interfaces';
+import './Switch.scss';
+
 const cn = withNaming({ e: '__', m: '-' })('Switch');
 
 const Switch = React.forwardRef((props: ICheckbox, ref: any) => {

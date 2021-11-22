@@ -1,9 +1,9 @@
-import React from 'react';
-import { INumber } from '../interfaces';
 import cs from 'classnames';
+import React from 'react';
 
-import './Number.scss';
+import { INumber } from '../interfaces';
 import { numWithCommas } from '../utils';
+import './Number.scss';
 
 function round(input: any, precision: any) {
   const [number, exponent] = input.toString().split('.');
@@ -23,14 +23,9 @@ function round(input: any, precision: any) {
     [unit, mantissa] = rounded.toString().split('.');
     rounded = `${Number(unit) >= 1 ? Number(number) + Number(unit) : number}${
       precision > 0 ? '.' : ''
-    }${mantissa ||
-      Array(precision)
-        .fill('0')
-        .join('')}`;
+    }${mantissa || Array(precision).fill('0').join('')}`;
   } else {
-    rounded += `.${Array(precision)
-      .fill('0')
-      .join('')}`;
+    rounded += `.${Array(precision).fill('0').join('')}`;
   }
 
   return rounded;

@@ -1,7 +1,9 @@
-import React, { FC } from 'react';
-import './Table.scss';
 import { withNaming } from '@bem-react/classname';
+import React, { FC } from 'react';
+
 import { ITable } from '../interfaces';
+import './Table.scss';
+
 const cn = withNaming({ e: '__', m: '-' })('Table');
 
 const Table: FC<ITable> = ({ head, body }) => {

@@ -1,10 +1,11 @@
-import React, { FC, useState, useEffect, useRef, Component } from 'react';
 import { withNaming } from '@bem-react/classname';
 import cs from 'classnames';
-import './Richtext.scss';
-import 'trix/dist/trix.css';
+import React, { Component, FC, useEffect, useRef, useState } from 'react';
 import 'trix/dist/trix';
+import 'trix/dist/trix.css';
+
 import { IRichtext } from '../interfaces';
+import './Richtext.scss';
 
 const cn = withNaming({ e: '__', m: '--' })('Richtext');
 
@@ -86,12 +87,12 @@ class Richtext extends Component<IRichtext, { touched: boolean }> {
     const cdn = process.env.REACT_APP_CDN_NAME || 'https://dev-assets.qeemtee.com';
     xhr.open('POST', url, true);
 
-    xhr.upload.addEventListener('progress', function(event) {
+    xhr.upload.addEventListener('progress', function (event) {
       const progress = (event.loaded / event.total) * 100;
       progressCallback(progress);
     });
 
-    xhr.addEventListener('load', function(event) {
+    xhr.addEventListener('load', function (event) {
       if (xhr.status == 200) {
         const response = JSON.parse(xhr.response);
 
@@ -115,9 +116,7 @@ class Richtext extends Component<IRichtext, { touched: boolean }> {
   render() {
     const { className, error, submitted, label, placeholder, value } = this.props;
     const { touched } = this.state;
-    const id = Math.random()
-      .toString(36)
-      .substr(2, 9);
+    const id = Math.random().toString(36).substr(2, 9);
     return (
       <div className={cs(className, cn('', { error: (error && touched) || (submitted && error) }))}>
         {label && (

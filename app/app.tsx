@@ -1,29 +1,30 @@
-import React, { useState, useRef, useEffect } from 'react';
-import './app.scss';
+import moment from 'moment';
+import React, { useEffect, useRef, useState } from 'react';
+
 import {
   Button,
-  Modal,
-  TypeAhead,
+  Carousel,
   Checkbox,
-  Notification,
-  Input,
-  Switch,
   Collapse,
   Currency,
-  Number,
-  TimePicker,
-  Tag,
   DatePicker,
-  Richtext,
   FileUploader,
+  Input,
+  Modal,
+  Notification,
+  Number,
+  PhoneNumber,
   Radio,
   RichTextDisplay,
-  PhoneNumber,
-  getPassedPhoneNumber,
+  Richtext,
+  Switch,
+  Tag,
+  TimePicker,
+  TypeAhead,
   checkPhoneNumberValidity,
-  Carousel,
+  getPassedPhoneNumber,
 } from '../src';
-import moment from 'moment';
+import './app.scss';
 
 const App = () => {
   const [contactNumber, setContactNumber] = useState<null | {

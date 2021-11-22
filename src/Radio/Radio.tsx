@@ -1,8 +1,9 @@
-import React from 'react';
 import { withNaming } from '@bem-react/classname';
+import React from 'react';
 
-import './Radio.scss';
 import { IRadio } from '../interfaces';
+import './Radio.scss';
+
 const cn = withNaming({ e: '__', m: '-' })('Radio');
 
 const Radio = React.forwardRef((props: IRadio, ref: any) => {

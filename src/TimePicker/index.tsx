@@ -1,14 +1,15 @@
-import * as React from 'react';
+import classNames from 'classnames';
 import * as moment from 'moment';
 import omit from 'omit.js';
-import { polyfill } from 'react-lifecycles-compat';
 import RcTimePicker from 'rc-time-picker/lib/TimePicker';
-import classNames from 'classnames';
-import warning from '../utils/warning';
+import * as React from 'react';
+import { polyfill } from 'react-lifecycles-compat';
+
 import Icon from '../Icon';
-import './TimePicker.scss';
 import { TimePickerProps } from '../interfaces';
 import interopDefault from '../utils/interopDefault';
+import warning from '../utils/warning';
+import './TimePicker.scss';
 
 export function generateShowHourMinuteSecond(format: string) {
   // Ref: http://momentjs.com/docs/#/parsing/string-format/

@@ -1,7 +1,8 @@
-import React from 'react';
 import { withNaming } from '@bem-react/classname';
-import './Button.scss';
+import React from 'react';
+
 import { IButton } from '../interfaces';
+import './Button.scss';
 
 const cn = withNaming({ e: '__', m: '-' })('Button');
 

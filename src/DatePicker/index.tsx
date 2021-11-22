@@ -1,16 +1,18 @@
-import * as React from 'react';
 import RcCalendar from 'rc-calendar';
 import MonthCalendar from 'rc-calendar/lib/MonthCalendar';
+import * as React from 'react';
+
+import { DatePickerDecorator, DatePickerProps } from '../interfaces';
 import CreatePicker from './CreatePicker';
-import WrapPicker from './WrapPicker';
+import './DatePicker.scss';
 import RangePicker from './RangePicker';
 import WeekPicker from './WeekPicker';
-import { DatePickerProps, DatePickerDecorator } from '../interfaces';
-import './DatePicker.scss';
+import WrapPicker from './WrapPicker';
 
-const DatePicker = WrapPicker(CreatePicker(RcCalendar), 'date') as React.ClassicComponentClass<
-  DatePickerProps
->;
+const DatePicker = WrapPicker(
+  CreatePicker(RcCalendar),
+  'date'
+) as React.ClassicComponentClass<DatePickerProps>;
 
 const MonthPicker = WrapPicker(CreatePicker(MonthCalendar), 'month');
 

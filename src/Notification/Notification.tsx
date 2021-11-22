@@ -1,7 +1,8 @@
-import * as React from 'react';
 import Notification from 'rc-notification';
+import * as React from 'react';
+
 import Icon from '../Icon';
-import { INotification, NotificationPlacement, NotificationApi, ConfigProps } from '../interfaces';
+import { ConfigProps, INotification, NotificationApi, NotificationPlacement } from '../interfaces';
 import './Notification.scss';
 
 const notificationInstance: { [key: string]: any } = {};
@@ -170,20 +171,20 @@ function notice(args: INotification) {
 const api: any = {
   open: notice,
   close(key: string) {
-    Object.keys(notificationInstance).forEach(cacheKey =>
+    Object.keys(notificationInstance).forEach((cacheKey) =>
       notificationInstance[cacheKey].removeNotice(key)
     );
   },
   config: setNotificationConfig,
   destroy() {
-    Object.keys(notificationInstance).forEach(cacheKey => {
+    Object.keys(notificationInstance).forEach((cacheKey) => {
       notificationInstance[cacheKey].destroy();
       delete notificationInstance[cacheKey];
     });
   },
 };
 
-['success', 'info', 'warning', 'error'].forEach(type => {
+['success', 'info', 'warning', 'error'].forEach((type) => {
   api[type] = (args: INotification) =>
     api.open({
       ...args,

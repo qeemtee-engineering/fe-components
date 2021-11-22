@@ -1,10 +1,11 @@
-import * as React from 'react';
-import { polyfill } from 'react-lifecycles-compat';
-import TimePickerPanel from 'rc-time-picker/lib/Panel';
 import classNames from 'classnames';
 import * as moment from 'moment';
-import interopDefault from '../utils/interopDefault';
+import TimePickerPanel from 'rc-time-picker/lib/Panel';
+import * as React from 'react';
+import { polyfill } from 'react-lifecycles-compat';
+
 import { generateShowHourMinuteSecond } from '../TimePicker';
+import interopDefault from '../utils/interopDefault';
 import warning from '../utils/warning';
 
 type PickerType = 'date' | 'week' | 'month';
@@ -39,7 +40,7 @@ function getColumns({ showHour, showMinute, showSecond, use12Hours }: any) {
 
 function checkValidate(value: any, propName: string) {
   const values: any[] = Array.isArray(value) ? value : [value];
-  values.forEach(val => {
+  values.forEach((val) => {
     if (!val) return;
 
     warning(
@@ -99,28 +100,28 @@ export default function WrapPicker(Picker: React.ComponentClass<any>, pickerType
       onOpenChange(open);
     };
 
-    handleFocus: React.FocusEventHandler<HTMLInputElement> = e => {
+    handleFocus: React.FocusEventHandler<HTMLInputElement> = (e) => {
       const { onFocus } = this.props;
       if (onFocus) {
         onFocus(e);
       }
     };
 
-    handleBlur: React.FocusEventHandler<HTMLInputElement> = e => {
+    handleBlur: React.FocusEventHandler<HTMLInputElement> = (e) => {
       const { onBlur } = this.props;
       if (onBlur) {
         onBlur(e);
       }
     };
 
-    handleMouseEnter: React.MouseEventHandler<HTMLInputElement> = e => {
+    handleMouseEnter: React.MouseEventHandler<HTMLInputElement> = (e) => {
       const { onMouseEnter } = this.props;
       if (onMouseEnter) {
         onMouseEnter(e);
       }
     };
 
-    handleMouseLeave: React.MouseEventHandler<HTMLInputElement> = e => {
+    handleMouseLeave: React.MouseEventHandler<HTMLInputElement> = (e) => {
       const { onMouseLeave } = this.props;
       if (onMouseLeave) {
         onMouseLeave(e);

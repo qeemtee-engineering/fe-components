@@ -1,23 +1,24 @@
 import {
-  ISVG,
-  IModal,
-  IButton,
-  ITable,
-  IInput,
-  ITranslateProvider,
-  ITranslateConnect,
-  IOverlayComponent,
-  ICheckbox,
-  INotification,
-  IIcon,
   CollapseProps,
-  INumber,
+  IButton,
+  ICheckbox,
   ICurrency,
-  IRichtext,
   IFileUploader,
+  IIcon,
+  IInput,
+  IModal,
+  INotification,
+  INumber,
+  IOverlayComponent,
   IRadio,
+  IRichtext,
+  ISVG,
+  ITable,
+  ITranslateConnect,
+  ITranslateProvider,
   NotificationApi,
 } from './src/interfaces';
+
 export function SVG(props: ISVG): any;
 export function Modal(props: IModal): any;
 export function Button(props: IButton): any;

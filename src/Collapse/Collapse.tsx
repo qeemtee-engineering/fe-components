@@ -1,10 +1,11 @@
-import React, { Component } from 'react';
-import Icon from '../Icon';
-import './Collapse.scss';
-import { CollapseProps, PanelProps } from '../interfaces';
-import CollapsePanel from './CollapsePanel';
 import classNames from 'classnames';
 import RcCollapse from 'rc-collapse';
+import React, { Component } from 'react';
+
+import Icon from '../Icon';
+import { CollapseProps, PanelProps } from '../interfaces';
+import './Collapse.scss';
+import CollapsePanel from './CollapsePanel';
 
 export default class Collapse extends Component<CollapseProps> {
   static Panel = CollapsePanel;

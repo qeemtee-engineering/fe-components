@@ -1,14 +1,15 @@
-import typescript from 'rollup-plugin-typescript2';
-import sass from 'rollup-plugin-sass';
 import commonjs from '@rollup/plugin-commonjs';
-import external from 'rollup-plugin-peer-deps-external';
-import resolve from '@rollup/plugin-node-resolve';
-import localResolve from 'rollup-plugin-local-resolve';
 import json from '@rollup/plugin-json';
-import filesize from 'rollup-plugin-filesize';
-import pkg from './package.json';
-import postcss from 'rollup-plugin-postcss';
+import resolve from '@rollup/plugin-node-resolve';
 import autoprefixer from 'autoprefixer';
+import filesize from 'rollup-plugin-filesize';
+import localResolve from 'rollup-plugin-local-resolve';
+import external from 'rollup-plugin-peer-deps-external';
+import postcss from 'rollup-plugin-postcss';
+import sass from 'rollup-plugin-sass';
+import typescript from 'rollup-plugin-typescript2';
+
+import pkg from './package.json';
 
 export default {
   input: 'components/index.tsx',

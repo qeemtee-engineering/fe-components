@@ -1,8 +1,9 @@
-import React, { FC, useState, useEffect } from 'react';
-import './Carousel.scss';
 import { withNaming } from '@bem-react/classname';
-import Icon from '../Icon';
 import cs from 'classnames';
+import React, { FC, useEffect, useState } from 'react';
+
+import Icon from '../Icon';
+import './Carousel.scss';
 
 const cn = withNaming({ e: '__', m: '--' })('Carousel');
 
@@ -16,14 +17,14 @@ interface ICarouselProps {
   captions?: string[];
 }
 
-const Carousel: FC<ICarouselProps> = props => {
+const Carousel: FC<ICarouselProps> = (props) => {
   const [active, setActive] = useState(props.startIndex || 0);
   const [seconds, setSeconds] = useState(0);
   const [isAuto, setAuto] = useState(props.autoPlay);
   const goNext = () => {
     setSeconds(0);
     if (props.images[active + 1]) {
-      return setActive(a => a + 1);
+      return setActive((a) => a + 1);
     }
     return setActive(0);
   };
@@ -33,7 +34,7 @@ const Carousel: FC<ICarouselProps> = props => {
       const autoPlayDuration = props.autoPlayDuration || 5;
       const interval = setInterval(() => {
         if (seconds <= autoPlayDuration) {
-          setSeconds(s => s + 1);
+          setSeconds((s) => s + 1);
         }
       }, 1000);
 
@@ -49,7 +50,7 @@ const Carousel: FC<ICarouselProps> = props => {
   const goPrev = () => {
     setSeconds(0);
     if (props.images[active - 1]) {
-      return setActive(a => a - 1);
+      return setActive((a) => a - 1);
     }
     return setActive(props.images.length - 1);
   };

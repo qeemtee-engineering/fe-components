@@ -1,17 +1,19 @@
 /* tslint:disable jsx-no-multiline-js */
-import * as React from 'react';
-import * as moment from 'moment';
-import { polyfill } from 'react-lifecycles-compat';
-import RangeCalendar from 'rc-calendar/lib/RangeCalendar';
-import RcDatePicker from 'rc-calendar/lib/Picker';
 import classNames from 'classnames';
+import * as moment from 'moment';
+import RcDatePicker from 'rc-calendar/lib/Picker';
+import RangeCalendar from 'rc-calendar/lib/RangeCalendar';
+import * as React from 'react';
+import { polyfill } from 'react-lifecycles-compat';
 import shallowequal from 'shallowequal';
+
 import Icon from '../Icon';
 import Tag from '../Tag';
-import warning from '../utils/warning';
+import { RangePickerPresetRange, RangePickerValue } from '../interfaces';
 import interopDefault from '../utils/interopDefault';
-import { RangePickerValue, RangePickerPresetRange } from '../interfaces';
+import warning from '../utils/warning';
 import { formatDate } from './utils';
+
 export interface RangePickerState {
   value?: RangePickerValue;
   showDate?: RangePickerValue;
@@ -46,7 +48,7 @@ function pickerValueAdapter(
 
 function isEmptyArray(arr: any) {
   if (Array.isArray(arr)) {
-    return arr.length === 0 || arr.every(i => !i);
+    return arr.length === 0 || arr.every((i) => !i);
   }
   return false;
 }
@@ -238,7 +240,7 @@ class RangePicker extends React.Component<any, RangePickerState> {
         {renderExtraFooter()}
       </div>
     ) : null;
-    const operations = Object.keys(ranges || {}).map(range => {
+    const operations = Object.keys(ranges || {}).map((range) => {
       const value = ranges[range];
       return (
         <Tag
@@ -314,7 +316,7 @@ class RangePicker extends React.Component<any, RangePickerState> {
       onOk: this.handleChange,
     };
     if (props.timePicker) {
-      pickerChangeHandler.onChange = changedValue => this.handleChange(changedValue);
+      pickerChangeHandler.onChange = (changedValue) => this.handleChange(changedValue);
     } else {
       calendarProps = {};
     }

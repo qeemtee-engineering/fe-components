@@ -1,7 +1,8 @@
 import React from 'react';
+
 import { LanguageContext } from '../TranslateProvider/TranslateProvider';
-import { extractFromUrl } from '../utils/language';
 import { ContextProps, ITranslateConnect } from '../interfaces';
+import { extractFromUrl } from '../utils/language';
 
 const TranslateConnect = <P extends ITranslateConnect>(Component: React.ComponentType<P>) => {
   return (props: Pick<P, Exclude<keyof P, 'translation'>>) => {

@@ -1,7 +1,8 @@
-import React from 'react';
 import { withNaming } from '@bem-react/classname';
-import './Checkbox.scss';
+import React from 'react';
+
 import { ICheckbox } from '../interfaces';
+import './Checkbox.scss';
 
 const cn = withNaming({ e: '__', m: '-' })('Checkbox');
 
