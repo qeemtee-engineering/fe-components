@@ -1,0 +1,6 @@
+{
+  "name": "fe-components/phoneUtils",
+  "private": true,
+  "main": "../cjs/phoneUtils",
+  "module": "../esm/phoneUtils"
+}

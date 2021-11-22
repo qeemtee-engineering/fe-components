@@ -1,0 +1,12 @@
+.error-react-phone-number-input {
+  border: 1px solid #9e2222 !important;
+  color: #9e2222 !important; }
+
+.react-phone-number-input-padding {
+  padding: 10px 16px !important;
+  border-radius: 6px !important;
+  border: 1px solid #d9d9d9; }
+
+.react-phone-number-input__icon {
+  height: initial !important;
+  border: 0 !important; }
