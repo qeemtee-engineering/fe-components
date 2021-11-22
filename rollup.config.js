@@ -11,7 +11,7 @@ import postcss from 'rollup-plugin-postcss';
 import autoprefixer from 'autoprefixer';
 
 export default {
-  input: 'src/components/index.tsx',
+  input: 'components/index.tsx',
   output: [
     {
       file: pkg.main,

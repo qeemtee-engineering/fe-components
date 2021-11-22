@@ -39,7 +39,7 @@ const Checkbox = React.forwardRef((props: ICheckbox, ref: any) => {
           ref={ref}
         />
         <div className="checkbox">
-          <img className="SVG icon" src="https://web-assets.qeemtee.com/component/success.svg" />
+          <img className="SVG icon" src="https://assets.qeemtee.com/component/success.svg" />
         </div>
       </label>
       {(children || label) && (
