@@ -144,7 +144,7 @@ const Carousel: FC<ICarouselProps> = (props) => {
         </ul>
       </div>
       <div className={cn('caption')}>
-        <p>{props.captions![active]}</p>
+        <p>{props.captions?.[active]}</p>
       </div>
     </div>
   );
